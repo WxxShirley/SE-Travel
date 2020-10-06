@@ -24,7 +24,7 @@
 
 主页设计（主页/点击搜索栏/景点攻略）：
 
-<img src="/Users/xxwu/Library/Application Support/typora-user-images/image-20201004214002874.png" alt="image-20201004214002874" style="zoom: 25%;" /><img src="/Users/xxwu/Library/Application Support/typora-user-images/image-20201004214026293.png" alt="image-20201004214026293" style="zoom: 25%;" /><img src="/Users/xxwu/Library/Application Support/typora-user-images/image-20201004214203980.png" alt="image-20201004214203980" style="zoom: 25%;" />
+<img src="/Users/xxwu/Downloads/hulv/readme-imgs/image-20201004214002874.png" alt="image-20201004214002874" style="zoom: 25%;" /><img src="/Users/xxwu/Downloads/hulv/readme-imgs/image-20201004214026293.png" alt="image-20201004214026293" style="zoom: 25%;" /><img src="/Users/xxwu/Downloads/hulv/readme-imgs/image-20201004214203980.png" alt="image-20201004214203980" style="zoom: 25%;" />
 
 
 
@@ -32,7 +32,7 @@
 
 消息和发现页：
 
-<img src="/Users/xxwu/Library/Application Support/typora-user-images/image-20201004214304238.png" alt="image-20201004214304238" style="zoom: 25%;" /><img src="/Users/xxwu/Library/Application Support/typora-user-images/image-20201004215446755.png" alt="image-20201004215446755" style="zoom: 25%;" /><img src="/Users/xxwu/Library/Application Support/typora-user-images/image-20201004215528546.png" alt="image-20201004215528546" style="zoom: 25%;" />
+<img src="/Users/xxwu/Downloads/hulv/readme-imgs/image-20201004214304238.png" alt="image-20201004214304238" style="zoom: 25%;" /><img src="/Users/xxwu/Downloads/hulv/readme-imgs/image-20201004215446755.png" alt="image-20201004215446755" style="zoom: 25%;" /><img src="/Users/xxwu/Downloads/hulv/readme-imgs/image-20201004215528546.png" alt="image-20201004215528546" style="zoom: 25%;" />
 
 
 
@@ -63,7 +63,7 @@
 > 
 >* 位置信息，类似下面这样，点击可以进入大图的地图模式
 > 
->  <img src="/Users/xxwu/Library/Application Support/typora-user-images/image-20201004215058050.png" alt="image-20201004215058050" style="zoom:50%;" />
+>  <img src="/Users/xxwu/Downloads/hulv/readme-imgs/image-20201004215058050.png" alt="image-20201004215058050" style="zoom:50%;" />
 > 
 >* 景区介绍信息
 > 

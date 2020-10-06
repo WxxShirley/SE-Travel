@@ -1,0 +1,74 @@
+/* pages/search/search.wxss */
+/* 搜索历史 */
+.hmly-history{
+  width: 90%;
+  height: auto;
+  margin: 0rpx auto;
+  margin-top: 80rpx;
+}
+
+.hmly-title{
+  width: 100%;
+  height: 50rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.hmly-title-text{
+  color: #000;
+  font-weight: 700;
+}
+
+.hmly-history-content{
+  width: 100%;
+  height: auto;
+  margin-top: 30rpx;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.hmly-content-item{
+  width: 150rpx;
+  font-size: 33rpx;
+  text-align: center;
+  padding: 10rpx 20rpx;
+  margin-bottom: 20rpx;
+  border-radius: 25rpx;
+}
+
+/* 热门搜索 */
+.hmly-hot{
+  width: 90%;
+  height: auto;
+  margin: 0rpx auto;
+  margin-top: 80rpx;
+}
+
+.hmly-hot-content{
+  width: 100%;
+  height: auto;
+  margin-top: 30rpx;
+}
+
+.hmly-hot-items{
+  width: 100%;
+  height: 50rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.hmly-item-left{
+  display: flex;
+  justify-content: flex-start;
+  font-size: 32rpx;
+}
+
+.hmly-item-title{
+  margin-left: 40rpx;
+}

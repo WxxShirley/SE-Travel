@@ -1,0 +1,34 @@
+<!--搜索框-->
+<van-search value="{{searchInput}}" placeholder="请输入你想去的地方" bind:search="onSearch"/>
+
+<!--搜索历史-->
+<view class="hmly-history">
+  <!--提示标题-->
+  <view class="hmly-title">
+    <view class="title-text">搜索历史</view>
+    <van-icon name="delete" bindtap="deleteSearchHistory" />
+  </view>
+  <!--内容-->
+  <view class="hmly-history-content">
+    <view  wx:for="{{searchHistory}}" wx:key="index">
+      <view class="hmly-content-item bg-gray text-black">{{item}}</view>
+    </view>
+    </view>
+</view>
+
+<!--热门搜索-->
+<view class="hmly-hot">
+  <!--提示标题-->
+  <view class="hmly-title">
+    <view class="hmly-title-text">热门搜索</view>
+  </view>
+  <view class="hmly-hot-content">
+    <view class="hmly-hot-items" wx:for="{{hotSearchPlace}}" wx:key="index">
+      <view class="hmly-item-left">
+        <view class="{{index<3 ? 'text-red' : ''}}">{{index+1}}</view>
+        <view class="hmly-item-title text-black">{{item.place}}</view>
+      </view>
+
+    </view>
+  </view>
+</view>

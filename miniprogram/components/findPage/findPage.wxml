@@ -1,0 +1,7 @@
+<!--发现页-->
+
+<van-tabs active="{{ active }}" bind:change="onChange" color="#1989fa"> 
+  <van-tab title="景点·攻略" class="content">内容 1</van-tab>
+  <van-tab title="记录·手帐" class="content">内容 2</van-tab>
+  <van-tab title="寻找·驴友" class="content">内容 3</van-tab>
+</van-tabs>

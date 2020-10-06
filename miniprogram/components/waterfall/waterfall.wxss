@@ -1,0 +1,44 @@
+/* components/waterfall/waterfall.wxss */
+/* 瀑布流相关 */
+.content{
+  display: flex;
+  flex-direction: row;
+  margin: 20rpx;
+  overflow: hidden;
+}
+
+.left{
+  width: 345rpx;
+  padding-left: 5px;
+}
+
+.right{
+  width: 345rpx;
+  margin-left: 20rpx;
+  padding-right: 5px;
+}
+
+.pic{
+  border-radius: 10rpx;
+  width: 345rpx;
+}
+
+.like-img{
+  background-color: white;
+  border-radius: 5%;
+  margin-bottom: 25px;
+}
+
+.detail-content{
+  color: #C0C0C0;
+}
+
+.avatar{
+  width: 24px;
+  height: 24px;
+  border-radius: 24px;
+}
+
+.tail-text{
+  text-align: end;
+}

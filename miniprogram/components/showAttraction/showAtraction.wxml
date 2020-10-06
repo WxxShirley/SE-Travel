@@ -1,0 +1,17 @@
+<view class="hmly-like">
+  <view class="hmly-bar-title">
+    <view class="hmly-title-left">{{title}}</view>
+    <view class="hmly-title-right" bindtap="goToList">更多<text class="icon-right"></text></view>
+  </view>
+  <view class="hmly-like-item-box">
+    <view class="hmly-like-item" bindtap="gotoDetails" data-coverImg="{{item.coverMiddle}}" data-title="{{item.title}}" wx:for="{{dataset}}" wx:key="index">
+      <view class="hmly-like-img">
+        <image class="hmly-like-item-icon" src="{{item.imgSrc}}" mode="heightFix"></image>
+        <view class="hmly-like-cover">
+          <text class="">{{item.title}}</text> 
+        </view>
+      </view>
+      <view class="hmly-like-text">{{item.description}}</view>
+    </view>
+  </view>
+</view>

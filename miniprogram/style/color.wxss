@@ -1,0 +1,25 @@
+/* 背景颜色 */
+.bg-gray{
+  background-color: #eeeeee;
+}
+
+/* 字体颜色 */
+.text-gray{
+  color: #aaaaaa;
+}
+
+.text-black{
+  color: #181818;
+}
+
+.text-red{
+  color: #f00;
+}
+
+.text-orange{
+  color: orange;
+}
+
+.text-green{
+  color: green;
+}

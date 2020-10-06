@@ -1,0 +1,74 @@
+/* components/showAttraction/showAtraction.wxss */
+
+
+
+.hmly-like{
+  width: 92%;
+  margin: 0rpx auto;
+  margin-top: 40rpx;
+}
+
+.hmly-like-item-box{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.hmly-like-item{
+  width: 210rpx;
+  height: 310rpx;
+  border-radius: 15rpx;
+  position: relative;
+}
+
+.hmly-like-img{
+  width: 210rpx;
+  height: 210rpx;
+  border-radius: 15rpx;
+  position: relative;
+}
+
+.hmly-like-item-icon{
+  width: 100%;
+  height: 100%;
+  border-radius: 0rpx;
+}
+
+.hmly-like-text{
+  font-size: 28rpx;
+  color: #333;
+  margin-top: 10rpx;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;  /*行数n*/
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.hmly-like-cover{
+  width: 190rpx;
+  height: 40rpx;
+  background-image: linear-gradient(rgba(0,0,0,0.01), rgba(0,0,0,1)); /*透明背景层*/
+  position: absolute;
+  bottom: 0rpx;
+  color: #fff;
+  font-size: 25rpx;
+  padding: 5rpx 10rpx;
+  border-bottom-left-radius: 15rpx;
+  border-bottom-right-radius: 15rpx;
+}
+
+.hmly-title-left{
+  float: left;
+  font-size: 37rpx;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: 800;
+  color: #333;
+}
+
+.hmly-title-right{
+  float: right;
+  font-size: 26rpx;
+  color: #aaa;
+}

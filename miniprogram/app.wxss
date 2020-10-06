@@ -1,0 +1,4 @@
+/**app.wxss**/
+/* 引入icon样式库 */
+@import '/style/common.wxss';
+@import '/style/color.wxss';

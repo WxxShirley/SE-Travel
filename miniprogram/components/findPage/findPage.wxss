@@ -1,0 +1,5 @@
+/* components/findPage/findPage.wxss */
+
+.content{
+  text-align: center;
+}

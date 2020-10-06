@@ -1,0 +1,105 @@
+/* pages/components/mainpage/mainpage.wxss */
+.search-bar{
+  padding-left: 3%;
+  padding-right: 3%;
+}
+
+/* 轮播图 */
+.hmly-swiper{
+  width: 100%;
+  height: 100%;
+  border-radius: 15rpx;
+}
+
+.hmly-swiper-container{
+  width: 90%;
+  height: 280rpx;
+  margin: 0rpx auto;
+  position: relative;
+  border-radius: 15rpx;
+  overflow: hidden;
+}
+
+.hmly-swiper-item{
+  width: 100%;
+  height: 100%;
+  border-radius: 15rpx;
+}
+
+.hmly-swiper-item>image{
+  width: 100%;
+  height: 100%;
+  border-radius: 15rpx;
+}
+
+.hmly-dots{
+  width: auto;
+  height: 10rpx;
+  position: absolute;
+  bottom: 20rpx;
+  border-radius: 50rpx;
+  left: 240rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rpx 10rpx;
+}
+
+.hmly-dots-item{
+  width: 8rpx;
+  height: 8rpx;
+  margin: 0rpx 8rpx;
+  border-radius: 50%;
+  background-color: #cdcdcd;
+  transition: all .3s;
+}
+
+.hmly-dot-active{
+  width: 10rpx;
+  height: 10rpx;
+  background-color: #fff;
+}
+
+/* 宫格导航 */
+.hmly-nav{
+  width: 90%;
+  height: 132rpx;
+  margin: 0rpx auto;
+  margin-top: 40rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+}
+
+.hmly-nav-item{
+  width: 94rpx;
+  font-size: 22rpx;
+  text-align: center;
+  line-height: 35rpx;
+  color: #aaa;
+}
+
+.hmly-nav-icon{
+  width: 80rpx;
+  height: 80rpx;
+}
+
+/* 瀑布流相关 */
+.content{
+  display: flex;
+  flex-direction: row;
+  margin: 20rpx;
+  overflow: hidden;
+}
+
+.left{
+  width: 345rpx;
+  padding-left: 5px;
+}
+
+.right{
+  width: 345rpx;
+  margin-left: 20rpx;
+  padding-right: 5px;
+}

@@ -1,0 +1,50 @@
+<!--components/messagePage/messagePage.wxml-->
+<van-notice-bar left-icon="volume-o" text="消息列表"></van-notice-bar>
+
+<!--自定义的tab-->
+<van-grid column-num="2" border="{{ false }}" > 
+  <van-grid-item use-slot bindtap="tapLikeNotice">
+    <van-icon size="25"   name="like"  color="pink" dot/>
+    <text class="text">  攻略获赞</text>
+  </van-grid-item>
+  <van-grid-item use-slot bindtap="tapQuesNotice" >
+    <van-icon size="25"   name="comment"  color="#1989fa" />
+    <text class="text">  问题相关</text>
+  </van-grid-item>
+</van-grid>
+
+
+<!--攻略获赞-->
+<view wx:if="{{tapLike}}" class="likes-content">
+  <block wx:for="{{likeNotice}}" wx:key="index">
+     <van-cell center value="{{item.timestap}}">
+       <view slot="title">
+         <van-col span="4">
+           <image class="avatar" src="{{item.avatar}}"/>
+         </van-col>
+         <val-col span="8" offset="4">
+           <view class="van-cell-text">{{item.nickname}}点赞了:</view>
+           <text class="gonglue-text">{{item.title}}</text>
+         </val-col>
+       </view>
+     </van-cell>
+  </block>
+</view>
+
+
+<!--问题相关-->
+<view wx:if="{{tapQues}}" class="likes-content">
+  <block wx:for="{{quesNotice}}" wx:key="index">
+     <van-cell center value="{{item.timestap}}">
+       <view slot="title">
+         <van-col span="4">
+           <image class="avatar" src="{{item.avatar}}"/>
+         </van-col>
+         <val-col span="12" offset="4">
+           <view class="van-cell-text">{{item.nickname}}的问题等你回答:</view>
+           <text class="gonglue-text">{{item.title}}</text>
+         </val-col>
+       </view>
+     </van-cell>
+  </block>
+</view>

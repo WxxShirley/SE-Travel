@@ -1,0 +1,20 @@
+<!--pages/touristAttraction/touristAttraction.wxml-->
+<!--搜索框-->
+<view class="search-bar">
+  <van-search  placeholder="请输入你想去的地方" show-action bindtap="onSearchTap"/>
+</view>
+
+<showAttraction title="热门景点" dataset="{{hotPlace}}" />
+<showAttraction title="当季景点" dataset="{{onSeason}}" />
+
+<!--分区展示-->
+<view class="hmly-like">
+  <view class="hmly-bar-title">
+    <view class="hmly-title-left">分区浏览</view>
+  </view>
+</view>
+<view class="area-show">
+  <van-tree-select items="{{districts}}" height="60vw" main-active-index="{{mainActiveIndex}}" active-id="{{activeId}}" bind:click-nav="onClickNav" bind:click-item="onClickItem">
+       
+  </van-tree-select>
+</view>

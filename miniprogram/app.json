@@ -1,0 +1,40 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/search/search",
+    "pages/touristAttraction/touristAttraction",
+    "pages/listview/tourList"
+  ],
+  "cloud": true,
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#1989fa",
+    "navigationBarTitleText": "沪驴",
+    "navigationBarTextStyle": "white"
+  },
+  "sitemapLocation": "sitemap.json",
+  "usingComponents": {
+    "van-button": "plugins/vantComponents/dist/button/index",
+    "van-tabbar": "plugins/vantComponents/dist/tabbar/index",
+    "van-tabbar-item": "plugins/vantComponents/dist/tabbar-item/index",
+    "van-icon": "plugins/vantComponents/dist/icon/index",
+    "van-search": "plugins/vantComponents/dist/search/index",
+    "van-image": "plugins/vantComponents/dist/image/index",
+    "van-divider": "plugins/vantComponents/dist/divider/index",
+    "van-notice-bar": "plugins/vantComponents/dist/notice-bar/index",
+    "van-grid": "plugins/vantComponents/dist/grid/index",
+    "van-grid-item": "plugins/vantComponents/dist/grid-item/index",
+    "van-cell": "plugins/vantComponents/dist/cell/index",
+    "van-cell-group": "plugins/vantComponents/dist/cell-group/index",
+    "van-col": "plugins/vantComponents/dist/col/index",
+    "van-tab": "plugins/vantComponents/dist/tab/index",
+    "van-tabs": "plugins/vantComponents/dist/tabs/index",
+    "van-tree-select": "plugins/vantComponents/dist/tree-select/index",
+    "main": "components/mainpage/mainpage",
+    "waterfall": "components/waterfall/waterfall",
+    "messagePage": "components/messagePage/messagePage",
+    "findPage": "components/findPage/findPage",
+    "showAttraction": "components/showAttraction/showAtraction"
+  }
+}

@@ -1,0 +1,48 @@
+<!--主页-->
+
+<!--搜索框-->
+<view class="search-bar">
+  <van-search  placeholder="请输入你想去的地方" show-action bindtap="onSearchTap"/>
+</view>
+
+<!--轮播图:热门景点-->
+<view class="hmly-swiper-container">
+  <swiper class="hmly-swiper" autoplay="true" circular="true"
+    interval="3000" easing-function="easeOutCubic" current="{{swiperCurren}}" bindchange="swiperChange">
+    <swiper-item class="hmly-swiper-item" wx:for="{{imgList}}" wx:key="index">
+      <image src="{{item}}"></image>
+    </swiper-item>
+  </swiper>
+  <view class="hmly-dots">
+    <block wx:for="{{imgList.length}}" wx:key="index">
+      <view class="hmly-dots-item{{index==swiperCurren?'hmly-dot-active':''}}"></view>
+    </block>
+  </view>
+</view>
+
+<!--宫格导航-->
+<view class="hmly-nav">
+<block>
+  <view class="hmly-nav-item" wx:for="{{navList}}" wx:key="index">
+    <view class="hmly-nav-icon">
+      <van-icon size="40"   id="{{index}}" bindtap="{{item.events}}"    name="{{item.icon}}"  color="#1989fa"/>
+    </view>
+    <text class="hmly-nav-text">{{item.name}}</text>
+  </view>
+</block>
+</view>
+
+<!--分割线-->
+<van-divider contentPosition="center" customStyle="padding-left:20px; padding-right:20px;color: #1989fa; border-color: #1989fa; font-size: 18px;">猜你喜欢</van-divider>
+
+<!--瀑布流-->
+<view class="content">
+  <view class="left">
+    <waterfall dataset="{{leftList}}" />
+  </view>
+
+  <view class="right">
+    <waterfall dataset="{{rightList}}" />
+  </view>
+</view>
+

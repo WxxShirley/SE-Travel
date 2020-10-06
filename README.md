@@ -1,18 +1,18 @@
-## HULV-DEV-LOGS
+# HULV-DEV-LOGS
 
-[TOC]
 
-### How to run
+
+## How to run
 
 下载代码，下载[微信小程序](https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html)，打开软件包。
 
 小程序ID：`wx871696d2ebd36b09`
 
-------
 
 
 
-### TimeLine
+
+## TimeLine
 
 **Sprint1**：
 
@@ -40,11 +40,11 @@
 | 根据微信开发文档，实现景区云数据库，实现图片的存储和加载     | 10.18 | 仔细阅读景区数据集格式再建库 |
 | 云函数实现【按名称搜索景区 、 实时热门景区  、给定景区ID返回景区对象、（待定）给景区评分】 | 10.23 |                              |
 
-------
 
 
 
-### 文件夹说明
+
+## 文件夹说明
 
 `cloudfunctions`：编写云函数
 
@@ -54,11 +54,11 @@
 
 `docs`:开发文档
 
-------
 
 
 
-### 参考文档
+
+## 参考文档
 
 - 后端
   * [云开发文档](https://developers.weixin.qq.com/miniprogram/dev/wxcloud/basis/getting-started.html)
@@ -73,7 +73,7 @@
   >
   > 密码：FudanSE2020, 再配合微信扫码登录
 
-------
+
 
 
 

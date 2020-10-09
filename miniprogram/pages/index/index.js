@@ -8,7 +8,8 @@ Page({
     motto: '一开口就是老程序员了',
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    backTopValue: false
   },
   //事件处理函数
   onChange(event){
@@ -56,5 +57,27 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
+  },
+
+  // 监听滚动条坐标, 如果滚动超过600，则出现“返回顶部”的按钮
+  onPageScroll: function(e){
+    let scrollTop = e.scrollTop
+    //console.log(scrollTop)
+    let backTopValue = scrollTop>600?true:false;
+    this.setData({backTopValue})
+  },
+
+  // 返回顶部
+  backTop: function(e){
+    if(wx.pageScrollTo){
+      wx.pageScrollTo({
+        scrollTop:0
+      })
+    }else{
+      wx.showModal({
+        title:'提示',
+        content: '当前微信版本过低，无法使用该功能，请升级到最新微信版本后重试'
+      })
+    }
   }
 })

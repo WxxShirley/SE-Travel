@@ -24,7 +24,9 @@ Component({
       {name: '解锁成就', events: 'tapNav', icon: 'award', color: 'yellow'}
     ],
     leftList: [],
-    rightList: []
+    rightList: [],
+    backTopValue: false, // “返回顶部”
+
   },
 
   /**
@@ -78,5 +80,6 @@ Component({
         url: "../touristAttraction/touristAttraction",
       })
     },
+
   }
 })

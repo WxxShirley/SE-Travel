@@ -2,7 +2,7 @@
 
 <!--搜索框-->
 <view class="search-bar">
-  <van-search  placeholder="请输入你想去的地方" show-action bindtap="onSearchTap"/>
+  <van-search  placeholder="请输入你想去的地方" show-action bindfocus="onSearchTap" action-text=''/>
 </view>
 
 <!--轮播图:热门景点-->

@@ -11,7 +11,7 @@
   <!--内容-->
   <view class="hmly-history-content">
     <view  wx:for="{{searchHistory}}" wx:key="index">
-      <view class="hmly-content-item bg-gray text-black">{{item}}</view>
+      <view class="hmly-content-item bg-gray text-black" bindtap="onTapHistory" id="{{item}}">{{item}}</view>
     </view>
     </view>
 </view>
@@ -24,7 +24,7 @@
   </view>
   <view class="hmly-hot-content">
     <view class="hmly-hot-items" wx:for="{{hotSearchPlace}}" wx:key="index">
-      <view class="hmly-item-left">
+      <view class="hmly-item-left" bindtap="onTapHotplace" id="{{item.place}}">
         <view class="{{index<3 ? 'text-red' : ''}}">{{index+1}}</view>
         <view class="hmly-item-title text-black">{{item.place}}</view>
       </view>

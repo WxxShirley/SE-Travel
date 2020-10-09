@@ -17,3 +17,8 @@
     <van-tabbar-item icon="user-o">我的</van-tabbar-item>
   </van-tabbar>
 </view>
+
+<!--返回顶部-->
+<view wx:if="{{backTopValue}}" class="back-top" catchtap="backTop">
+  <van-icon name="arrow-up" />
+</view>

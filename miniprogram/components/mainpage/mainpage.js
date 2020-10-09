@@ -17,9 +17,9 @@ Component({
       '/images/places/外滩.jpeg','/images/places/欢乐谷.jpeg', '/images/places/迪士尼.jpeg','/images/places/魔都矩阵.jpeg', ],
     swiperCurrent: 0,
     navList: [ // 宫格导航
-      {name: '路径规划', events: 'tapNav', icon: 'location',color: 'lightblue'},
+      {name: '旅行手帐', events: 'goDiary', icon: 'edit',color: 'lightblue'},
       {name: '景点攻略', events: 'goTourist', icon: 'fire',color:'pink'},
-      {name: '旅行手帐', events: 'tapNav', icon: 'photo', color:'lightgreen'},
+      {name: '发布攻略', events: 'goPublish', icon: 'photo', color:'lightgreen'},
       {name: '寻找驴友', events: 'tapNav', icon: 'friends', color: 'orange'},
       {name: '解锁成就', events: 'tapNav', icon: 'award', color: 'yellow'}
     ],
@@ -80,6 +80,19 @@ Component({
         url: "../touristAttraction/touristAttraction",
       })
     },
+
+    // 点击“发布攻略”，进入到发布动态的界面
+    goPublish: function(e){
+      wx.navigateTo({
+        url: '../publish/publish',
+      })
+    },
+
+    goDiary: function(e){
+      wx.navigateTo({
+        url: '../diary/diary',
+      })
+    }
 
   }
 })

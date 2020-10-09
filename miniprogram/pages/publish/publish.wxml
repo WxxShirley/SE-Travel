@@ -1,0 +1,22 @@
+<!--发布攻略界面-->
+
+
+<!--文本输入-->
+<textarea class="input-text" placeholder="请输入内容" bindinput="getInput" />
+
+<!--展示图片-->
+<view class="imageRootAll">
+  <block wx:for="{{imgList}}" wx:key="index">
+    <view class="imgItem">
+      <image class="img" src='{{item}}' mode='aspectFill'></image>
+      <image class="closeImg" bindtap="DeleteImg" src="../../images/close.png" data-index="{{index}}"></image>
+    </view>
+  </block>
+  <!-- 选择图片按钮 -->
+  <view wx:if="{{imgList.length<8}}" class="imgItem" bindtap="ChooseImage">
+    <image class="photo" src="../../images/photo.png"></image>
+  </view>
+</view>
+
+<!--发布-->
+<van-button color="#1989fa" bindtap="publish" block>发布攻略</van-button>

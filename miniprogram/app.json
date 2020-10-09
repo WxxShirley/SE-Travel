@@ -4,7 +4,9 @@
     "pages/logs/logs",
     "pages/search/search",
     "pages/touristAttraction/touristAttraction",
-    "pages/listview/tourList"
+    "pages/listview/tourList",
+    "pages/publish/publish",
+    "pages/diary/diary"
   ],
   "cloud": true,
   "window": {

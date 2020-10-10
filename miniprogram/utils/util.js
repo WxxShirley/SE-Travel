@@ -14,6 +14,18 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
-module.exports = {
-  formatTime: formatTime
+// 显示失败提示
+var showModal = (title, content, doStringify = false) => {
+  wx.hideToast()
+  wx.showModal({
+    title,
+    content: doStringify ? JSON.stringify(content) : content,
+    showCancel: false
+  })
 }
+
+module.exports = {
+  formatTime,
+  showModal,
+}
+

@@ -37,6 +37,9 @@
     "waterfall": "components/waterfall/waterfall",
     "messagePage": "components/messagePage/messagePage",
     "findPage": "components/findPage/findPage",
-    "showAttraction": "components/showAttraction/showAtraction"
+    "showAttraction": "components/showAttraction/showAtraction",
+    "sticker":"components/sticker/sticker",
+    "inputBox":"components/inputBox/inputBox",
+    "journal":"components/journal/journal"
   }
 }

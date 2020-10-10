@@ -1,8 +1,5 @@
 // components/showAttraction/showAtraction.js
 Component({
-  /**
-   * 组件的属性列表
-   */
   properties: {
     dataset: { // 展示的数据集
       type: Array,

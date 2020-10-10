@@ -2,7 +2,7 @@
 
 <!--搜索框-->
 <view class="search-bar">
-  <van-search  placeholder="请输入你想去的地方" show-action bindfocus="onSearchTap" action-text=''/>
+  <van-search  placeholder="请输入你想去的地方" show-action bindtap="onSearchTap" action-text=''/>
 </view>
 
 <!--轮播图:热门景点-->
@@ -25,7 +25,7 @@
 <block>
   <view class="hmly-nav-item" wx:for="{{navList}}" wx:key="index">
     <view class="hmly-nav-icon">
-      <van-icon size="40"   id="{{index}}" bindtap="{{item.events}}"    name="{{item.icon}}"  color="#1989fa"/>
+      <van-icon size="40"   id="{{index}}" bindtap="tapNav"    name="{{item.icon}}"  color="#1989fa"/>
     </view>
     <text class="hmly-nav-text">{{item.name}}</text>
   </view>

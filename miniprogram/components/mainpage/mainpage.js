@@ -2,9 +2,6 @@
 var mockData = require("../../models/mockData.js");
 
 Component({
-  /**
-   * 组件的属性列表
-   */
   properties: {
 
   },
@@ -14,14 +11,14 @@ Component({
    */
   data: {
     imgList: [
-      '/images/places/外滩.jpeg','/images/places/欢乐谷.jpeg', '/images/places/迪士尼.jpeg','/images/places/魔都矩阵.jpeg', ],
+      '/images/places/外滩.jpeg','/images/places/欢乐谷.jpeg', '/images/places/迪士尼.jpeg' ],
     swiperCurrent: 0,
     navList: [ // 宫格导航
-      {name: '旅行手帐', events: 'goDiary', icon: 'edit',color: 'lightblue'},
-      {name: '景点攻略', events: 'goTourist', icon: 'fire',color:'pink'},
-      {name: '发布攻略', events: 'goPublish', icon: 'photo', color:'lightgreen'},
-      {name: '寻找驴友', events: 'tapNav', icon: 'friends', color: 'orange'},
-      {name: '解锁成就', events: 'tapNav', icon: 'award', color: 'yellow'}
+      {name: '旅行手帐',  icon: 'edit', pageUrl: '../diary/diary'},
+      {name: '景点攻略',  icon: 'fire', pageUrl: '../touristAttraction/touristAttraction'},
+      {name: '发布攻略', icon: 'photo',pageUrl:'../publish/publish'},
+      {name: '寻找驴友',  icon: 'friends',pageUrl:null},
+      {name: '解锁成就', icon: 'award',pageUrl:null}
     ],
     leftList: [],
     rightList: [],
@@ -59,7 +56,7 @@ Component({
       this.setData({swiperCurrent: e.detail.current})
     },
 
-    // 用户点击搜索栏
+    // 用户点击搜索栏,界面跳转到搜索
     onSearchTap:()=>{
       console.log("tap")
       wx.navigateTo({
@@ -67,32 +64,17 @@ Component({
       })
     },
     
-    // 点击了宫格导航栏
+    // 点击宫格导航栏,界面跳转到对应的界面
     tapNav:function (e){
-      wx.showToast({
-        title:'点击:'+this.data.navList[e.target.id].name
-      });
+      if(this.data.navList[e.target.id].pageUrl){
+        wx.navigateTo({
+          url: this.data.navList[e.target.id].pageUrl,
+        })
+      }else{
+        wx.showToast({
+          title:'点击:'+this.data.navList[e.target.id].name
+        });
+      }
     },
-
-    // 进入到景点
-    goTourist: function(e){
-      wx.navigateTo({
-        url: "../touristAttraction/touristAttraction",
-      })
-    },
-
-    // 点击“发布攻略”，进入到发布动态的界面
-    goPublish: function(e){
-      wx.navigateTo({
-        url: '../publish/publish',
-      })
-    },
-
-    goDiary: function(e){
-      wx.navigateTo({
-        url: '../diary/diary',
-      })
-    }
-
   }
 })

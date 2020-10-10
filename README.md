@@ -57,7 +57,44 @@
 
 `docs`:开发文档
 
-
+├── README.md
+├── cloudfunctions    云函数
+├── docs              文档
+├── miniprogram       小程序前端代码
+│   ├── app.js        小程序启动执行的代码
+│   ├── app.json      配置文件，使用的components和pages需要注册说明
+│   ├── app.wxss      全局格式文件
+│   ├── components    抽象出来的各个组件
+│   │   ├── findPage  发现页
+│   │   ├── inputBox  手帐 - 输入框
+│   │   ├── journal   手帐 - 展示
+│   │   ├── mainpage  主页
+│   │   ├── messagePage 消息页
+│   │   ├── showAttraction 展示一行三个景区的抽象组件
+│   │   ├── sticker   手帐 - 贴纸
+│   │   └── waterfall 瀑布流展示
+│   ├── images         图片
+│   ├── models
+│   │   └── mockData.js 模拟数据
+│   ├── package-lock.json
+│   ├── pages
+│   │   ├── diary      编辑手帐界面
+│   │   ├── index      小程序主页
+│   │   ├── diary      编辑手帐
+│   │   ├── listview   展示热门景区
+│   │   ├── logs
+│   │   ├── publish    发布攻略界面
+│   │   ├── diary      编辑手帐
+│   │   ├── search     搜索页
+│   │   └── touristAttraction 景点攻略页面
+│   ├── plugins        使用插件 vant-weapp
+│   │   └── vantComponents
+│   ├── sitemap.json
+│   ├── style          全局格式
+│   └── utils          功能函数
+├── project.config.json
+├── readme-imgs  
+└── tmp                微信小程序前端初始化的文件
 
 
 

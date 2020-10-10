@@ -41,8 +41,11 @@
 | 云函数实现【按名称搜索景区 、 实时热门景区  、给定景区ID返回景区对象、（待定）给景区评分】 | 10.23 |                              |
 
 
+## 如何提交
+* 方式1:直接提交到这个仓库中，
+![commit-example](https://github.com/WxxShirley/SE-Travel/blob/master/readme-imgs/commit.png)
 
-
+* 方式2:fork到自己的仓库中，更新代码后提交pull request。之后经过Code review后会merge两个分支
 
 ## 文件夹说明
 

@@ -56,7 +56,7 @@
 `tmp`:小程序初始化时微信生成的前端代码，可以参考集成API
 
 `docs`:开发文档
-
+```
 ├── README.md
 ├── cloudfunctions    云函数
 ├── docs              文档
@@ -95,7 +95,7 @@
 ├── project.config.json
 ├── readme-imgs  
 └── tmp                微信小程序前端初始化的文件
-
+```
 
 
 ## 参考文档

@@ -49,13 +49,7 @@
 
 ## 文件夹说明
 
-`cloudfunctions`：编写云函数
 
-`miniprogram`:目前`HULV`的前端代码
-
-`tmp`:小程序初始化时微信生成的前端代码，可以参考集成API
-
-`docs`:开发文档
 ```
 ├── README.md
 ├── cloudfunctions    云函数

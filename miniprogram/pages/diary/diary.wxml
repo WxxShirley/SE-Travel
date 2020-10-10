@@ -1,15 +1,33 @@
 <!--miniprogram/pages/diary/diary.wxml-->
 
 <view class='editor-container'>
+  <!--输入文字框
+       * 绑定了处理“确定-onInputConfirm”和“取消-OnInputCancel”的函数
+       * 变量addingText决定它是否会显示
+  -->
   <inputBox title='请输入文字' multiline='true' bindinputCancel='onInputCancel' bindinputConfirm='onInputConfirm' wx:if='{{ addingText }}' />
+  
+  <!--当前用户编辑的手帐内容 
+       * assemblies`存放各个贴纸、文字和图片内容
+  -->
   <view class='journal-container' style='height:{{ containerHeight }}rpx;' bindtap='onRefreshView'>
     <view class='journal' style='Bottom:-{{ windowBottom }}rpx;'>
+      <!--背景图-->
       <image class='background' src='{{ backgroundPath }}' />
+      
+      <!--所有的贴纸-->
       <sticker id='{{ item.id }}' component_type='{{ item.component_type }}' selected='{{ selected }}' hidden='{{ hidden }}' border='{{ border }}' image_url='{{ item.image_url }}' text='{{ item.text }}' stickerCenterX='{{ item.stickerCenterX }}' stickerCenterY='{{ item.stickerCenterY }}'
         scale='{{ item.scale }}' rotate='{{ item.rotate }}' z_index='{{ item.z_index }}' max_z_index='{{ max_z_index }}' bindrefreshData='onRefreshData' bindrefreshView='onRefreshView' bindremoveSticker='onRemoveComponent' bindupdateMax_z_index='onUpdateMax_z_index'
         wx:key='id' wx:for='{{ assemblies }}' />
     </view>
   </view>
+ 
+  <!--底部的TabBar
+      *  背景,点击后触发 onBackgroundTabTap 函数，展示选择背景框
+      *  贴纸,点击后触发 onStickerTabtap 函数，展示选择贴纸
+      *  文字,点击后触发onTextTabTap 函数，显示文字框(addingText为true)
+      *  图片，点击后触发 onImageTabTap 函数，用户选择图片
+  -->
   <view class='tab-bar'>
     <view class='selector' bindtap='onBackgroundTabTap'>
       <image class='tab-bar-icon' src='../../images/assets/background.png' />
@@ -28,17 +46,23 @@
       <text class='tab-bar-title'>图片</text>
     </view>
   </view>
+  
+  <!--完成按钮-->
   <picker bindchange='onJournalBookSelected' range='{{ bookList }}' range-key='name' value='{{ currentPickerIndex }}'>
     <view class='submit'>
       <text class='submit-text'>完成</text>
       <image class='forward' src='../../images/assets/forward.png' />
     </view>
   </picker>
+
+  <!--选择背景-->
   <view class='background-rich-tab-bar' style='animation:{{ backgroundAnimation }}  0.3s;bottom:{{ backgroundBottom }};' wx:if='{{ backgroundRichTabBarDidOpen }}'>
     <scroll-view class='background-scroll-view' scroll-x bindtap='onBackgroundTap'>
       <image class='background-icon' id='{{ index + 1 }}' src='../../images/bg.jpg' wx:key='id' wx:for='{{ allBackground }}' />
     </scroll-view>
   </view>
+
+  <!--选择贴纸-->
   <view class='sticker-rich-tab-bar' style='animation:{{ stickerAnimation }} 0.3s;bottom:{{ stickerBottom }};' wx:if='{{ stickerRichTabBarDidOpen }}'>
     <scroll-view class='sticker-type-scroll-view' scroll-x bindtap='onStickerTypeTap'>
       <view class='sticker-type' data-type='food' style='color:{{ stickerTypes[0].color }}'>食物</view>

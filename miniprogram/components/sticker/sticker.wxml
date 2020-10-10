@@ -1,7 +1,15 @@
 <view class='sticker-container' catchtouchstart='onTouchStart' catchtouchend='onTouchEnd' catchtouchmove='onTouchMove'>
+  <!--
+     根据内容类型展示 
+      * component_type决定组件类型
+  -->
   <image class='sticker' id='sticker' src='{{ image_url }}' mode='aspectFit' style='left:{{ stickerCenterX - 100 }}rpx;top:{{ stickerCenterY - 100 }}rpx;transform:rotate({{ rotate }}deg) scale({{ scale }});border:{{ border }};z-index:{{ z_index }};' wx:if='{{ component_type !== "text" }}'
   />
   <text class='text' id='sticker' style='left:{{ stickerCenterX - 100 }}rpx;top:{{ stickerCenterY - 100 }}rpx;transform:rotate({{ rotate }}deg) scale({{ scale }});border:{{ border }};z-index:{{ z_index }};' wx:if='{{ component_type === "text" }}'>{{ text }}</text>
+
+  <!--remove按钮，悬浮在左上方-->
   <image class='remove' src='../../images/assets/remove-icon.png' id='remove' hidden='{{ !selected || hideRemove }}' style='left:{{ removeCenterX - 20 }}rpx;top:{{ removeCenterY - 20 }}rpx;z-index:{{ z_index }};' />
+
+  <!--rotate按钮，悬浮在右下角-->
   <image class='handle' src='../../images/assets/rotate-icon.png' id='handle' hidden='{{ !selected }}' style='left:{{ handleCenterX - 20 }}rpx;top:{{ handleCenterY - 20 }}rpx;z-index:{{ z_index }};' />
 </view>

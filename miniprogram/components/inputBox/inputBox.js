@@ -1,6 +1,7 @@
+// 输入框组件
 Component({
   properties: {
-    multiline: {
+    multiline: { // 是否多行
       type: Boolean,
       value: false
     },
@@ -26,7 +27,7 @@ Component({
 
   attached: function() {
     var res = wx.getSystemInfoSync()
-
+    // 根据设备调整大小
     this.setData({
       modalBottom: this.data.multiline ? (res.screenHeight - 234).toString() : (res.screenHeight - 178).toString(),
       modalHeight: this.data.multiline ? '468' : '355'

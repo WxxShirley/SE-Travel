@@ -38,8 +38,8 @@
     "messagePage": "components/messagePage/messagePage",
     "findPage": "components/findPage/findPage",
     "showAttraction": "components/showAttraction/showAtraction",
-    "sticker":"components/sticker/sticker",
-    "inputBox":"components/inputBox/inputBox",
-    "journal":"components/journal/journal"
+    "sticker": "components/sticker/sticker",
+    "inputBox": "components/inputBox/inputBox",
+    "journal": "components/journal/journal"
   }
 }

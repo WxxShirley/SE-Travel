@@ -6,41 +6,22 @@ Page({
     assemblies: [],
 
     // 贴纸类型
-    stickerTypes: [{
-        name: 'food',
-        color: '#59c8b1',
-        count: 24
-      },
-      {
-        name: 'travel',
-        color: '',
-        count: 20
-      },
-      {
-        name: 'sport',
-        color: '',
-        count: 20
-      },
-      {
-        name: 'plant',
-        color: '',
-        count: 20
-      },
-      {
-        name: 'national_flag',
-        color: '',
-        count: 31
-      }
+    stickerTypes: [
+      { name: 'food',color: '#59c8b1',count: 24},
+      { name: 'travel',color: '', count: 20},
+      { name: 'sport',color: '',count: 20},
+      { name: 'plant',color: '',count: 20},
+      { name: 'national_flag',color: '',count: 31}
     ],
 
     // 图片素材信息
     allBackground: new Array(9),
-    backgroundUrl: '',
+    backgroundUrl: '', // 请求后台的背景图
     backgroundId: '1',
     backgroundPath: null,
-    stickerUrl: '',
+    stickerUrl: '', // 请求后台的贴纸图
     currentStickerType: 'food',
-    currentStickers: [],
+    currentStickers: [], 
 
     // 控制组件选中状态
     selected: false,
@@ -76,61 +57,14 @@ Page({
     containerHeight: '',
     windowBottom: ''
   },
-
+  
+  // 初始化相关数据
   onLoad: function(option) {
-    var that = this,
-      res = wx.getSystemInfoSync()
-
-    if (option.journal_id) {
-      wx.request({
-        url: config.service.getJournalUrl,
-        method: 'GET',
-        header: {
-          skey: app.globalData.skey
-        },
-        data: {
-          journal_id: option.journal_id
-        },
-        success: res => {
-          if (res.data.success) {
-            // 解析组件数据
-            var components = JSON.parse(res.data.data.components)
-            this.downloadBackgroundImage(components.backgroundId)
-            // 更新默认Index
-            for (var i in app.globalData.bookList) {
-              if (app.globalData.bookList[i].journal_book_id === res.data.data.journal_book_id) {
-                this.data.currentPickerIndex = i
-                break
-              }
-            }
-            // 刷新数据
-            this.setData({
-              journal_id: option.journal_id,
-              journal_book_id: res.data.data.journal_book_id,
-              backgroundId: components.backgroundId,
-              assemblies: components.assemblies,
-              currentPickerIndex: this.data.currentPickerIndex
-            })
-          } else {
-            if (res.data.errMsg) {
-              util.showModal('请求失败', res.data.errMsg)
-            } else {
-              util.showModal('请求失败', 'statusCode: ' + res.statusCode)
-            }
-          }
-        },
-        fail: error => {
-          util.showModal('请求失败', error, true)
-        }
-      })
-    } else {
-      this.downloadBackgroundImage(this.data.backgroundId)
-    }
-
-    // 初始化相关数据
+    // TODO: 向服务端请求加载背景图和贴纸图
+    var res = wx.getSystemInfoSync()
+    this.downloadBackgroundImage(this.data.backgroundId)
     this.setData({
       currentStickers: new Array(this.data.stickerTypes[0].count),
-      bookList: app.globalData.bookList,
       containerHeight: (2 * res.windowHeight - 105).toString(),
       windowBottom: (res.windowHeight - res.windowWidth * 1112 / 750 - 52.5).toString()
     })
@@ -138,6 +72,7 @@ Page({
 
   // 下载背景图
   downloadBackgroundImage: function(backgroundId) {
+    // TODO: 正确修改背景图
     this.setData({
       backgroundPath: "../../images/bg.jpg"
     })
@@ -268,8 +203,8 @@ Page({
     this.onRefreshView()
 
     wx.chooseImage({
-      count: 1,
-      sizeType: ['original'],
+      count: 1, //默认只从相册/照相机选择一张
+      sizeType: ['compressed'],
       sourceType: ['album', 'camera'],
       success: res => {
         // 获取图片信息
@@ -294,7 +229,7 @@ Page({
               assemblies: that.data.assemblies
             })
 
-            that.onUpdateMax_z_index()
+            that.onUpdateMax_z_index() //更新界面层级
           }
         })
       }
@@ -383,7 +318,6 @@ Page({
       })
       this.setData({assemblies: this.data.assemblies})
       this.onUpdateMax_z_index()
-      console.log("finish")
     }
   },
 
@@ -405,8 +339,6 @@ Page({
 
     // 构造页面传递数据
     var data = {
-      journal_id: this.data.journal_book_id === this.data.bookList[e.detail.value].journal_book_id ? this.data.journal_id : '',
-      journal_book_id: this.data.bookList[e.detail.value].journal_book_id,
       backgroundId: this.data.backgroundId,
       backgroundPath: this.data.backgroundPath,
       assemblies: this.data.assemblies

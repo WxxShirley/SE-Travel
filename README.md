@@ -42,10 +42,11 @@
 
 
 ## 如何提交
-* 方式1:直接提交到这个仓库中，
+> 无论何种方式，都需要先`git pull `拉取最新的代码，注意冲突合并问题
+* 方式1 直接提交到这个仓库中
 ![commit-example](https://github.com/WxxShirley/SE-Travel/blob/master/readme-imgs/commit.png)
 
-* 方式2:fork到自己的仓库中，更新代码后提交pull request。之后经过Code review后会merge两个分支
+* 方式2 fork到自己的仓库中，更新代码后提交pull request。之后经过Code review后会merge两个分支
 
 ## 文件夹说明
 

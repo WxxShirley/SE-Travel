@@ -1,3 +1,5 @@
+var data = require("../../utils/district2attr");
+
 Page({
   data: {
     hotPlace: [
@@ -10,26 +12,7 @@ Page({
       {title:"泰晤士小镇",description:"浓郁的欧式建筑风情，适合摄影",imgSrc:"../../images/waterfall/2.jpeg"},
       {title:"佘山公园",description:"山体中秀，林木葱郁", imgSrc:"../../images/waterfall/1.jpeg"},
     ],
-    districts:[
-      {text:"黄浦区", dot: false, children: [{text:"外滩", id:"0101",imgSrc:"../../images/waterfall/1.jpeg"}, {text:"田子坊", id:"0102",imgSrc:"../../images/waterfall/1.jpeg"},{text:"南京路步行街",id:"0103", imgSrc: "../../images/waterfall/2.jpeg"},
-      {text:"豫园",id:"0104",imgSrc:"./../images/waterfall/3.jpeg"}]},
-      {text:"徐汇区", dot: false, children: [{text:"龙华寺", id:"0201",imgSrc:"../../images/waterfall/3.jpeg"}, {text:"徐家汇", id:"0202", imgSrc:"../../images/waterfall/2.jpeg"} ,{text:"上海植物园", id:"0203",imgSrc:"../../images/waterfall/1.jpeg"},
-      {text:"滨江大道",id:"0204",imgSrc:"./../images/waterfall/2.jpeg"}]},
-      {text:"长宁区", dot: false, children: [{text:"静安寺", id:1}]},
-      {text:"静安区", dot: false, children: [{text:"静安寺", id:1}]},
-      {text:"普陀区", dot: false, children: [{text:"静安寺", id:1}]},
-      {text:"虹口区", dot: false, children: [{text:"静安寺", id:1}]},
-      {text:"杨浦区", dot: false, children: [{text:"静安寺", id:1}]},
-      {text:"闵行区", dot: false, children: [{text:"静安寺", id:1}]},
-      {text:"宝山区", dot: false, children: [{text:"静安寺", id:1}]},
-      {text:"嘉定区", dot: false, children: [{text:"静安寺", id:1}]},
-      {text:"浦东新区", dot: false, children: [{text:"静安寺", id:1}]},
-      {text:"金山区", dot: false, children: [{text:"静安寺", id:1}]},
-      {text:"松江区", dot: false, children: [{text:"静安寺", id:1}]},
-      {text:"青浦区", dot: false, children: [{text:"静安寺", id:1}]},
-      {text:"奉贤区", dot: false, children: [{text:"静安寺", id:1}]},
-      {text:"崇明区", dot: false, children: [{text:"静安寺", id:1}]},
-    ],
+    districts:data.districtMp,
     mainActiveIndex: 0,
     activeId: [],
     max: 2

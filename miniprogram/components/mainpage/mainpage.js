@@ -10,8 +10,14 @@ Component({
    * 组件的初始数据
    */
   data: {
-    imgList: [
-      '/images/places/外滩.jpeg','/images/places/欢乐谷.jpeg', '/images/places/迪士尼.jpeg' ],
+    imgList: [ 
+      {id: 1,imgSrc: '/images/places/外滩.jpeg'},
+      {id: 2,imgSrc: '/images/places/欢乐谷.jpeg'},
+      {id: 3,imgSrc: '/images/places/迪士尼.jpeg'},
+      {id: 4,imgSrc: '/images/places/科技馆.jpeg'},
+      {id: 5,imgSrc: '/images/places/朱家角.jpeg'},
+      {id: 6,imgSrc: '/images/places/城隍庙.jpeg'}
+    ],
     swiperCurrent: 0,
     navList: [ // 宫格导航
       {name: '旅行手帐',  icon: 'edit', pageUrl: '../diary/diary'},

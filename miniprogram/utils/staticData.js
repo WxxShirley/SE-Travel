@@ -1,3 +1,8 @@
+/* 
+   filename: staticData
+   存储静态数据
+*/
+
 // districtMp: 上海市行政区到对应景点的映射
 var districtMp = [
 {text: '黄浦区',
@@ -182,6 +187,12 @@ children: [{text: '东平国家森林公园', id: 38},
  {text: '西沙湿地公园', id: 85},
  {text: '东滩湿地公园', id: 93},]},
 ]
+
+// season2Attr: 季节到景点的映射
+var season2Attr={
+
+}
 module.exports = {
-  districtMp
+  districtMp,
+  season2Attr
 };

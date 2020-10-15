@@ -10,7 +10,7 @@
   <swiper class="hmly-swiper" autoplay="true" circular="true"
     interval="3000" easing-function="easeOutCubic" current="{{swiperCurren}}" bindchange="swiperChange">
     <swiper-item class="hmly-swiper-item" wx:for="{{imgList}}" wx:key="index">
-      <image src="{{item}}"></image>
+      <image src="{{item.imgSrc}}"></image>
     </swiper-item>
   </swiper>
   <view class="hmly-dots">

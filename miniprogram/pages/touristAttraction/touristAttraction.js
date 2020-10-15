@@ -1,4 +1,4 @@
-var data = require("../../utils/district2attr");
+var data = require("../../utils/staticData");
 
 Page({
   data: {

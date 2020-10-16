@@ -1,3 +1,4 @@
+const app=getApp()
 const formatTime = date => {
   const year = date.getFullYear()
   const month = date.getMonth() + 1
@@ -24,8 +25,27 @@ var showModal = (title, content, doStringify = false) => {
   })
 }
 
+function goattrDetail(id){
+  app.getInfoWhere('touristAttraction',{id: parseInt(id),},
+     res=>{
+       if(res.data.length){
+         var attractionObj=JSON.stringify(res.data[0])
+         wx.navigateTo({
+           url: '../attractionDetail/attractionDetail?attraction='+attractionObj,
+         })
+       }else{
+         wx.showToast({
+           title: '景区资源不存在喔~',
+         })
+       }
+     }
+    )
+}
+
+
 module.exports = {
   formatTime,
   showModal,
+  goattrDetail,
 }
 

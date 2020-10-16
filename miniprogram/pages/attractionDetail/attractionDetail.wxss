@@ -1,0 +1,53 @@
+/* 轮播图 */
+.hmly-swiper{
+  width: 100%;
+  height: 100%;
+}
+
+.hmly-swiper-container{
+  width: 100%;
+  height: 400rpx;
+  margin: 0rpx auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.hmly-swiper-item{
+  width: 100%;
+  height: 100%;
+  border-radius: 15rpx;
+}
+
+.hmly-swiper-item>image{
+  width: 100%;
+  height: 100%;
+  border-radius: 15rpx;
+}
+
+.hmly-dots{
+  width: auto;
+  height: 10rpx;
+  position: absolute;
+  bottom: 20rpx;
+  border-radius: 50rpx;
+  left: 240rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rpx 10rpx;
+}
+
+.hmly-dots-item{
+  width: 8rpx;
+  height: 8rpx;
+  margin: 0rpx 8rpx;
+  border-radius: 50%;
+  background-color: #cdcdcd;
+  transition: all .3s;
+}
+
+.hmly-dot-active{
+  width: 10rpx;
+  height: 10rpx;
+  background-color: #fff;
+}

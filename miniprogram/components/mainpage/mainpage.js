@@ -1,9 +1,9 @@
 // pages/components/mainpage/mainpage.js
 var mockData = require("../../models/mockData.js");
+var utils = require("../../utils/util.js")
 
 Component({
   properties: {
-
   },
 
   /**
@@ -83,5 +83,11 @@ Component({
         });
       }
     },
+    
+    // 进入到景区的详细界面
+    goAttractionDetail: function(e){
+      var id_ = e.target.id // 景区id
+      utils.goattrDetail(id_)
+    }
   }
 })

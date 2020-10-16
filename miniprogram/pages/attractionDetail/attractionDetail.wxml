@@ -1,0 +1,37 @@
+<!--景区图片的轮播图-->
+
+<view class="hmly-swiper-container">
+  <swiper class="hmly-swiper" autoplay="true" circular="true"
+    interval="3000" easing-function="easeOutCubic" current="{{swiperCurren}}" bindchange="swiperChange">
+    <swiper-item class="hmly-swiper-item" wx:for="{{attractionObj.imgSrc}}" wx:key="index">
+      <image src="{{filepath+item}}"></image>
+    </swiper-item>
+  </swiper>
+  <view class="hmly-dots">
+    <block wx:for="{{attractionObj.imgSrc.length}}" wx:key="index">
+      <view class="hmly-dots-item{{index==swiperCurren?'hmly-dot-active':''}}"></view>
+    </block>
+  </view>
+</view>
+
+<!--景区信息展示-->
+<!--TODO:点击进入腾讯地图-->
+<van-cell title="{{attractionObj.title}}" label="{{attractionObj.geoInfo.location}}">
+</van-cell>
+
+<!--TODO: 修改成可以显示更多的模式-->
+  <view>{{attractionObj.description}}</view>
+
+
+<!--TODO:修改格式更加美观-->
+<!--显示评分-->
+<van-cell title="评分" >
+  {{attractionObj.score}}
+  <van-rate value="{{attractionObj.score}}"></van-rate>
+</van-cell>
+
+<!--显示开放时间-->
+<van-cell title="开放时间" value="{{attractionObj.opentime}}"></van-cell>
+
+<!--显示票价-->
+<van-cell title="票价" value="{{attractionObj.price}}" />

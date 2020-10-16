@@ -64,5 +64,5 @@ App({
         success: callback,
         fail: console.error
       })
-  }
+  },
 })

@@ -48,6 +48,20 @@ Page({
       wx.setStorage({data: his,key: 'searchHistory',})
     }
     
+    wx.cloud.init()
+    wx.cloud.database().collection('touristAttraction').where({
+      title: wx.cloud.database().RegExp({
+        regexp: place,
+        options: 'i',
+      })
+    }).get().then(res => {
+      console.log(res.data)
+      for(var i = 0; i < res.data.length; i ++) {
+        console.log(res.data[i].title)
+      }
+    }).catch(err => {
+      console.log(err)
+    })
   },
 
 })

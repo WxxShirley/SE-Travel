@@ -12,11 +12,11 @@ Component({
   data: {
     imgList: [ 
       {id: 1,imgSrc: '/images/places/外滩.jpeg'},
-      {id: 2,imgSrc: '/images/places/欢乐谷.jpeg'},
+      {id: 8,imgSrc: '/images/places/欢乐谷.jpeg'},
       {id: 3,imgSrc: '/images/places/迪士尼.jpeg'},
-      {id: 4,imgSrc: '/images/places/科技馆.jpeg'},
-      {id: 5,imgSrc: '/images/places/朱家角.jpeg'},
-      {id: 6,imgSrc: '/images/places/城隍庙.jpeg'}
+      {id: 7,imgSrc: '/images/places/科技馆.jpeg'},
+      {id: 21,imgSrc: '/images/places/朱家角.jpeg'},
+      {id: 11,imgSrc: '/images/places/城隍庙.jpeg'}
     ],
     swiperCurrent: 0,
     navList: [ // 宫格导航

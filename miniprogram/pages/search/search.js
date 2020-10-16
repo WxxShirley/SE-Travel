@@ -1,5 +1,6 @@
 // pages/search/search.js
 var mockData = require('../../models/mockData.js');
+const app=getApp()
 
 Page({
   data: {
@@ -36,10 +37,21 @@ Page({
 
   onSearch: function(event){
     var place = event.detail;
+
     // TODO: 向服务端发起查找请求
+    app.getInfoWhere(
+      'touristAttraction',
+      {
+        title: wx.cloud.database().RegExp({regexp: place,options: 'i', }),
+      },
+      res=>{
+        for(var i=0;i<res.data.length;++i)
+           console.log(res.data[i].title)
+      }
+    )
+
     // 修改本地缓存及界面变量
     var his = wx.getStorageSync('searchHistory')||[];
-    
     // 如果已经在本地缓存中了，则不再加入历史
     var idx = his.indexOf(place);
     if(idx==-1){
@@ -47,21 +59,6 @@ Page({
       this.setData({searchHistory: his});
       wx.setStorage({data: his,key: 'searchHistory',})
     }
-    
-    wx.cloud.init()
-    wx.cloud.database().collection('touristAttraction').where({
-      title: wx.cloud.database().RegExp({
-        regexp: place,
-        options: 'i',
-      })
-    }).get().then(res => {
-      console.log(res.data)
-      for(var i = 0; i < res.data.length; i ++) {
-        console.log(res.data[i].title)
-      }
-    }).catch(err => {
-      console.log(err)
-    })
   },
 
 })

@@ -1,4 +1,5 @@
 // components/showAttraction/showAtraction.js
+var data = require("../../utils/staticData");
 Component({
   properties: {
     dataset: { // 展示的数据集
@@ -12,7 +13,7 @@ Component({
   },
 
   data: {
-
+    filepath: data.path
   },
 
   methods: {

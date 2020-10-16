@@ -1,9 +1,5 @@
-// pages/listview/tourList.js
+var data = require("../../utils/staticData");
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
     active: 0,
     currentTab:0,
@@ -20,14 +16,8 @@ Page({
       {title:"城隍庙",description:"古色古香如集市，不可错过的夜景", imgSrc:"../../images/waterfall/2.jpeg"},
       {title:"1933老场坊",description:"建筑设计简约，拍照打卡圣地", imgSrc:"../../images/waterfall/1.jpeg"}
     ],
-    seasonList:[
-      {title:"朱家角古镇",description:"江南水乡古镇，古意盎然", imgSrc:"../../images/waterfall/1.jpeg"},
-      {title:"泰晤士小镇",description:"浓郁的欧式建筑风情，适合摄影",imgSrc:"../../images/waterfall/2.jpeg"},
-      {title:"佘山公园",description:"山体中秀，林木葱郁", imgSrc:"../../images/waterfall/3.jpeg"},
-      {title:"新天地",description:"石库门建旧区，古色古香",imgSrc:"../../images/waterfall/3.jpeg"},
-      {title:"上海科技馆",description:"全方位了解自然科学，适合亲子游",imgSrc:"../../images/waterfall/2.jpeg"},
-      {title:"七宝古镇",description:"集游览、观光、餐饮、休闲一体",imgSrc:"../../images/waterfall/1.jpeg"},
-    ]
+    seasonList:data.onSeasonAttr,
+    filepath: data.path
   },
 
   onLoad: function (options) {

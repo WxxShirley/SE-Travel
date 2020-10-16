@@ -6,7 +6,7 @@
   <view class="hmly-like-item-box">
     <view class="hmly-like-item" bindtap="gotoDetails" data-coverImg="{{item.coverMiddle}}" data-title="{{item.title}}" wx:for="{{dataset}}" wx:key="index">
       <view class="hmly-like-img">
-        <image class="hmly-like-item-icon" src="{{item.imgSrc}}" mode="heightFix"></image>
+        <image class="hmly-like-item-icon" src="{{filepath+item.imgSrc}}" mode="heightFix"></image>
         <view class="hmly-like-cover">
           <text class="">{{item.title}}</text> 
         </view>

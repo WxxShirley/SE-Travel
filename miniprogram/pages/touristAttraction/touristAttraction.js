@@ -2,16 +2,8 @@ var data = require("../../utils/staticData");
 
 Page({
   data: {
-    hotPlace: [
-      {title:"外滩", description:"建筑群美轮美奂，夜景不可错过", imgSrc:"../../images/waterfall/1.jpeg"},
-      {title:"迪士尼乐园",description:"进入迪士尼的梦幻童话世界", imgSrc:"../../images/waterfall/2.jpeg"},
-      {title:"田子坊",description:"最有味道的弄堂",imgSrc:"../../images/waterfall/3.jpeg"},
-    ],
-    onSeason: [
-      {title:"朱家角古镇",description:"江南水乡古镇，古意盎然", imgSrc:"../../images/waterfall/3.jpeg"},
-      {title:"泰晤士小镇",description:"浓郁的欧式建筑风情，适合摄影",imgSrc:"../../images/waterfall/2.jpeg"},
-      {title:"佘山公园",description:"山体中秀，林木葱郁", imgSrc:"../../images/waterfall/1.jpeg"},
-    ],
+    hotPlace: data.onSeasonAttr.slice(6,9),
+    onSeason: data.onSeasonAttr.slice(0,3),
     districts:data.districtMp,
     mainActiveIndex: 0,
     activeId: [],
@@ -33,6 +25,14 @@ Page({
       activeId.push(detail.id);
     }
     this.setData({activeId})
+  },
+
+  // 用户点击搜索栏,界面跳转到搜索
+  onSearchTap:()=>{
+    console.log("tap")
+    wx.navigateTo({
+      url: "../search/search"
+    })
   },
 
   /**

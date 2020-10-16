@@ -1,6 +1,15 @@
 //app.js
 App({
   onLaunch: function () {
+    // 开启云开发
+    if(!wx.cloud){
+      console.error('请升级版本使用云开发功能')
+    }else{
+      wx.cloud.init({
+        env: 'env-dev-6gb5dffd859b69ee',
+      })
+    }
+
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
@@ -40,5 +49,20 @@ App({
   },
   globalData: {
     userInfo: null
+  },
+
+  /* 
+      云数据库查询
+      @param: setName 查询的数据库名称
+      @param: ruleObj 查询的字段
+      @param: callback 查询成功的回调函数
+  */
+  getInfoWhere: function(setName, ruleObj, callback){
+    const db=wx.cloud.database()
+    db.collection(setName).where(ruleObj)
+      .get({
+        success: callback,
+        fail: console.error
+      })
   }
 })

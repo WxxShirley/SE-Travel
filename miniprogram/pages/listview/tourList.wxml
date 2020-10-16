@@ -16,8 +16,8 @@
   </van-tab>
   <van-tab title="当季景点">
     <view class="hmly-content-item" wx:for="{{seasonList}}" wx:key="index">
-      <image src="{{item.imgSrc}}"></image>
-      <view class="hmly-content-left">
+      <image src="{{filepath + item.imgSrc}}"></image>
+      <view class="hmly-content-left2">
          <view class="hmly-content-title">{{item.title}}</view>
          <view class="hmly-like-text">{{item.description}}</view>
       </view>

@@ -47,6 +47,9 @@ Page({
       res=>{
         for(var i=0;i<res.data.length;++i)
            console.log(res.data[i].title)
+        console.log(res.data)
+        
+
       }
     )
 

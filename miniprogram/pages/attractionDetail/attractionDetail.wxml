@@ -1,5 +1,6 @@
-<!--景区图片的轮播图-->
+<!---->
 
+<!--景区图片的轮播图-->
 <view class="hmly-swiper-container">
   <swiper class="hmly-swiper" autoplay="true" circular="true"
     interval="3000" easing-function="easeOutCubic" current="{{swiperCurren}}" bindchange="swiperChange">
@@ -31,7 +32,7 @@
 </van-cell>
 
 <!--显示开放时间-->
-<van-cell title="开放时间" value="{{attractionObj.opentime}}"></van-cell>
+<van-cell title="开放时间" value="{{attractionObj.opentime }}"></van-cell>
 
 <!--显示票价-->
 <van-cell title="票价" value="{{attractionObj.price}}" />

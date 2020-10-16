@@ -7,7 +7,8 @@
     "pages/listview/tourList",
     "pages/publish/publish",
     "pages/diary/diary",
-    "pages/attractionDetail/attractionDetail"
+    "pages/attractionDetail/attractionDetail",
+    "pages/demo/demo"
   ],
   "cloud": true,
   "window": {
@@ -35,7 +36,6 @@
     "van-tabs": "plugins/vantComponents/dist/tabs/index",
     "van-tree-select": "plugins/vantComponents/dist/tree-select/index",
     "van-rate": "plugins/vantComponents/dist/rate/index",
-
     "main": "components/mainpage/mainpage",
     "waterfall": "components/waterfall/waterfall",
     "messagePage": "components/messagePage/messagePage",

@@ -1,18 +1,26 @@
-// pages/deployFunctions/deployFunctions.js
+// miniprogram/pages/demo/demo.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    privateData: null,
+  },
 
+  changeText: function(){
+    this.setData({
+      privateData: "You have tapped data!"
+    })
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      privateData: "Hello world!"
+    })
   },
 
   /**

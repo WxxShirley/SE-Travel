@@ -4,7 +4,7 @@
     <view class="hmly-title-right" bindtap="goToList">更多<text class="icon-right"></text></view>
   </view>
   <view class="hmly-like-item-box">
-    <view class="hmly-like-item" bindtap="gotoDetails" data-coverImg="{{item.coverMiddle}}" data-title="{{item.title}}" wx:for="{{dataset}}" wx:key="index">
+    <view class="hmly-like-item" bindtap="gotoDetails" data-coverImg="{{item.coverMiddle}}" data-title="{{item.title}}" wx:for="{{dataset}}" wx:key="index" id="{{item.id}}">
       <view class="hmly-like-img">
         <image class="hmly-like-item-icon" src="{{filepath+item.imgSrc}}" mode="heightFix"></image>
         <view class="hmly-like-cover">

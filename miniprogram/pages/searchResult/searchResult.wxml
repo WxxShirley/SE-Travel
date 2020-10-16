@@ -1,0 +1,7 @@
+<view class="hmly-content-item" wx:for="{{list}}" wx:key="index" id="{{item.id}}" name="{{item._id}}"bindtap="goDetail" >
+   <image src="{{filepath + item.imgSrc[0]}}"></image>
+    <view class="hmly-content-left2">
+       <view class="hmly-content-title">{{item.title}}</view>
+       <view class="hmly-like-text">{{item.description}}</view>
+    </view>
+</view>

@@ -21,7 +21,7 @@ Component({
     swiperCurrent: 0,
     navList: [ // 宫格导航
       {name: '旅行手帐',  icon: 'edit', pageUrl: '../diary/diary'},
-      {name: '路径规划', icon: 'location', pageUrl:'../demo/demo'},
+      {name: '路径规划', icon: 'location', pageUrl:null },
       {name: '景点攻略',  icon: 'fire', pageUrl: '../touristAttraction/touristAttraction'},
       {name: '发布攻略', icon: 'photo',pageUrl:'../publish/publish'},
       {name: '寻找驴友',  icon: 'friends',pageUrl:null},

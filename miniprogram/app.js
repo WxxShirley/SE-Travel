@@ -65,4 +65,15 @@ App({
         fail: console.error
       })
   },
+
+  // 云数据库更新数据
+  updateInfo: function(setName, ruleObj, updateInfoObj, callback){
+    const db=wx.cloud.database();
+    db.collection(setName).where(ruleObj).update({
+      data: updateInfoObj,
+      success:callback,
+      fail: console.error
+    })
+  }
+
 })

@@ -45,10 +45,15 @@ Page({
         title: wx.cloud.database().RegExp({regexp: place,options: 'i', }),
       },
       res=>{
-        for(var i=0;i<res.data.length;++i)
-           console.log(res.data[i].title)
-        console.log(res.data)
-        
+        // 如果没有查询到，toast提示；否则跳转到结果界面
+        if(res.data.length==0){
+          wx.showToast({icon:'error',title:'未查询到！'})
+        }else{
+          var lists = JSON.stringify(res.data)
+          wx.navigateTo({
+            url: '../searchResult/searchResult?res='+lists,
+          })
+        }
 
       }
     )

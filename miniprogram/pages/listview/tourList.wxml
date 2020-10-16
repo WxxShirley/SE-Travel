@@ -3,7 +3,7 @@
 <van-tabs active="{{active}}" color="#1989fa">
   <van-tab title="热门景点">
     <!--对应的内容区域-->
-    <view class="hmly-content-item" wx:for="{{hotList}}" wx:key="index" id="{{item.id}}" bindtap="goDetail">
+    <view class="hmly-content-item" wx:for="{{hotList}}" wx:key="index" >
       <view class="hmly-index-number">
         <view>{{index>10 ? index: '0'+(index+1)}}</view>
       </view>
@@ -15,7 +15,7 @@
     </view>
   </van-tab>
   <van-tab title="当季景点">
-    <view class="hmly-content-item" wx:for="{{seasonList}}" wx:key="index" bindtap="">
+    <view class="hmly-content-item" wx:for="{{seasonList}}" wx:key="index" id="{{item.id}}" bindtap="goDetail">
       <image src="{{filepath + item.imgSrc}}"></image>
       <view class="hmly-content-left2">
          <view class="hmly-content-title">{{item.title}}</view>

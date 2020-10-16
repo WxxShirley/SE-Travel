@@ -7,7 +7,6 @@ Page({
     onSeason: data.onSeasonAttr.slice(0,3),
     districts:data.districtMp,
     mainActiveIndex: 0,
-    activeId: [],
     max: 2
   },
   
@@ -19,14 +18,6 @@ Page({
   },
 
   onClickItem({detail={}}){
-    const {activeId} = this.data;
-    const index=activeId.indexOf(detail.id);
-    if(index>-1){
-      activeId.splice(index,1);
-    }else{
-      activeId.push(detail.id);
-    }
-    this.setData({activeId})
     console.log(detail.id)
     utils.goattrDetail(detail.id)
   },

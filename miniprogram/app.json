@@ -1,14 +1,13 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/logs/logs",
     "pages/search/search",
     "pages/touristAttraction/touristAttraction",
     "pages/listview/tourList",
     "pages/publish/publish",
     "pages/diary/diary",
     "pages/attractionDetail/attractionDetail",
-    "pages/demo/demo"
+    "pages/searchResult/searchResult"
   ],
   "cloud": true,
   "window": {

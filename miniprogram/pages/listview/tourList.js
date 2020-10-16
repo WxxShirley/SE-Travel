@@ -35,7 +35,7 @@ Page({
   },
 
   goDetail: function(e){
-    console.log(e.target.id)
-   // utils.goattrDetail(e.currentTarget.id);
+    console.log(e.currentTarget.id)
+    utils.goattrDetail(e.currentTarget.id);
   }
 })

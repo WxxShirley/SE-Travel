@@ -1,0 +1,78 @@
+/* miniprogram/pages/searchResult/searchResult.wxss */
+
+/* 主内容 */
+.hmly-content-item{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20rpx 0rpx;
+}
+
+.hmly-index-number{
+  width: 15%;
+  height: auto;
+  padding: 20rpx 0rpx;
+  text-align: center;
+  font-size: 40rpx;
+  color: #1989fa;
+}
+
+.hmly-content-item image{
+  width: 140rpx;
+  height: 140rpx;
+  margin-top: 10rpx;
+  border-radius: 15rpx;
+}
+
+
+.hmly-content-left2{
+  padding: 10rpx 0rpx;
+  margin-left: 10rpx;
+  width: 70%;
+  height: auto;
+  border-bottom: 1rpx solid #f1f1f1;
+}
+
+.hmly-content-title{
+  font-size: 35rpx;
+  height: 40rpx;
+  color: #000;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.hmly-content-text{
+  height: 40rpx;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 27rpx;
+  text-align: left;
+  color: #ccc;
+  margin-top: 15rpx;
+}
+
+.hmly-count{
+  font-size: 27rpx;
+  color: #ccc;
+  display: flex;
+  justify-content: start;
+  margin-top: 15rpx;
+}
+
+.hmly-like-text{
+  font-size: 28rpx;
+  color: gray;
+  margin-top: 10rpx;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;  /*行数n*/
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

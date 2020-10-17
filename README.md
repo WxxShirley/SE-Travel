@@ -14,6 +14,8 @@
 **Sprint1**：
 这一阶段我们构建上海市景区数据集，提供景区搜索、展示详细信息、实时热门景区和景区评分的功能
 
+[开发文档](https://github.com/WxxShirley/SE-Travel/blob/master/docs/Sprint1%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3.md)
+
 
 
 ## 如何提交

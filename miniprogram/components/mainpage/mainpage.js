@@ -1,6 +1,6 @@
 // pages/components/mainpage/mainpage.js
-var mockData = require("../../models/mockData.js");
 var utils = require("../../utils/util.js")
+var mockData = require("../../models/mockData")
 
 Component({
   properties: {

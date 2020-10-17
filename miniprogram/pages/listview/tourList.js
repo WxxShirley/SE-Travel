@@ -23,7 +23,7 @@ Page({
     wx.cloud.database().collection('touristAttraction').orderBy('hotDegree','desc')
     .get()
     .then(res=>{
-        var hotL = res.data.slice(0,10)
+        var hotL = res.data.slice(0,9)
         for(var i=0;i<hotL.length;i++){
           hotL[i].imgSrc = this.data.filepath+hotL[i].imgSrc[0]
         }

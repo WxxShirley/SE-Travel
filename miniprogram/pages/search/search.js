@@ -1,5 +1,3 @@
-// pages/search/search.js
-var mockData = require('../../models/mockData.js');
 var utils = require('../../utils/util')
 const app=getApp()
 
@@ -24,7 +22,7 @@ Page({
     wx.cloud.database().collection('touristAttraction').orderBy('hotDegree','desc')
     .get()
     .then(res=>{
-        this.setData({hotSearchPlace:res.data.slice(0,10),
+        this.setData({hotSearchPlace:res.data.slice(0,6),
           searchHistory: wx.getStorageSync('searchHistory')
         })
         wx.hideLoading()

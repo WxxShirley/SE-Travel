@@ -10,11 +10,6 @@ App({
       })
     }
 
-    // 展示本地存储能力
-    var logs = wx.getStorageSync('logs') || []
-    logs.unshift(Date.now())
-    wx.setStorageSync('logs', logs)
-
     // 登录
     wx.login({
       success: res => {
@@ -42,13 +37,14 @@ App({
           })
         }else{
           // 用户没有授权，有消息提示框
-          console.log("你还未授权，无法使用本app")
+          console.log("你还未授权")
         }
       }
     })
   },
   globalData: {
-    userInfo: null
+    // 全局信息： userInfo(用户信息)
+    userInfo: null,
   },
 
   /* 
@@ -65,15 +61,5 @@ App({
         fail: console.error
       })
   },
-
-  // 云数据库更新数据
-  updateInfo: function(setName, ruleObj, updateInfoObj, callback){
-    const db=wx.cloud.database();
-    db.collection(setName).where(ruleObj).update({
-      data: updateInfoObj,
-      success:callback,
-      fail: console.error
-    })
-  }
 
 })

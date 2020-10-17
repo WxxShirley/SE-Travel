@@ -18,9 +18,17 @@ Page({
   },
 
   goDetail: function(e){
-     // TODO: 增加景区热度
      var id_ = e.currentTarget.id
-    
+     
+     // TODO: 增加景区热度
+     const db = wx.cloud.database()
+     const _ = db.command
+     wx.cloud.callFunction({
+       name: 'hotDegreeInc',
+       data: {id: parseInt(id_)}
+     }).then(res=>{
+       console.log(res)
+     }).catch(console.error)
 
      utils.goattrDetail(id_)
    }

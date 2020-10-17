@@ -1,5 +1,6 @@
 // pages/search/search.js
 var mockData = require('../../models/mockData.js');
+var utils = require('../../utils/util')
 const app=getApp()
 
 Page({
@@ -17,9 +18,16 @@ Page({
   
   // 获取数据 - 搜索历史以及热搜地点
   onLoad: function (options) {
-    this.setData({
-     hotSearchPlace: mockData.hotPlace,
-     searchHistory: wx.getStorageSync('searchHistory')
+    wx.showLoading({
+      title: '加载中...',
+    })
+    wx.cloud.database().collection('touristAttraction').orderBy('hotDegree','desc')
+    .get()
+    .then(res=>{
+        this.setData({hotSearchPlace:res.data.slice(0,10),
+          searchHistory: wx.getStorageSync('searchHistory')
+        })
+        wx.hideLoading()
      })
   },
 
@@ -54,7 +62,6 @@ Page({
             url: '../searchResult/searchResult?res='+lists,
           })
         }
-
       }
     )
 

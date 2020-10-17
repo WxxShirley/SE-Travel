@@ -25,6 +25,10 @@ var showModal = (title, content, doStringify = false) => {
   })
 }
 
+/*
+    功能函数：进入到某个景区的详细界面
+    @param: id ,景区的id(类型为string)
+*/
 function goattrDetail(id){
   app.getInfoWhere('touristAttraction',{id: parseInt(id),},
      res=>{

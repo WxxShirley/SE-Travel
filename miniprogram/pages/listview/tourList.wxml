@@ -3,9 +3,11 @@
 <van-tabs active="{{active}}" color="#1989fa">
   <van-tab title="热门景点">
     <!--对应的内容区域-->
-    <view class="hmly-content-item" wx:for="{{hotList}}" wx:key="index" >
+    <view class="hmly-content-item" wx:for="{{hotList}}" wx:key="index"id="{{item.id}}" bindtap="goDetail" >
       <view class="hmly-index-number">
-        <view>{{index>10 ? index: '0'+(index+1)}}</view>
+        <view wx:if="{{index>=3}}" >{{index>10 ? index: '0'+(index+1)}}
+        </view>
+        <van-icon name="fire-o" wx:if="{{index<3}}" color="red"/>
       </view>
       <image src="{{item.imgSrc}}"></image>
          <view class="hmly-content-left">

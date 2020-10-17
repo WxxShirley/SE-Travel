@@ -3,11 +3,27 @@ var utils = require("../../utils/util.js");
 
 Page({
   data: {
-    hotPlace: data.onSeasonAttr.slice(6,9),
+    hotPlace: null,
     onSeason: data.onSeasonAttr.slice(0,3),
     districts:data.districtMp,
     mainActiveIndex: 0,
     max: 2
+  },
+
+  onLoad: function(options){
+    wx.showLoading({
+      title: '加载中...',
+    })
+    wx.cloud.database().collection('touristAttraction').orderBy('hotDegree','desc')
+    .get()
+    .then(res=>{
+        var hotList = res.data.slice(0,3)
+        for(var i=0;i<3;i++){
+          hotList[i].imgSrc = hotList[i].imgSrc[0]
+        }
+        this.setData({hotPlace:hotList,})
+        wx.hideLoading()
+     })
   },
   
   onClickNav: function({detail={}}){

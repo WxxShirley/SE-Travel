@@ -24,9 +24,9 @@
   </view>
   <view class="hmly-hot-content">
     <view class="hmly-hot-items" wx:for="{{hotSearchPlace}}" wx:key="index">
-      <view class="hmly-item-left" bindtap="onTapHotplace" id="{{item.place}}">
+      <view class="hmly-item-left" bindtap="onTapHotplace" id="{{item.title}}">
         <view class="{{index<3 ? 'text-red' : ''}}">{{index+1}}</view>
-        <view class="hmly-item-title text-black">{{item.place}}</view>
+        <view class="hmly-item-title text-black">{{item.title}}</view>
       </view>
 
     </view>

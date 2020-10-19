@@ -255,9 +255,89 @@ var onSeasonAttr = [
    imgSrc: 'img/245.jpg',
    description: '七宝古镇是离上海市区最近的古镇，而七宝老街是古镇的旅游中心。整条老街的建筑古色古香，富有明清建筑风格。'},
 ];
+
+// 手帐背景图片
+var bgs = [
+  {id:"1",path: "cloud://env-dev-6gb5dffd859b69ee.656e-env-dev-6gb5dffd859b69ee-1303853824/diary_bg/bg1.jpg"},
+  {id:"2",path: "cloud://env-dev-6gb5dffd859b69ee.656e-env-dev-6gb5dffd859b69ee-1303853824/diary_bg/bg2.jpeg"},
+  {id:"3",path:"cloud://env-dev-6gb5dffd859b69ee.656e-env-dev-6gb5dffd859b69ee-1303853824/diary_bg/bg3.jpg"},
+  {id:"4",path:"cloud://env-dev-6gb5dffd859b69ee.656e-env-dev-6gb5dffd859b69ee-1303853824/diary_bg/bg4.png"},
+  {id:"5",path:"cloud://env-dev-6gb5dffd859b69ee.656e-env-dev-6gb5dffd859b69ee-1303853824/diary_bg/bg5.jpeg"},
+  {id:"6",path:"cloud://env-dev-6gb5dffd859b69ee.656e-env-dev-6gb5dffd859b69ee-1303853824/diary_bg/bg6.jpg"},
+  {id:"7",path:"cloud://env-dev-6gb5dffd859b69ee.656e-env-dev-6gb5dffd859b69ee-1303853824/diary_bg/bg7.jpeg"},
+  {id:"8",path:"cloud://env-dev-6gb5dffd859b69ee.656e-env-dev-6gb5dffd859b69ee-1303853824/diary_bg/bg8.jpg"},
+  {id:"9",path:"cloud://env-dev-6gb5dffd859b69ee.656e-env-dev-6gb5dffd859b69ee-1303853824/diary_bg/bg9.jpeg"},
+
+];
+
+// 贴纸
+var stickers = [
+  {id:"1",type:"food",path:"cloud://env-dev-6gb5dffd859b69ee.656e-env-dev-6gb5dffd859b69ee-1303853824/food_sticker/1.jpeg"},
+  {id:"2",type:"food",path:"cloud://env-dev-6gb5dffd859b69ee.656e-env-dev-6gb5dffd859b69ee-1303853824/food_sticker/2.jpg"},
+  {id:"3",type:"food",path:"cloud://env-dev-6gb5dffd859b69ee.656e-env-dev-6gb5dffd859b69ee-1303853824/food_sticker/3.jpg"},
+  {id:"4",type:"food",path:"cloud://env-dev-6gb5dffd859b69ee.656e-env-dev-6gb5dffd859b69ee-1303853824/food_sticker/4.jpg"},
+  {id:"5",type:"food",path:"cloud://env-dev-6gb5dffd859b69ee.656e-env-dev-6gb5dffd859b69ee-1303853824/food_sticker/5.jpg"},
+  {id:"6",type:"food",path:"cloud://env-dev-6gb5dffd859b69ee.656e-env-dev-6gb5dffd859b69ee-1303853824/food_sticker/6.jpg"},
+  {id:"7",type:"food",path:"cloud://env-dev-6gb5dffd859b69ee.656e-env-dev-6gb5dffd859b69ee-1303853824/food_sticker/7.png"},
+  {id:"8",type:"food",path:"cloud://env-dev-6gb5dffd859b69ee.656e-env-dev-6gb5dffd859b69ee-1303853824/food_sticker/8.jpg"},
+  {id:"9",type:"food",path:"cloud://env-dev-6gb5dffd859b69ee.656e-env-dev-6gb5dffd859b69ee-1303853824/food_sticker/9.jpg"},
+  {id:"10",type:"food",path:"cloud://env-dev-6gb5dffd859b69ee.656e-env-dev-6gb5dffd859b69ee-1303853824/food_sticker/10.jpg"},
+  {id:"11",type:"food",path:"cloud://env-dev-6gb5dffd859b69ee.656e-env-dev-6gb5dffd859b69ee-1303853824/food_sticker/11.jpg"},
+  {id:"12",type:"food",path:"cloud://env-dev-6gb5dffd859b69ee.656e-env-dev-6gb5dffd859b69ee-1303853824/food_sticker/12.jpg"},
+  {id:"13",type:"food",path:"cloud://env-dev-6gb5dffd859b69ee.656e-env-dev-6gb5dffd859b69ee-1303853824/food_sticker/13.jpg"},
+  {id:"14",type:"food",path:"cloud://env-dev-6gb5dffd859b69ee.656e-env-dev-6gb5dffd859b69ee-1303853824/food_sticker/14.jpeg"},
+  {id:"15",type:"food",path:"cloud://env-dev-6gb5dffd859b69ee.656e-env-dev-6gb5dffd859b69ee-1303853824/food_sticker/15.jpg"},
+  {id:"16",type:"food",path:"cloud://env-dev-6gb5dffd859b69ee.656e-env-dev-6gb5dffd859b69ee-1303853824/food_sticker/16.jpg"},
+  
+  {id:"1",type:"travel",path:"cloud://env-dev-6gb5dffd859b69ee.656e-env-dev-6gb5dffd859b69ee-1303853824/travel_sticker/1.jpeg"},
+  {id:"2",type:"travel",path:"cloud://env-dev-6gb5dffd859b69ee.656e-env-dev-6gb5dffd859b69ee-1303853824/travel_sticker/2.jpeg"},
+  {id:"3",type:"travel",path:"cloud://env-dev-6gb5dffd859b69ee.656e-env-dev-6gb5dffd859b69ee-1303853824/travel_sticker/3.jpg"},
+  {id:"4",type:"travel",path:"cloud://env-dev-6gb5dffd859b69ee.656e-env-dev-6gb5dffd859b69ee-1303853824/travel_sticker/4.jpeg"},
+  {id:"5",type:"travel",path:"cloud://env-dev-6gb5dffd859b69ee.656e-env-dev-6gb5dffd859b69ee-1303853824/travel_sticker/5.jpg"},
+  {id:"6",type:"travel",path:"cloud://env-dev-6gb5dffd859b69ee.656e-env-dev-6gb5dffd859b69ee-1303853824/travel_sticker/6.jpg"},
+  {id:"7",type:"travel",path:"cloud://env-dev-6gb5dffd859b69ee.656e-env-dev-6gb5dffd859b69ee-1303853824/travel_sticker/7.jpg"},
+  {id:"8",type:"travel",path:"cloud://env-dev-6gb5dffd859b69ee.656e-env-dev-6gb5dffd859b69ee-1303853824/travel_sticker/8.jpg"},
+  {id:"9",type:"travel",path:"cloud://env-dev-6gb5dffd859b69ee.656e-env-dev-6gb5dffd859b69ee-1303853824/travel_sticker/9.jpeg"},
+  {id:"10",type:"travel",path:"cloud://env-dev-6gb5dffd859b69ee.656e-env-dev-6gb5dffd859b69ee-1303853824/travel_sticker/10.jpg"},
+  {id:"11",type:"travel",path:"cloud://env-dev-6gb5dffd859b69ee.656e-env-dev-6gb5dffd859b69ee-1303853824/travel_sticker/11.jpg"},
+  {id:"12",type:"travel",path:"cloud://env-dev-6gb5dffd859b69ee.656e-env-dev-6gb5dffd859b69ee-1303853824/travel_sticker/12.jpg"},
+  {id:"13",type:"travel",path:"cloud://env-dev-6gb5dffd859b69ee.656e-env-dev-6gb5dffd859b69ee-1303853824/travel_sticker/13.jpg"},
+  {id:"14",type:"travel",path:"cloud://env-dev-6gb5dffd859b69ee.656e-env-dev-6gb5dffd859b69ee-1303853824/travel_sticker/14.jpg"},
+  {id:"15",type:"travel",path:"cloud://env-dev-6gb5dffd859b69ee.656e-env-dev-6gb5dffd859b69ee-1303853824/travel_sticker/15.jpeg"},
+  {id:"16",type:"travel",path:"cloud://env-dev-6gb5dffd859b69ee.656e-env-dev-6gb5dffd859b69ee-1303853824/travel_sticker/16.jpg"},
+  {id:"17",type:"travel",path:"cloud://env-dev-6gb5dffd859b69ee.656e-env-dev-6gb5dffd859b69ee-1303853824/travel_sticker/17.jpg"},
+  {id:"18",type:"travel",path:"cloud://env-dev-6gb5dffd859b69ee.656e-env-dev-6gb5dffd859b69ee-1303853824/travel_sticker/18.jpg"},
+  {id:"19",type:"travel",path:"cloud://env-dev-6gb5dffd859b69ee.656e-env-dev-6gb5dffd859b69ee-1303853824/travel_sticker/19.jpeg"},
+  {id:"20",type:"travel",path:"cloud://env-dev-6gb5dffd859b69ee.656e-env-dev-6gb5dffd859b69ee-1303853824/travel_sticker/20.jpg"},
+  
+  {id:'1',type:"sport",path:"cloud://env-dev-6gb5dffd859b69ee.656e-env-dev-6gb5dffd859b69ee-1303853824/sport_sticker/1.jpeg"},
+  {id:'2',type:"sport",path:"cloud://env-dev-6gb5dffd859b69ee.656e-env-dev-6gb5dffd859b69ee-1303853824/sport_sticker/2.jpg"},
+  {id:'3',type:"sport",path:"cloud://env-dev-6gb5dffd859b69ee.656e-env-dev-6gb5dffd859b69ee-1303853824/sport_sticker/3.jpg"},
+  {id:'4',type:"sport",path:"cloud://env-dev-6gb5dffd859b69ee.656e-env-dev-6gb5dffd859b69ee-1303853824/sport_sticker/4.jpg"},
+  {id:'5',type:"sport",path:"cloud://env-dev-6gb5dffd859b69ee.656e-env-dev-6gb5dffd859b69ee-1303853824/sport_sticker/5.jpeg"},
+  {id:'6',type:"sport",path:"cloud://env-dev-6gb5dffd859b69ee.656e-env-dev-6gb5dffd859b69ee-1303853824/sport_sticker/6.jpeg"},
+  {id:'7',type:"sport",path:"cloud://env-dev-6gb5dffd859b69ee.656e-env-dev-6gb5dffd859b69ee-1303853824/sport_sticker/7.jpg"},
+  {id:'8',type:"sport",path:"cloud://env-dev-6gb5dffd859b69ee.656e-env-dev-6gb5dffd859b69ee-1303853824/sport_sticker/8.jpg"},
+
+  {id:'1',type:"national_flag",path:"cloud://env-dev-6gb5dffd859b69ee.656e-env-dev-6gb5dffd859b69ee-1303853824/national_flag_sticker/1.jpeg"},
+  {id:'2',type:"national_flag",path:"cloud://env-dev-6gb5dffd859b69ee.656e-env-dev-6gb5dffd859b69ee-1303853824/national_flag_sticker/2.jpg"},
+  {id:'3',type:"national_flag",path:"cloud://env-dev-6gb5dffd859b69ee.656e-env-dev-6gb5dffd859b69ee-1303853824/national_flag_sticker/3.jpg"},
+  {id:'4',type:"national_flag",path:"cloud://env-dev-6gb5dffd859b69ee.656e-env-dev-6gb5dffd859b69ee-1303853824/national_flag_sticker/4.jpg"},
+  {id:'5',type:"national_flag",path:"cloud://env-dev-6gb5dffd859b69ee.656e-env-dev-6gb5dffd859b69ee-1303853824/national_flag_sticker/5.jpg"},
+  {id:'6',type:"national_flag",path:"cloud://env-dev-6gb5dffd859b69ee.656e-env-dev-6gb5dffd859b69ee-1303853824/national_flag_sticker/6.jpg"},
+
+]
+
+// 景点图片主路径
+//  因为在导入数据库的时候直接用了"img/1.jpg"作为imgSrc，因此在加载的时候需要加上路径
 var path="cloud://env-dev-6gb5dffd859b69ee.656e-env-dev-6gb5dffd859b69ee-1303853824/"
+
+
+
 module.exports = {
   districtMp,
   onSeasonAttr,
-  path
+  path,
+  bgs,
+  stickers
 };

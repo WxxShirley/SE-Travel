@@ -1,4 +1,5 @@
 var util = require('../../utils/util.js')
+var data = require('../../utils/staticData');
 const app = getApp()
 Page({
   data: {
@@ -7,11 +8,10 @@ Page({
 
     // 贴纸类型
     stickerTypes: [
-      { name: 'food',color: '#59c8b1',count: 24},
+      { name: 'food',color: '#59c8b1',count: 16},
       { name: 'travel',color: '', count: 20},
-      { name: 'sport',color: '',count: 20},
-      { name: 'plant',color: '',count: 20},
-      { name: 'national_flag',color: '',count: 31}
+      { name: 'sport',color: '',count: 8},
+      { name: 'national_flag',color: '',count: 6}
     ],
 
     // 图片素材信息
@@ -62,19 +62,39 @@ Page({
   onLoad: function(option) {
     // TODO: 向服务端请求加载背景图和贴纸图
     var res = wx.getSystemInfoSync()
-    this.downloadBackgroundImage(this.data.backgroundId)
     this.setData({
       currentStickers: new Array(this.data.stickerTypes[0].count),
       containerHeight: (2 * res.windowHeight - 105).toString(),
-      windowBottom: (res.windowHeight - res.windowWidth * 1112 / 750 - 52.5).toString()
+      windowBottom: (res.windowHeight - res.windowWidth * 1112 / 750 - 52.5).toString(),
+      allBackground: data.bgs
     })
+    this.downloadBackgroundImage(this.data.backgroundId)
+    this.downloadStickers(this.data.currentStickerType)
   },
 
   // 下载背景图
   downloadBackgroundImage: function(backgroundId) {
     // TODO: 正确修改背景图
+    for(var i=0;i<this.data.allBackground.length;++i){
+      if(this.data.allBackground[i].id==backgroundId){
+        this.setData({
+          backgroundPath: this.data.allBackground[i].path
+        })
+      }
+    }
+  },
+
+  // 加载贴纸
+  downloadStickers: function(type){
+    var allStickers = data.stickers;
+    var stickers = [];
+    for(var i=0;i<allStickers.length;++i){
+      if(allStickers[i].type==type){
+        stickers.push(allStickers[i]);
+      }
+    }
     this.setData({
-      backgroundPath: "../../images/bg.jpg"
+      currentStickers: stickers
     })
   },
 
@@ -286,6 +306,7 @@ Page({
         if (this.data.stickerTypes[i].name === e.target.dataset.type) {
           this.data.stickerTypes[i].color = '#59c8b1'
           this.data.currentStickers = new Array(this.data.stickerTypes[i].count)
+          this.downloadStickers(e.target.dataset.type)
         } else {
           this.data.stickerTypes[i].color = ''
         }
@@ -309,7 +330,7 @@ Page({
         component_type: 'sticker',
         sticker_type: this.data.currentStickerType,
         sticker_id: e.target.id,
-        image_url: "../../images/sticker.jpg",
+        image_url: this.data.currentStickers[parseInt(e.target.id)-1].path,
         stickerCenterX: 375,
         stickerCenterY: 300,
         scale: 0.5,
@@ -327,7 +348,8 @@ Page({
       this.onRefreshView()
       this.downloadBackgroundImage(e.target.id)
       this.setData({
-        backgroundId: e.target.id
+        backgroundId: e.target.id,
+        
       })
     }
   },

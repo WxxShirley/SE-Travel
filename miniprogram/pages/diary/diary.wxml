@@ -13,7 +13,7 @@
   <view class='journal-container' style='height:{{ containerHeight }}rpx;' bindtap='onRefreshView'>
     <view class='journal' style='Bottom:-{{ windowBottom }}rpx;'>
       <!--背景图-->
-      <image class='background' src='{{ backgroundPath }}' />
+      <image class='background' src='{{ backgroundPath }}' mode=""/>
       
       <!--所有的贴纸-->
       <sticker id='{{ item.id }}' component_type='{{ item.component_type }}' selected='{{ selected }}' hidden='{{ hidden }}' border='{{ border }}' image_url='{{ item.image_url }}' text='{{ item.text }}' stickerCenterX='{{ item.stickerCenterX }}' stickerCenterY='{{ item.stickerCenterY }}'
@@ -58,7 +58,7 @@
   <!--选择背景-->
   <view class='background-rich-tab-bar' style='animation:{{ backgroundAnimation }}  0.3s;bottom:{{ backgroundBottom }};' wx:if='{{ backgroundRichTabBarDidOpen }}'>
     <scroll-view class='background-scroll-view' scroll-x bindtap='onBackgroundTap'>
-      <image class='background-icon' id='{{ index + 1 }}' src='../../images/bg.jpg' wx:key='id' wx:for='{{ allBackground }}' />
+      <image class='background-icon' id='{{ index + 1 }}' src='{{item.path}}' wx:key='id' wx:for='{{ allBackground }}' />
     </scroll-view>
   </view>
 
@@ -68,11 +68,10 @@
       <view class='sticker-type' data-type='food' style='color:{{ stickerTypes[0].color }}'>食物</view>
       <view class='sticker-type' data-type='travel' style='color:{{ stickerTypes[1].color }}'>旅行</view>
       <view class='sticker-type' data-type='sport' style='color:{{ stickerTypes[2].color }}'>运动</view>
-      <view class='sticker-type' data-type='plant' style='color:{{ stickerTypes[3].color }}'>植物</view>
-      <view class='sticker-type' data-type='national_flag' style='color:{{ stickerTypes[4].color }}'>国旗</view>
+      <view class='sticker-type' data-type='national_flag' style='color:{{ stickerTypes[3].color }}'>国旗</view>
     </scroll-view>
     <scroll-view class='sticker-scroll-view' scroll-x scroll-left='{{ currentScrollLeft }}' bindtap='onStickerTap'>
-      <image class='sticker' id='{{ index + 1 }}' src='../../images/sticker.jpg' wx:key='id' wx:for='{{ currentStickers }}' />
+      <image class='sticker' id='{{ index + 1 }}' src='{{item.path}}' wx:key='id' wx:for='{{ currentStickers }}' />
     </scroll-view>
   </view>
 </view>

@@ -48,12 +48,12 @@
   </view>
   
   <!--完成按钮-->
-  <picker bindchange='onJournalBookSelected' range='{{ bookList }}' range-key='name' value='{{ currentPickerIndex }}'>
-    <view class='submit'>
+    <view class='submit' bindtap='onChooseFinish'>
       <text class='submit-text'>完成</text>
       <image class='forward' src='../../images/assets/forward.png' />
     </view>
-  </picker>
+    <inputBox title='为手帐取个名字吧' multiline='false' bindinputCancel='onTitleCancel' bindinputConfirm='onJournalBookSelected' wx:if='{{ isInputTitle }}' />
+  
 
   <!--选择背景-->
   <view class='background-rich-tab-bar' style='animation:{{ backgroundAnimation }}  0.3s;bottom:{{ backgroundBottom }};' wx:if='{{ backgroundRichTabBarDidOpen }}'>

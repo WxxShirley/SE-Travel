@@ -55,7 +55,11 @@ Page({
     currentPickerIndex: 0,
 
     containerHeight: '',
-    windowBottom: ''
+    windowBottom: '',
+
+    // 输入手帐名称
+    isInputTitle: false
+
   },
   
   // 初始化相关数据
@@ -353,17 +357,108 @@ Page({
       })
     }
   },
+  
+  // 显示弹窗 -> 给手帐取名
+  onChooseFinish: function() {
+    // 首先检测当前的stickers是否为空
+    if(this.data.assemblies.length==0){
+      wx.showToast({
+        title:'还未编辑手帐',
+        icon: 'error',
+      })
+      return
+    }
+
+    this.setData({isInputTitle:true})
+  } ,
+  
+  // 给手帐取名 “取消"
+  onTitleCancel: function() {
+    // 隐藏弹框
+    this.setData({
+      isInputTitle: false
+    })
+  },
 
   // 提交数据
   onJournalBookSelected: function(e) {
-    // 取消所有组件选中状态
-    this.onRefreshView()
+    // 首先检查输入内容是否为空
+    console.log("e.detail:"+e.detail)
+    if(e.detail){
+      // 取消所有组件选中状态
+      this.onRefreshView()
 
-    // 构造页面传递数据
-    var data = {
-      backgroundId: this.data.backgroundId,
-      backgroundPath: this.data.backgroundPath,
-      assemblies: this.data.assemblies
+      // 构造页面传递数据
+      var data = {
+         backgroundId: this.data.backgroundId,
+         backgroundPath: this.data.backgroundPath,
+         assemblies: this.data.assemblies
+      }
+
+      var new_assemblies = []
+
+      // 将数据传入服务端
+      //  在save界面提供只读视图和保存手帐成为图片的功能
+      /*
+         var item = {
+           user_id: "用户的open_id",
+           timestap: "对应的时间戳",
+           title: "手帐名称",
+           backgroundId: "对应的背景图片的id"
+           assemblies: [] // 每一个贴纸组件的信息,需要把用户本地的图片地址改为云服务端的
+         }
+      */
+     // STEP1 : 上传图片集合到云端
+     var imgCounter = 0, tmpCounter = 0
+     for(var i=0;i<this.data.assemblies.length;i++){
+       if(this.data.assemblies[i].component_type!='image'){
+         new_assemblies.push(this.data.assemblies[i])
+       }else{
+         imgCounter++;
+       }
+     }
+
+     console.log("imgCounter",imgCounter)
+     
+     this.data.assemblies.map((item,index)=>{
+       if(item.component_type=='image'){
+         wx.cloud.uploadFile({
+           cloudPath: 'diary_image/'+new Date().getTime() + item.image_url.match(/\.[^.]+?$/)[0],
+           filePath: item.image_url
+         }).then(res=>{
+           console.log(res.fileID)
+           var tmp = item
+           tmp.image_url = res.fileID
+           new_assemblies.push(tmp)
+           tmpCounter++
+           
+           //  STEP2 所有图片上传完毕, 调用云函数，执行更新diary数据库操作
+           console.log("current imgCounter",tmpCounter)
+           if(tmpCounter==imgCounter){
+             var data = {
+               backgroundId: this.data.backgroundId,
+               assemblies: new_assemblies,
+               title: e.detail 
+             }
+             console.log(data)
+             wx.cloud.callFunction({
+               name: 'addDiary',
+               data: {item: data},
+              }).then(res=>{
+                console.log(res)
+             }).catch(console.error)
+           }
+           
+         })
+       }
+     })
+    
+    }else{
+      wx.showToast({
+        title:'请输入手帐名',
+        icon: 'error',
+      })
+      return 
     }
     
     // 界面跳转
@@ -371,5 +466,6 @@ Page({
     wx.redirectTo({
       url: '/pages/save/save?data=' + JSON.stringify(data),
     })*/
-  }
+  },
+
 })

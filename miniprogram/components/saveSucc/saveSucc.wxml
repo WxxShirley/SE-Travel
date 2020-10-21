@@ -1,0 +1,11 @@
+<!--保存成功组件-->
+
+<view class="save-success" >
+  <view class="center-icon">
+    <van-icon name="success" size="100px" color="#1989fa"></van-icon>
+  </view>
+  <view class="center-text">
+    <text>{{txtContent}}</text>
+  </view>
+</view>
+

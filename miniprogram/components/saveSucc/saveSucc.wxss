@@ -1,0 +1,9 @@
+.center-icon{
+  text-align: center;
+  margin-top: 40%;
+}
+
+.center-text{
+  text-align: center;
+  font-size: large;
+}

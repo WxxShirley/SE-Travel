@@ -1,6 +1,7 @@
 <!--miniprogram/pages/diary/diary.wxml-->
 
-<view class='editor-container'>
+<!--正在编辑界面-->
+<view class='editor-container' wx:if="{{isEdit}}">
   <!--输入文字框
        * 绑定了处理“确定-onInputConfirm”和“取消-OnInputCancel”的函数
        * 变量addingText决定它是否会显示
@@ -74,4 +75,12 @@
       <image class='sticker' id='{{ index + 1 }}' src='{{item.path}}' wx:key='id' wx:for='{{ currentStickers }}' />
     </scroll-view>
   </view>
+</view>
+
+
+
+<!--保存成功界面-->
+
+<view class="save-success" wx:if="{{isEdit==false}}">
+  <saveSucc txtContent="可在我的手帐中查看" />
 </view>

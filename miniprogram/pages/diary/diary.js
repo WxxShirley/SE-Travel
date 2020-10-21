@@ -3,6 +3,9 @@ var data = require('../../utils/staticData');
 const app = getApp()
 Page({
   data: {
+    // 是否保存
+    isEdit: true, 
+
     // 组件数组
     assemblies: [],
 
@@ -463,6 +466,7 @@ Page({
          console.log(res)
          wx.hideLoading() // 隐藏正在加载的提示
          wx.showToast({title:"保存成功!"})
+         this.setData({isEdit:false})
       }).catch(console.error)
 
    }

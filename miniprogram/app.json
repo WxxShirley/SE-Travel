@@ -42,6 +42,7 @@
     "showAttraction": "components/showAttraction/showAtraction",
     "sticker": "components/sticker/sticker",
     "inputBox": "components/inputBox/inputBox",
-    "journal": "components/journal/journal"
+    "journal": "components/journal/journal",
+    "saveSucc":"components/saveSucc/saveSucc"
   }
 }

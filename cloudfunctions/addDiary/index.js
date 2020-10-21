@@ -11,7 +11,6 @@ exports.main = async (event, context) => {
   
   let diary = event.item
   diary.openid = openid
-  diary.timestap = new Date().getTime()
   
   try{
     return await db.collection('diary').add({

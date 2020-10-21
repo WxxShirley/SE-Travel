@@ -388,26 +388,12 @@ Page({
       // 取消所有组件选中状态
       this.onRefreshView()
 
-      // 构造页面传递数据
-      var data = {
-         backgroundId: this.data.backgroundId,
-         backgroundPath: this.data.backgroundPath,
-         assemblies: this.data.assemblies
-      }
-
       var new_assemblies = []
-
-      // 将数据传入服务端
-      //  在save界面提供只读视图和保存手帐成为图片的功能
-      /*
-         var item = {
-           user_id: "用户的open_id",
-           timestap: "对应的时间戳",
-           title: "手帐名称",
-           backgroundId: "对应的背景图片的id"
-           assemblies: [] // 每一个贴纸组件的信息,需要把用户本地的图片地址改为云服务端的
-         }
-      */
+      
+      wx.showLoading({
+        title: '正在保存',
+      })
+  
      // STEP1 : 上传图片集合到云端
      var imgCounter = 0, tmpCounter = 0
      for(var i=0;i<this.data.assemblies.length;i++){
@@ -419,6 +405,12 @@ Page({
      }
 
      console.log("imgCounter",imgCounter)
+     
+     // 如果用户没有图片上传，直接调用云函数
+     if(imgCounter==0){
+       this.callCloudFunc(new_assemblies,e.detail )
+       return 
+     }
      
      this.data.assemblies.map((item,index)=>{
        if(item.component_type=='image'){
@@ -435,20 +427,8 @@ Page({
            //  STEP2 所有图片上传完毕, 调用云函数，执行更新diary数据库操作
            console.log("current imgCounter",tmpCounter)
            if(tmpCounter==imgCounter){
-             var data = {
-               backgroundId: this.data.backgroundId,
-               assemblies: new_assemblies,
-               title: e.detail 
-             }
-             console.log(data)
-             wx.cloud.callFunction({
-               name: 'addDiary',
-               data: {item: data},
-              }).then(res=>{
-                console.log(res)
-             }).catch(console.error)
+             this.callCloudFunc(new_assemblies, e.detail)
            }
-           
          })
        }
      })
@@ -467,5 +447,24 @@ Page({
       url: '/pages/save/save?data=' + JSON.stringify(data),
     })*/
   },
+  
+   callCloudFunc: function(new_assemblies, title){
+      var data = {
+        backgroundId: this.data.backgroundId,
+        assemblies: new_assemblies,
+        title: title,
+        timestap: util.formatTime(new Date())
+      }
+      
+      wx.cloud.callFunction({
+        name: 'addDiary',
+        data: {item: data},
+       }).then(res=>{
+         console.log(res)
+         wx.hideLoading() // 隐藏正在加载的提示
+         wx.showToast({title:"保存成功!"})
+      }).catch(console.error)
+
+   }
 
 })

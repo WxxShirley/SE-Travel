@@ -1,5 +1,6 @@
 /* 
-    增加一个手帐的云函数
+    模版函数：增加数据库中一条记录
+    @param event (event.item -> 记录的内容， event.collection -> 插入的表名称)
 */
 const cloud = require('wx-server-sdk')
 
@@ -9,12 +10,12 @@ const db = cloud.database()
 exports.main = async (event, context) => {
   let openid = cloud.getWXContext().OPENID
   
-  let diary = event.item
-  diary.openid = openid
+  let entry = event.item
+  entry.openid = openid
   
   try{
-    return await db.collection('diary').add({
-      data: diary,
+    return await db.collection(event.collection).add({
+      data: entry,
     })
   }catch(e){
     console.log(e)

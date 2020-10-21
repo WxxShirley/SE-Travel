@@ -460,8 +460,8 @@ Page({
       }
       
       wx.cloud.callFunction({
-        name: 'addDiary',
-        data: {item: data},
+        name: 'addEntry',
+        data: {item: data, collection: 'diary'},
        }).then(res=>{
          console.log(res)
          wx.hideLoading() // 隐藏正在加载的提示

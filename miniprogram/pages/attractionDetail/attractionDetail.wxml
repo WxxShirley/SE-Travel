@@ -17,22 +17,30 @@
 
 <!--景区信息展示-->
 <!--TODO:点击进入腾讯地图-->
-<van-cell title="{{attractionObj.title}}" label="{{attractionObj.geoInfo.location}}">
+<van-cell  title="{{attractionObj.title}}" label="{{attractionObj.geoInfo.location}}" bindtap="goMap">
+  <van-icon slot="right-icon" name="location-o" style="font-size:24px" class="custom-icon" />
 </van-cell>
 
-<!--TODO: 修改成可以显示更多的模式-->
-  <view>{{attractionObj.description}}</view>
+  
+<van-collapse value="{{activeNames}}" bind:change="onchange">
+   <van-collapse-item title="景区介绍" name="1">
+      {{attractionObj.description}}
+   </van-collapse-item>
+   <!--显示开放时间-->
+   <van-collapse-item title="开放时间" name="2">
+       {{attractionObj.opentime}}
+   </van-collapse-item>
+  </van-collapse>
 
 
-<!--TODO:修改格式更加美观-->
 <!--显示评分-->
 <van-cell title="评分" >
   {{attractionObj.score}}
-  <van-rate value="{{attractionObj.score}}"></van-rate>
+  <!--增加了`readonly`字段 用户不能修改评分-->
+  <van-rate readonly value="{{attractionObj.score}}"></van-rate>
 </van-cell>
 
-<!--显示开放时间-->
-<van-cell title="开放时间" value="{{attractionObj.opentime }}"></van-cell>
+
 
 <!--显示票价-->
 <van-cell title="票价" value="{{attractionObj.price}}" />

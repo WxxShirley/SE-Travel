@@ -1,3 +1,8 @@
+<!--弹出层，可供用户登陆-->
+<van-popup show="{{showAuthButton}}" bind:close="onClose">
+    <button open-type="getUserInfo" bindgetuserinfo="getUser">授权登陆</button>
+</van-popup>
+
 <!--主页-->
 
 <!--搜索框-->

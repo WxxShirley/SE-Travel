@@ -19,6 +19,7 @@ Component({
       {id: 11,imgSrc: '/images/places/城隍庙.jpeg'}
     ],
     swiperCurrent: 0,
+    showAuthButton: false,
     navList: [ // 宫格导航
       {name: '旅行手帐',  icon: 'edit', pageUrl: '../diary/diary'},
       {name: '路径规划', icon: 'location', pageUrl:null },
@@ -37,6 +38,15 @@ Component({
    * 组件的方法列表
    */
   lifetimes:{
+    // 如果用户尚未登陆，请求授权登陆
+    created: function(){
+      if(wx.getStorageSync('isLogin')!="true"){
+        this.setData({
+          showAuthButton: true
+        })
+      }
+    },
+
     attached: function(){
       var leftData = [];
       var rightData = [];
@@ -51,9 +61,10 @@ Component({
           rightData.push(mockData.shares[i]);
         }
       }
+     
       this.setData({
         leftList: leftData,
-        rightList: rightData
+        rightList: rightData,
       })
     }
   },
@@ -88,6 +99,19 @@ Component({
     goAttractionDetail: function(e){
       var id_ = e.target.id // 景区id
       utils.goattrDetail(id_)
+    },
+
+    getUser: function(e){
+      wx.getUserInfo({
+       success:(res)=>{
+         this.setData({showAuthButton:false})
+         wx.setStorageSync('isLogin', "true")
+       }
+      })
+    },
+    onClose: function(e){
+      this.setData({showAuthButton:false})
     }
+
   }
 })

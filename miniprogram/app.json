@@ -7,9 +7,15 @@
     "pages/publish/publish",
     "pages/diary/diary",
     "pages/attractionDetail/attractionDetail",
-    "pages/searchResult/searchResult"
+    "pages/searchResult/searchResult",
+    "pages/attractionDetail/mapView"
   ],
   "cloud": true,
+  "permission": {
+    "scope.userLocation": {
+      "desc": "授权后方可使用该功能"
+    }
+  },
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#1989fa",
@@ -35,6 +41,9 @@
     "van-tabs": "plugins/vantComponents/dist/tabs/index",
     "van-tree-select": "plugins/vantComponents/dist/tree-select/index",
     "van-rate": "plugins/vantComponents/dist/rate/index",
+    "van-collapse": "plugins/vantComponents/dist/collapse/index",
+    "van-collapse-item": "plugins/vantComponents/dist/collapse-item/index",
+    "van-popup": "plugins/vantComponents/dist/popup/index",
     "main": "components/mainpage/mainpage",
     "waterfall": "components/waterfall/waterfall",
     "messagePage": "components/messagePage/messagePage",
@@ -43,6 +52,6 @@
     "sticker": "components/sticker/sticker",
     "inputBox": "components/inputBox/inputBox",
     "journal": "components/journal/journal",
-    "saveSucc":"components/saveSucc/saveSucc"
+    "saveSucc": "components/saveSucc/saveSucc"
   }
 }

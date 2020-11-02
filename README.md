@@ -95,6 +95,10 @@ var item = {
 > 前后端交互的逻辑可以参考`diary`中上传图片的策略，尤其是异步问题的解决
 
 
+测试：
+* 前端编写单元测试，[单元测试文档](https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/unit-test.html)
+* 对于不便编写单元测试的功能，请说明测试用例、期待结果和实际结果
+
 
 ## 如何提交
 > 无论何种方式，都需要先`git pull `拉取最新的代码，注意冲突合并问题

@@ -81,6 +81,14 @@ var item = {
 }
 ```
 
+获得用户昵称和头像的办法
+```javascript
+const app=getApp(); //写在文件顶部
+
+var nickname = app.globalData.userInfo.nickName;
+var profile_url = app.globalData.userInfo.avatarUrl
+```
+
 前端要求：
 
 * 组件 all-in-place,提供必要的加载或者提示，注意**同步**和**异步**

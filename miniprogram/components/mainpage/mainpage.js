@@ -106,6 +106,9 @@ Component({
        success:(res)=>{
          this.setData({showAuthButton:false})
          wx.setStorageSync('isLogin', "true")
+        
+         // 保存全局信息
+         getApp().globalData.userInfo = res.rawData
        }
       })
     },

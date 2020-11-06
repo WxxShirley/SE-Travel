@@ -1,0 +1,32 @@
+
+page{
+  background-color: #f5f5f5;
+}
+
+.b1 {
+  width: 750rpx;
+  height: 240rpx;
+  margin-bottom: 40rpx;
+  background-color: white;
+  border-style: 6px solid #F5F5F5;
+}
+
+.name {
+  line-height: 60rpx;
+  width: 280rpx;
+  height: 240rpx;
+  margin: 100rpx 50rpx;
+  font-size: 40rpx
+}
+
+.head{
+  overflow: hidden;
+  border-radius: 60%;
+  width: 120rpx;
+  height: 120rpx;
+  margin: 60rpx 60rpx;
+}
+
+.float {
+  float: left;
+}

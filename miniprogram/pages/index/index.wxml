@@ -7,7 +7,8 @@
     <view wx:elif="{{active==1}}"><findPage /></view>
     <!--消息页-->
     <view wx:elif="{{active==2}}"><messagePage /></view>
-   
+   <!--个人中心-->
+   <view wx:elif="{{active==3}}"><personal /></view>
   </view>
   
   <van-tabbar active="{{active}}" bind:change="onChange">

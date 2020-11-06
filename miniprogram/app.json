@@ -8,7 +8,9 @@
     "pages/diary/diary",
     "pages/attractionDetail/attractionDetail",
     "pages/searchResult/searchResult",
-    "pages/attractionDetail/mapView"
+    "pages/attractionDetail/mapView",
+    "pages/diary/diaryList/diaryList",
+    "pages/diary/saveDiary/saveDiary"
   ],
   "cloud": true,
   "permission": {
@@ -52,6 +54,7 @@
     "sticker": "components/sticker/sticker",
     "inputBox": "components/inputBox/inputBox",
     "journal": "components/journal/journal",
-    "saveSucc": "components/saveSucc/saveSucc"
+    "saveSucc": "components/saveSucc/saveSucc",
+    "personal": "components/personal/personalPage"
   }
 }

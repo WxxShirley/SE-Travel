@@ -19,9 +19,9 @@ Page({
 
     // 图片素材信息
     allBackground: new Array(9),
-    backgroundUrl: '', // 请求后台的背景图
+    backgroundUrl: "cloud://env-dev-6gb5dffd859b69ee.656e-env-dev-6gb5dffd859b69ee-1303853824/diary_bg/bg1.jpg",
     backgroundId: '1',
-    backgroundPath: null,
+    backgroundPath: '',
     stickerUrl: '', // 请求后台的贴纸图
     currentStickerType: 'food',
     currentStickers: [], 
@@ -82,10 +82,19 @@ Page({
   // 下载背景图
   downloadBackgroundImage: function(backgroundId) {
     // TODO: 正确修改背景图
+    var that = this
     for(var i=0;i<this.data.allBackground.length;++i){
       if(this.data.allBackground[i].id==backgroundId){
-        this.setData({
-          backgroundPath: this.data.allBackground[i].path
+        var path = this.data.allBackground[i].path
+        wx.cloud.downloadFile({
+          fileID: this.data.allBackground[i].path,
+          success: res=>{
+            that.setData({
+              backgroundId:backgroundId,
+              backgroundUrl: path,
+              backgroundPath: res.tempFilePath
+            })
+          }
         })
       }
     }
@@ -332,7 +341,7 @@ Page({
     console.log(e.target.id)
     if (e.target.id) {
       this.onRefreshView()
-      this.data.assemblies.push({
+      var obj = {
         id: Math.random().toString(36).substr(2,4),
         component_type: 'sticker',
         sticker_type: this.data.currentStickerType,
@@ -343,21 +352,29 @@ Page({
         scale: 0.5,
         rotate: 0,
         z_index: this.data.max_z_index+1 // 默认放置在最顶层
+      }
+
+      // 将贴纸图下载到本地
+      var that = this
+      console.log(this.data.currentStickers[parseInt(e.target.id)-1].path)
+      wx.cloud.downloadFile({
+        fileID: this.data.currentStickers[parseInt(e.target.id)-1].path,
+        success: (res)=>{
+          obj.local_url = res.tempFilePath
+          that.data.assemblies.push(obj)
+          that.setData({
+            assemblies: that.data.assemblies
+          })
+          this.onUpdateMax_z_index()
+        }
       })
-      this.setData({assemblies: this.data.assemblies})
-      this.onUpdateMax_z_index()
     }
   },
 
   onBackgroundTap: function(e) {
-    console.log(e.target.id)
     if (e.target.id) {
       this.onRefreshView()
       this.downloadBackgroundImage(e.target.id)
-      this.setData({
-        backgroundId: e.target.id,
-        
-      })
     }
   },
   
@@ -398,6 +415,9 @@ Page({
       })
   
      // STEP1 : 上传图片集合到云端
+     this.callCloudFunc(this.data.assemblies,e.detail )
+    
+     /*
      var imgCounter = 0, tmpCounter = 0
      for(var i=0;i<this.data.assemblies.length;i++){
        if(this.data.assemblies[i].component_type!='image'){
@@ -423,6 +443,7 @@ Page({
          }).then(res=>{
            console.log(res.fileID)
            var tmp = item
+           tmp.local_url = item.image_url
            tmp.image_url = res.fileID
            new_assemblies.push(tmp)
            tmpCounter++
@@ -435,7 +456,7 @@ Page({
          })
        }
      })
-    
+    */
     }else{
       wx.showToast({
         title:'请输入手帐名',
@@ -444,31 +465,34 @@ Page({
       return 
     }
     
-    // 界面跳转
-    /*
-    wx.redirectTo({
-      url: '/pages/save/save?data=' + JSON.stringify(data),
-    })*/
   },
   
    callCloudFunc: function(new_assemblies, title){
+     
       var data = {
         backgroundId: this.data.backgroundId,
         assemblies: new_assemblies,
         title: title,
-        timestap: util.formatTime(new Date())
+        timestap: util.formatTime(new Date()),
+        backgroundUrl: this.data.backgroundUrl,
+        backgroundPath: this.data.backgroundPath,
       }
       
       wx.cloud.callFunction({
         name: 'addEntry',
         data: {item: data, collection: 'diary'},
        }).then(res=>{
-         console.log(res)
          wx.hideLoading() // 隐藏正在加载的提示
          wx.showToast({title:"保存成功!"})
          this.setData({isEdit:false})
-      }).catch(console.error)
+         
+         data.journal_id = res.result._id
+         
+         wx.redirectTo({
+          url: '/pages/diary/saveDiary/saveDiary?data=' + JSON.stringify(data),
+        })
 
+      }).catch(console.error)
    }
 
 })

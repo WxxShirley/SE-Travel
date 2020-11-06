@@ -1,0 +1,13 @@
+<!-- 个人中心 -->
+
+<view class="b1 float">
+    <view class="head float">
+       <open-data type="userAvatarUrl"></open-data>
+    </view>
+    <view class="name float">
+       <open-data type="userNickName"></open-data>
+    </view>
+</view>
+
+<van-cell title="我的手帐" icon="notes-o" is-link bindtap="goDiary"/>
+

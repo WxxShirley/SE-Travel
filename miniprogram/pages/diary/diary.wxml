@@ -14,7 +14,7 @@
   <view class='journal-container' style='height:{{ containerHeight }}rpx;' bindtap='onRefreshView'>
     <view class='journal' style='Bottom:-{{ windowBottom }}rpx;'>
       <!--背景图-->
-      <image class='background' src='{{ backgroundPath }}' mode=""/>
+      <image class='background' src='{{ backgroundUrl }}' mode=""/>
       
       <!--所有的贴纸-->
       <sticker id='{{ item.id }}' component_type='{{ item.component_type }}' selected='{{ selected }}' hidden='{{ hidden }}' border='{{ border }}' image_url='{{ item.image_url }}' text='{{ item.text }}' stickerCenterX='{{ item.stickerCenterX }}' stickerCenterY='{{ item.stickerCenterY }}'

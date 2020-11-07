@@ -1,0 +1,25 @@
+<!--miniprogram/pages/friend/friend.wxml-->
+<!--文本框 多行-->
+<textarea class="input-text" placeholder="请输入内容" bindinput="getInput" />
+
+
+<!--时间区间选择-->
+<van-cell title="选择日期区间" value="{{ date }}" bind:click="onDisplay" />
+<van-calendar
+  show="{{show}}"
+  type="range"
+  bind:close="onClose"
+  bind:confirm="onConfirm"
+/>
+
+<!--性别选择-->
+<van-radio-group value="{{ radio }}" bind:change="onChange">
+  <van-radio name="1">男</van-radio>
+  <van-radio name="2">女</van-radio>
+  <van-radio name="3">无要求</van-radio>
+</van-radio-group>
+
+<!--Field 用户输入景点名-->
+
+<!--提交按钮-->
+<van-button type="info" bindtap="submit">提交</van-button>

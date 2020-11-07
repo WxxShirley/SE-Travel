@@ -10,7 +10,8 @@
     "pages/searchResult/searchResult",
     "pages/attractionDetail/mapView",
     "pages/diary/diaryList/diaryList",
-    "pages/diary/saveDiary/saveDiary"
+    "pages/diary/saveDiary/saveDiary",
+    "pages/friend/friend"
   ],
   "cloud": true,
   "permission": {
@@ -46,6 +47,10 @@
     "van-collapse": "plugins/vantComponents/dist/collapse/index",
     "van-collapse-item": "plugins/vantComponents/dist/collapse-item/index",
     "van-popup": "plugins/vantComponents/dist/popup/index",
+    "van-calendar":"plugins/vantComponents/dist/calendar/index",
+    "van-radio-group":"plugins/vantComponents/dist/radio-group/index",
+    "van-radio":"plugins/vantComponents/dist/radio/index"
+,
     "main": "components/mainpage/mainpage",
     "waterfall": "components/waterfall/waterfall",
     "messagePage": "components/messagePage/messagePage",

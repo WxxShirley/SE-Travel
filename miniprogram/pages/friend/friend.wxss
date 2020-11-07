@@ -1,0 +1,10 @@
+/* miniprogram/pages/friend/friend.wxss */
+
+
+.input-text {
+  margin-top: 25rpx;
+  width: 98%;
+  border: solid 1px gainsboro;
+  margin: 1%;
+  height: 150rpx;
+}

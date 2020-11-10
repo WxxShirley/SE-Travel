@@ -48,8 +48,10 @@ Page({
     this.setData({
       show: false,
       date: `${this.formatDate(start)} - ${this.formatDate(end)}`,
-      startDate:utils.formatTime(start),
-      endDate:utils.formatTime(end)
+      //startDate:utils.formatTime(start),
+      //endDate:utils.formatTime(end),
+      startDate: start,
+      endDate:end
     });
   },
 

@@ -61,8 +61,8 @@ Component({
                     if (res.confirm) {
                       // TODO:删除手帐
                       wx.cloud.callFunction({
-                        name: 'deleteDiary',
-                        data: {_id:that.data.journal_id}
+                        name: 'deleteEntry',
+                        data: {collection:'diary' ,_id:that.data.journal_id}
                       }).then(res=>{
                         this.triggerEvent("itemChange", "delete")
                       })

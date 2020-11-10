@@ -15,8 +15,8 @@ Page({
     // 加载手帐
     wx.showLoading({ title: '正在加载',})
     wx.cloud.callFunction({
-      name: 'loadAllDiary',
-      data: {},
+      name: 'loadUserAll',
+      data: {collection: 'diary'},
     }).then(res=>{
       console.log(res)
       this.setData({

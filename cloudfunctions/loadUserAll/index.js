@@ -1,17 +1,17 @@
 /* 
-    函数: 加载某位用户所有的手帐
-    @param event (event.item -> 记录的内容， event.collection -> 插入的表名称)
+    模版函数：加载某个表中某个用户的所有内容
+    @param event (event.collection -> 表名)
 */
 const cloud = require('wx-server-sdk')
 
 cloud.init({env: 'env-dev-6gb5dffd859b69ee'})
 const db = cloud.database()
-
+const _ = db.command
 exports.main = async (event, context) => {
   let openid = cloud.getWXContext().OPENID
 
   try{
-    return await db.collection('diary').where({
+    return await db.collection(event.collection).where({
       openid: openid
     }).get()
   }catch(e){

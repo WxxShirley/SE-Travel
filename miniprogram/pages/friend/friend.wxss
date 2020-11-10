@@ -1,10 +1,35 @@
 /* miniprogram/pages/friend/friend.wxss */
 
+.friend-page {
+  margin-left: 20px;
+  margin-right: 20px;
+}
 
 .input-text {
   margin-top: 25rpx;
   width: 98%;
   border: solid 1px gainsboro;
   margin: 1%;
-  height: 150rpx;
+  height: 300rpx;
+}
+.mf{
+  
+  border: solid 0.3px gainsboro;
+  margin: 1%;
+  
+}
+.jingdian{
+  width: 98%;
+  border: solid 1px gainsboro;
+  margin: 1%;
+  height: 200rpx;
+}
+
+.whitespace{
+  height:  20px;
+}
+
+.sub{
+  text-align: center;
+  margin-left: 38%;
 }

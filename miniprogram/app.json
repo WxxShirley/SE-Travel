@@ -49,8 +49,9 @@
     "van-popup": "plugins/vantComponents/dist/popup/index",
     "van-calendar":"plugins/vantComponents/dist/calendar/index",
     "van-radio-group":"plugins/vantComponents/dist/radio-group/index",
-    "van-radio":"plugins/vantComponents/dist/radio/index"
-,
+    "van-radio":"plugins/vantComponents/dist/radio/index",
+    "van-field":"plugins/vantComponents/dist/field/index",
+
     "main": "components/mainpage/mainpage",
     "waterfall": "components/waterfall/waterfall",
     "messagePage": "components/messagePage/messagePage",

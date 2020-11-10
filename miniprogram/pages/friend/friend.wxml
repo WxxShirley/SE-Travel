@@ -1,7 +1,9 @@
-<!--miniprogram/pages/friend/friend.wxml-->
-<!--文本框 多行-->
-<textarea class="input-text" placeholder="请输入内容" bindinput="getInput" />
 
+<!--文本框 多行-->
+<view class="friend-page" wx:if="{{save==false}}">
+
+<textarea class="input-text" placeholder="请描述你的招募驴友宣言" bindinput="getInput" />
+<view class="whitespace"></view>
 
 <!--时间区间选择-->
 <van-cell title="选择日期区间" value="{{ date }}" bind:click="onDisplay" />
@@ -11,15 +13,34 @@
   bind:close="onClose"
   bind:confirm="onConfirm"
 />
-
+<view class="whitespace"></view>
 <!--性别选择-->
-<van-radio-group value="{{ radio }}" bind:change="onChange">
-  <van-radio name="1">男</van-radio>
-  <van-radio name="2">女</van-radio>
-  <van-radio name="3">无要求</van-radio>
+<text>请选择性别</text>
+<van-radio-group  class="mf" value="{{ radio }}" bind:change="onChange">
+  <van-radio name="male">男</van-radio>
+  <van-radio name="female">女</van-radio>
+  <van-radio name="random">男女均可</van-radio>
 </van-radio-group>
 
 <!--Field 用户输入景点名-->
+<van-cell-group class="jingdian">
+  <van-field
+    value="{{ attraction }}"
+    placeholder="请输入想去的景点"
+    border="{{ false }}"
+    bind:change="onChange2"
+  />
+</van-cell-group>
 
+<view class="whitespace"></view>
 <!--提交按钮-->
-<van-button type="info" bindtap="submit">提交</van-button>
+<van-button class="sub" type="info" bindtap="submit">提交</van-button>
+
+</view>
+
+
+<!--保存成功界面-->
+
+<view class="save-success" wx:if="{{save}}">
+  <saveSucc txtContent="发布成功" />
+</view>

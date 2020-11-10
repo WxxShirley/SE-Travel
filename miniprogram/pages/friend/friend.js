@@ -13,25 +13,26 @@ Page({
     startDate: '',
     endDate: '',
     txtContent: '',
-    radio:'1',
+    radio:'male',
     attraction: '',
+    save: false,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
+  getInput(event){
+    console.log("输入内容",event.detail.value)
+    this.setData({txtContent: event.detail.value});
+  },
+
   onLoad: function (options) {
 
   },
 
-   getInput: function(e){
-     console.log(e)
-     console.log(e.detail.value)
-   },
 
-
-   onDisplay(e) {
-     console.log(e)
+  onDisplay(e) {
+    console.log(e)
     this.setData({ show: true });
   },
   onClose: function(e) {
@@ -51,13 +52,27 @@ Page({
       endDate:utils.formatTime(end)
     });
   },
+
+  onChange(event) {
+    this.setData({
+      radio: event.detail,
+    });
+  },
+  onChange2(event) {
+    // event.detail 为当前输入的值
+    this.setData({
+      attraction: event.detail,
+    });
+    console.log(event.detail);
+  },
   
   submit: function(e){
     // 各项参数合法性检查
-    if(this.data.startDate=='' ){
+    if(this.data.startDate=='' || this.data.endDate==''|| this.data.txtContent=='' || this.data.attraction=='' ){
       wx.showToast({title:"提交不合法"})
       return 
     }
+
 
     // 提交
     var obj = {
@@ -81,7 +96,14 @@ Page({
         item: obj
       }
     }).then(res=>{
-      console.log(res)
+      console.log(res.errMsg)
+      if(res.errMsg=="cloud.callFunction:ok"){
+        this.setData({save:true})
+      }else{
+        wx.showToast({
+          title: '出错了..',
+        })
+      }
     })
 
   }

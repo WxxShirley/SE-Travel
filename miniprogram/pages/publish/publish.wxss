@@ -1,16 +1,30 @@
 /* miniprogram/pages/publish/publish.wxss */
-
+.publish-page {
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 20px;
+}
+.input-head {
+  margin-top: 25rpx;
+  width: 98%;
+  margin: 1%;
+  height: 50rpx;
+  font-size: large;
+  font-style: italic;
+  font-weight: 300;
+}
 .input-text {
   margin-top: 25rpx;
   width: 98%;
-  border: solid 1px gainsboro;
+
   margin: 1%;
-  height: 150rpx;
+  height: 450rpx;
+  
 }
 
 .imageRootAll {
   margin-top: 30rpx;
-  margin-bottom: 60rpx;
+  margin-bottom: 10rpx;
   display: flex;
   display: -webkit-flex;
   flex-direction: row;
@@ -44,4 +58,83 @@
   width: 50%;
   height: 50%;
   margin: 25%;
+}
+.tab-bar {
+  background-color: #f4f4f4;
+  position: relative;
+  justify-content: space-around;
+  height: 105rpx;
+  display: flex;
+  flex-direction: row;
+  z-index: 19990125;
+  display: -webkit-flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.selector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10rpx 40rpx;
+}
+
+.tab-bar-icon {
+  position:absolute;
+  top: 11rpx;
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.tab-bar-title {
+  position: absolute;
+  top: 73rpx;
+  font-size: 21rpx;
+  color: #727177;
+}
+.tag-type {
+  display: inline-block;
+  margin: 18rpx 42rpx 10rpx;
+  font-size: 33rpx;
+}
+.tag-scroll-view {
+  display: flex;
+  flex-direction: row;
+  white-space: nowrap;
+  color: #727177;
+}
+.tag-rich-tab-bar {
+  background-color: #f4f4f4;
+  position: relative;
+  bottom: 0;
+  width: 750rpx;
+  height: 310rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  z-index: 19980119;
+}
+.tag-type-scroll-view {
+  display: flex;
+  flex-direction: row;
+  white-space: nowrap;
+  color: #808085;
+}
+@keyframes rich-tab-bar-open {
+  from {
+    bottom: -305rpx;
+  }
+
+  to {
+    bottom: 0;
+  }
+}
+@keyframes rich-tab-bar-close {
+  from {
+    bottom: 0;
+  }
+
+  to {
+    bottom: -305rpx;
+  }
 }

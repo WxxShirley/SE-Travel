@@ -1,9 +1,18 @@
 <!--发布攻略界面-->
 
-
+<view class="publish-page" wx:if="{{save==false}}">
 <!--文本输入-->
-<textarea class="input-text" placeholder="请输入内容" bindinput="getInput" />
-
+<textarea class="input-head" placeholder="为你的攻略添加个标题吧" bindinput="getTitle" />
+<van-divider></van-divider>
+<textarea class="input-text" placeholder="大家都很期待你的攻略  需要20字以上哦" bindinput="getInput" />
+<!--tags-->
+<view class="imageRootAll">
+  <block wx:for="{{tags}}" wx:key="id">
+    <view >
+      <van-tag  closeable round size="medium" type="primary" id="{{index}}" bind:close="onClosetag">{{item.tag}}</van-tag>
+    </view>
+  </block>
+</view>
 <!--展示图片-->
 <view class="imageRootAll">
   <block wx:for="{{imgList}}" wx:key="index">
@@ -12,11 +21,35 @@
       <image class="closeImg" bindtap="DeleteImg" src="../../images/close.png" data-index="{{index}}"></image>
     </view>
   </block>
-  <!-- 选择图片按钮 -->
-  <view wx:if="{{imgList.length<8}}" class="imgItem" bindtap="ChooseImage">
-    <image class="photo" src="../../images/photo.png"></image>
-  </view>
+   
 </view>
-
+<!-- 选择图片和标签按钮 --> 
+<view class='tab-bar'>
+    <view class='selector' bindtap='onTagTabTap'>
+      <image class='tab-bar-icon' src='../../images/assets/sticker.png' />
+      <text class='tab-bar-title'>+标签</text>
+    </view>
+    <view wx:if="{{imgList.length<8}}" bindtap="ChooseImage">
+      <image class='tab-bar-icon' src='../../images/assets/image.png' />
+      <text class='tab-bar-title'>+图片</text>
+    </view>
+</view>
+<!--选择标签-->
+<view class='tag-rich-tab-bar' style='animation:{{ TagAnimation }} 0.3s;bottom:{{ TagBottom }};' wx:if='{{ TagRichTabBarDidOpen }}'>
+    <scroll-view class='tag-type-scroll-view' scroll-x bindtap='onTagTypeTap'>
+      <view class='tag-type' data-type='tourist_attraction' style='color:{{ TagTypes[0].color }}'>景点</view>
+      <view class='tag-type' data-type='character' style='color:{{ TagTypes[1].color }}'>其他</view>
+    </scroll-view>
+    <scroll-view class='tag-scroll-view' scroll-y style="height: 600rpx;"scroll-top='{{ currentScrollTop }}' bindtap='onTagTap'>
+      <view class='Tag' id='{{ index + 1 }}' wx:key='id' wx:for='{{ currentTags }}'>{{item}}</view>>
+    </scroll-view>
+  </view>
 <!--发布-->
 <van-button color="#1989fa" bindtap="publish" block>发布攻略</van-button>
+
+</view>
+
+<!--保存成功界面-->
+<view class="save-success" wx:if="{{save}}">
+  <saveSucc txtContent="发布成功" />
+</view>

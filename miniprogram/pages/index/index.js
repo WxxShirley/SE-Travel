@@ -79,5 +79,10 @@ Page({
         content: '当前微信版本过低，无法使用该功能，请升级到最新微信版本后重试'
       })
     }
+  },
+
+  scrollToLower: function(e){
+    console.log(e)
+    this.selectComponent("#findPage").getGuideData()
   }
 })

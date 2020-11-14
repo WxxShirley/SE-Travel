@@ -4,7 +4,11 @@
     <!--主页-->
     <view wx:if="{{active==0}}"><main /></view>
     <!--发现页-->
-    <view wx:elif="{{active==1}}"><findPage /></view>
+    <view wx:elif="{{active==1}}">
+      <scroll-view scroll-y bindscrolltolower="scrollToLower" style="height:600px">
+        <findPage id="findPage" />
+      </scroll-view>
+    </view>
     <!--消息页-->
     <view wx:elif="{{active==2}}"><messagePage /></view>
    <!--个人中心-->

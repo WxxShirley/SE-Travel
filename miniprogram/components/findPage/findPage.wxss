@@ -22,3 +22,7 @@
   margin-left: 20rpx;
   padding-right: 5px;
 }
+
+.center-text{
+  text-align: center;
+}

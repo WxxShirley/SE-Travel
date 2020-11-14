@@ -15,3 +15,8 @@
     <waterfall dataset="{{rightList}}" />
   </view>
 </view>
+
+<!--显示"没有更多数据了"-->
+<view class="center-text" wx:if="{{noMore}}">
+  <text>没有更多数据了...</text>
+</view>

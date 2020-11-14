@@ -117,7 +117,7 @@ Page({
       "nickname": app.globalData.userInfo.nickName,
       "timestamp": utils.formatTime(new Date()),// 用户发布的时间戳
       "txt_content":desc, // 攻略文本内容
-      "shortDescrip": desc.substr(0.20)+"...",
+      "shortDescrip": desc.substr(0,20)+"...",
       "tags": tags,
       "like":0, // 点赞数目，初始化为0
       "title": this.data.title,

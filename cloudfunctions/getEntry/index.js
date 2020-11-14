@@ -12,10 +12,8 @@ const db = cloud.database()
 exports.main = async (event, context) => {
   let openid = cloud.getWXContext().OPENID
   
-  entry.openid = openid
-  
   try{
-    return await db.collection(event.collection).skip(event.skip).limit(event.num).get()
+    return await db.collection(event.collection).orderBy('timestamp','desc').skip(event.skip).limit(event.num).get()
   }catch(e){
     console.log(e)
     return e

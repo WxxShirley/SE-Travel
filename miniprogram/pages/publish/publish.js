@@ -88,7 +88,7 @@ Page({
     {
       tags.push(this.data.tags[x].tag)
     }
-    if(!desc || desc.length<3){
+    if(!desc || desc.length<20){
       wx.showToast({
         icon: "none", title:"内容长度需要大于20"
       })
@@ -115,7 +115,7 @@ Page({
     var guide = {
       "user_avatar": app.globalData.userInfo.avatarUrl,
       "nickname": app.globalData.userInfo.nickName,
-      "timestamp": new Date(), // 用户发布的时间戳
+      "timestamp": utils.formatTime(new Date()),// 用户发布的时间戳
       "txt_content":desc, // 攻略文本内容
       "shortDescrip": desc.substr(0.20)+"...",
       "tags": tags,

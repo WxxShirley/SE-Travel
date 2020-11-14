@@ -3,3 +3,22 @@
 .content{
   text-align: center;
 }
+
+/* 瀑布流相关 */
+.content{
+  display: flex;
+  flex-direction: row;
+  margin: 20rpx;
+  overflow: hidden;
+}
+
+.left{
+  width: 345rpx;
+  padding-left: 5px;
+}
+
+.right{
+  width: 345rpx;
+  margin-left: 20rpx;
+  padding-right: 5px;
+}

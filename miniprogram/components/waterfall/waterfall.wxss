@@ -31,6 +31,8 @@
 
 .detail-content{
   color: #C0C0C0;
+  text-align: start;
+  justify-content: start;
 }
 
 .avatar{

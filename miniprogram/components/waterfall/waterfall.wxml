@@ -4,15 +4,15 @@
       <view class="like-img">
         <image class="pic " src="{{item.imgSrc}}" mode="widthFix"/>
           <text class="detail-content" color="#C0C0C0">
-            {{item.shortDescrip}}
-          </text>
+            {{item.title?item.title : item.shortDescrip}}
+          </text> 
           <view class="user-info">
             <image round class="avatar" src="{{item.user_avatar}}" />
             {{item.nickname?item.nickname: "用户233"}} 
-            <van-icon id="{{index}}" wx:if="{{item.amILike}}" name="like" color="#1989fa" class="tail-text" bindtap="onBindtap"/>
+            <van-icon id="{{index}}"  name="like" wx:if="{{item.amILike==true}}" color="#1989fe" class="tail-text" bindtap="onBindtap"/>
             <van-icon id="{{index}}" wx:else name="like-o" color="gray" class="tail-text" bindtap="onBindtap"/>
             <text class="tail-text">{{item.like}}</text>
           </view>
-      </view>
+        </view>
     </block>
 </view>

@@ -1,40 +1,51 @@
 
 <!--文本框 多行-->
+<view class="whitespace"></view>
 <view class="friend-page" wx:if="{{save==false}}">
-
-<textarea class="input-text" placeholder="请描述你的招募驴友宣言" bindinput="getInput" />
+<textarea  class="input-text" placeholder="请描述你的招募驴友宣言" bindinput="getInput" />
 <view class="whitespace"></view>
 
 <!--时间区间选择-->
-<van-cell title="选择日期区间" value="{{ date }}" bind:click="onDisplay" />
+<van-cell  title="选择预期出行日期区间" value="{{ date }}" bind:click="onDisplay" 
+is-link 
+/>
 <van-calendar
   show="{{show}}"
   type="range"
   bind:close="onClose"
-  bind:confirm="onConfirm"
+  bind:confirm="onConfirm" color="#1989fa"
 />
 <view class="whitespace"></view>
 <!--性别选择-->
-<text>请选择性别</text>
+<text style="font-weight:300">选择招募驴友的性别</text>
 <van-radio-group  class="mf" value="{{ radio }}" bind:change="onChange">
-  <van-radio name="male">男</van-radio>
-  <van-radio name="female">女</van-radio>
-  <van-radio name="random">男女均可</van-radio>
+  <van-cell-group>
+    <van-cell title="男" clickable data-name="male" bind:click="onClick" >
+      <van-radio slot="right-icon" name="male"></van-radio>
+    </van-cell>
+    <van-cell title="女" clickable data-name="female" bind:click="onClick" >
+      <van-radio slot="right-icon" name="female"></van-radio>
+    </van-cell>
+    <van-cell title="男女均可" clickable data-name="random" bind:click="onClick" >
+      <van-radio slot="right-icon" name="random"></van-radio>
+    </van-cell>
+  </van-cell-group>
+  
 </van-radio-group>
 
 <!--Field 用户输入景点名-->
 <van-cell-group class="jingdian">
   <van-field
-    value="{{ attraction }}"
-    placeholder="请输入想去的景点"
+    value="{{ attraction }}" clearable label="景点名"
+    placeholder="输入想和驴友一起去的地方吧.." icon="location-o"
     border="{{ false }}"
     bind:change="onChange2"
   />
 </van-cell-group>
 
-<view class="whitespace"></view>
+
 <!--提交按钮-->
-<van-button class="sub" type="info" bindtap="submit">提交</van-button>
+<van-button icon="add" class="sub" type="info" bindtap="submit" block>确认提交</van-button>
 
 </view>
 

@@ -52,6 +52,7 @@
     "van-radio":"plugins/vantComponents/dist/radio/index",
     "van-field":"plugins/vantComponents/dist/field/index",
     "van-tag":"plugins/vantComponents/dist/tag/index",
+    "van-picker":"plugins/vantComponents/dist/picker/index",
 
     "main": "components/mainpage/mainpage",
     "waterfall": "components/waterfall/waterfall",

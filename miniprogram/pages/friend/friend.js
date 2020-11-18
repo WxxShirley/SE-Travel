@@ -68,10 +68,19 @@ Page({
     console.log(event.detail);
   },
   
+  // 用户点击性别单选框
+  onClick(event){
+    const {name} = event.currentTarget.dataset;
+    console.log(name);
+    this.setData({
+      radio: name
+    })
+  },
+  
   submit: function(e){
     // 各项参数合法性检查
     if(this.data.startDate=='' || this.data.endDate==''|| this.data.txtContent=='' || this.data.attraction=='' ){
-      wx.showToast({title:"提交不合法"})
+      wx.showToast({title:"提交不合法", icon:"none"})
       return 
     }
 
@@ -102,7 +111,7 @@ Page({
       if(res.errMsg=="cloud.callFunction:ok"){
         this.setData({save:true})
       }else{
-        wx.showToast({
+        wx.showToast({icon:"none",
           title: '出错了..',
         })
       }

@@ -3,6 +3,7 @@ const cloud = require('wx-server-sdk')
 
 cloud.init({env: 'env-dev-6gb5dffd859b69ee'})
 const db = cloud.database()
+const _ = db.command
 
 // 云函数入口函数
 exports.main = async (event, context) => {
@@ -29,7 +30,10 @@ exports.main = async (event, context) => {
       db.collection('guide').where({_id:entry.guide_id}).update({
         data: {like: _.inc(-1)}
        })
-      return await db.collection('message').where({source_id:entry.source_id}).where({guide_id:entry.guide_id}).remove()
+      return await db.collection('message').where({
+        source_id: entry.source_id,
+        guide_id:entry.guide_id
+      }).remove()
     }catch(e){
       console.log(e)
       return e

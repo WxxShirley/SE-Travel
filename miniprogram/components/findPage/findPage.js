@@ -1,4 +1,5 @@
 var mockData = require("../../models/mockData")
+const app=getApp()
 
 // components/findPage/findPage.js
 Component({
@@ -56,14 +57,14 @@ Component({
            that.setData({
              noMore: true
            })
-         }
+         }       
          for(var i=0;i<res.result.data.length;i++){
            if(i%2)
-              left.push(res.result.data[i])
+             right.push(res.result.data[i])
            else 
-              right.push(res.result.data[i])
-         }
-        var newSkip = that.data.skip+that.data.num
+             left.push(res.result.data[i])
+         }  
+         var newSkip = that.data.skip+that.data.num
          that.setData({
            guideData: res.result.data,
            leftList: left,
@@ -71,6 +72,7 @@ Component({
            skip: newSkip
          })
          console.log(that.data.guideData)
+
        })
     },
 }

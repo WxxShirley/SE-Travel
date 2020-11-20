@@ -1,0 +1,53 @@
+<!--单个驴友贴组件-->
+<view class="one-post">
+
+  <!--界面元素: 用户头像与昵称-->
+  <van-row class="user-info" >
+    <van-col span="3" >
+      <image class="user-avatar" src="{{profile_url}}" />
+    </van-col>
+    <val-col >
+        <text class="user-nickname">{{nickname}}</text>
+        <text class="hint" style="color:grey;font-weight:600"> 发布于 </text>
+        <text class="user-timestamp" style="font-style: italic;font-weight: 300;color: grey">{{timestamp+"      "}}</text>
+        <van-icon style="padding-right:5px;text-align:end" name="star-o"></van-icon>
+    </val-col>
+  </van-row>
+
+  <!--驴友贴内容-->
+  <view class="post-content">
+    <van-row>
+      <!--占位符-->
+      <van-col span="3"></van-col>
+      <!--正式内容-->
+      <van-col span="21" offset="3">
+        <text>{{content}} </text>
+      </van-col>
+    </van-row>
+  </view>
+
+   <!--tag显示时间、性别-->
+   <view class="tags">
+     <van-row>
+      <van-col span="3"></van-col>
+      <van-col span="21" offset="3">
+        <van-tag plain type="primary">{{formatGender}}</van-tag>
+       <text>{{whitespace}}</text>
+      <van-tag plain type="primary">{{formatTime}}</van-tag>
+      </van-col>
+     </van-row>
+   </view>
+
+   <!--显示景区-->
+   <view class="post-location">
+     <van-row>
+      <van-col span="3"></van-col>
+      <van-col offset="3">
+        <van-icon name="location-o" color="primary" style="padding-top:5px"/>
+        <text style="color:grey; font-weight:400">{{bindAttraction}}</text>
+      </van-col>
+      
+     </van-row>
+   </view>
+   <van-divider />
+</view>

@@ -53,6 +53,9 @@
     "van-field":"plugins/vantComponents/dist/field/index",
     "van-tag":"plugins/vantComponents/dist/tag/index",
     "van-picker":"plugins/vantComponents/dist/picker/index",
+    "van-row":"plugins/vantComponents/dist/row/index",
+    "van-dropdown-menu":"plugins/vantComponents/dist/dropdown-menu/index",
+    "van-dropdown-item":"plugins/vantComponents/dist/dropdown-item/index",
 
     "main": "components/mainpage/mainpage",
     "waterfall": "components/waterfall/waterfall",
@@ -63,6 +66,7 @@
     "inputBox": "components/inputBox/inputBox",
     "journal": "components/journal/journal",
     "saveSucc": "components/saveSucc/saveSucc",
-    "personal": "components/personal/personalPage"
+    "personal": "components/personal/personalPage",
+    "friendPost": "components/friendPost/friendPost"
   }
 }

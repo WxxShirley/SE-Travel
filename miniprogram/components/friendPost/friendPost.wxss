@@ -1,0 +1,40 @@
+/* components/friendPost/friendPost.wxss */
+.one-post{
+  margin-left: 10px;
+  margin-right: 10px;
+  background-color: white;
+  text-align: center;
+  text-overflow: ellipsis;
+}
+
+
+.user-info{
+  padding-top: 10px;
+  padding-left: 15px;
+  vertical-align: center;
+  text-align: start;
+}
+
+.user-avatar{
+  width: 30px;
+  height: 30px;
+  padding-left: 10px;
+}
+
+.user-nickname{
+  vertical-align: center;
+}
+
+.post-content{
+  text-align: start;
+
+}
+
+.tags{
+  text-align: start;
+}
+
+.post-location{
+  vertical-align: center;
+  text-align: center;
+}

@@ -41,7 +41,7 @@
 <van-divider contentPosition="center" customStyle="padding-left:20px; padding-right:20px;color: #1989fa; border-color: #1989fa; font-size: 18px;">猜你喜欢</van-divider>
 
 <!--瀑布流 "猜你喜欢"部分暂时注释-->
-<!--
+
 <view class="content">
   <view class="left">
     <waterfall dataset="{{leftList}}" />
@@ -51,4 +51,4 @@
     <waterfall dataset="{{rightList}}" />
   </view>
 </view>
--->
+

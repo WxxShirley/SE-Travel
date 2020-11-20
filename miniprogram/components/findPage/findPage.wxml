@@ -2,10 +2,10 @@
 <van-tabs active="{{ active }}" bind:change="onChange" color="#1989fa"> 
   <van-tab title="景点·攻略" class="content"></van-tab>
   
-  <van-tab title="寻找·驴友" class="content">内容 3</van-tab>
+  <van-tab title="寻找·驴友" class="content"></van-tab>
 </van-tabs>
 
-<!--瀑布流-->
+<!--瀑布流显示 景点-攻略-->
 <view wx:if="{{active==0}}" class="content">
   <view class="left">
     <waterfall dataset="{{leftList}}" />
@@ -14,9 +14,28 @@
   <view class="right">
     <waterfall dataset="{{rightList}}" />
   </view>
+
+  <!--显示"没有更多数据了"-->
+  <view class="center-text" wx:if="{{noMore}}">
+    <text>没有更多数据了...</text>
+  </view>
 </view>
 
-<!--显示"没有更多数据了"-->
-<view class="center-text" wx:if="{{noMore}}">
-  <text>没有更多数据了...</text>
+
+<!--显示寻找驴友-->
+<view wx:if="{{active==1}}" style="margin-left:10px;margin-right:10px">
+   <!--筛选-->
+    <van-dropdown-menu>
+     <van-dropdown-item value="{{ value1 }}" options="{{ option1 }}" bind:change="onGenderChange"/>
+     <van-dropdown-item value="{{ value2 }}" options="{{ option2 }}" bind:change="onAttractionChange"/>
+    </van-dropdown-menu>
 </view>
+
+   <view wx:if="{{active==1}}" class="content">
+     <!--驴友贴内容-->
+     <view>
+      <friendPost profile_url="{{item.profile_url}}" nickname="{{item.nickname}}" content="{{item.content}}" gender="{{item.demands.gender}}" valid_time="{{item.demands.valid_time}}" bindAttraction="{{item.demands.bindAttraction}}" timestamp="{{item.timestamp}}"  wx:for="{{searchFriendPostsShow}}" wx:key="index" id="child"/>
+     </view>
+    </view>
+
+

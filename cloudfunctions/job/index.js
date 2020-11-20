@@ -12,13 +12,13 @@ exports.main = async (event, context) => {
   var date = new Date()
   console.log(date)
   try{
-    return db.collection('searchFriend').where({
+    /*return db.collection('searchFriend').where({
       // 结束日期小于当前时间，设置为过期
       'demands.valid_time.1':_.lt(date+1)
     })
     .update(
       {data:{expired: true}}
-    )
+    )*/
 
   }catch(e){
     console.log(e)

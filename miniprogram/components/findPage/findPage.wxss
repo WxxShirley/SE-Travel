@@ -8,7 +8,7 @@
 .content{
   display: flex;
   flex-direction: row;
-  margin: 20rpx;
+  margin: 5rpx;
   overflow: hidden;
 }
 

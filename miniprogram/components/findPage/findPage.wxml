@@ -8,11 +8,11 @@
 <!--瀑布流显示 景点-攻略-->
 <view wx:if="{{active==0}}" class="content">
   <view class="left">
-    <waterfall dataset="{{leftList}}" />
+    <waterfall dataset="{{leftList}}" binditemChange="handleItemLeftChange" />
   </view>
 
   <view class="right">
-    <waterfall dataset="{{rightList}}" />
+    <waterfall dataset="{{rightList}}" binditemChange="handleItemRightChange"/>
   </view>
 
   <!--显示"没有更多数据了"-->

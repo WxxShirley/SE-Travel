@@ -56,6 +56,7 @@
     "van-row":"plugins/vantComponents/dist/row/index",
     "van-dropdown-menu":"plugins/vantComponents/dist/dropdown-menu/index",
     "van-dropdown-item":"plugins/vantComponents/dist/dropdown-item/index",
+    "van-empty": "plugins/vantComponents/dist/empty/index",
 
     "main": "components/mainpage/mainpage",
     "waterfall": "components/waterfall/waterfall",

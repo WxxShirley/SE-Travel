@@ -203,11 +203,12 @@ onTagTabTap: function() {
 // 点击tag类型选项卡则切换高亮选项
 onTagTypeTap: function(e) {
   if (e.target.dataset.type){
+    console.log(this.data.TagTypes, e.target.dataset.type)
     for (var i in this.data.TagTypes) {
       if (this.data.TagTypes[i].name === e.target.dataset.type) {
         this.data.TagTypes[i].color = '#59c8b1'
         this.data.currentTags = new Array(this.data.TagTypes[i].count)
-        this.data.currentTags = this.allTags[e.target.dataset.type]
+        this.data.currentTags = allTags[e.target.dataset.type]
       } else {
         this.data.TagTypes[i].color = ''
       }

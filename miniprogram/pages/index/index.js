@@ -1,4 +1,5 @@
 //index.js
+
 //获取应用实例
 const app = getApp()
 
@@ -9,11 +10,13 @@ Page({
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    backTopValue: false
+    backTopValue: false,
+    newMessagein: false
   },
   //事件处理函数
   onChange(event){
     console.log(event.detail+1)
+    console.log(event)
     this.setData({active: event.detail});
   },
 
@@ -49,7 +52,19 @@ Page({
         }
       })
     }
+    console.log("in")
+    app.watch(this.watchBack)
   },
+  
+  watchBack:function(val){
+    console.log(val)
+
+    this.setData({
+      newMessagein: val
+    })
+  },
+
+
   getUserInfo: function(e) {
     console.log(e)
     app.globalData.userInfo = e.detail.userInfo

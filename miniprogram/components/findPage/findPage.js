@@ -19,7 +19,7 @@ Component({
     leftList: [],
     rightList: [],
     skip: 0,
-    num: 4, // 每次加载的攻略数目，初始化为4
+    num: 8, // 每次加载的攻略数目，初始化为4
     noMore: false,  //是否还有更多数据
     searchFriendPosts: [], //寻找驴友贴
     searchFriendPostsShow: [], //当前展示的内容
@@ -68,6 +68,39 @@ Component({
 
          })
        })
+    },
+    
+    /*
+      !!! 瀑布流的爱心icon被点击时回调
+       如果在waterfall中修改，本质上没有修改leftList/rightList的值，上滑后又会变成原来的数值
+    */
+    handleItemLeftChange:function(e){
+      console.log(e.detail)
+      var lList = this.data.leftList
+      if(e.detail.type=="delLike"){
+       lList[e.detail.index].like-=1
+        lList[e.detail.index].amILike=false
+      }else if(e.detail.type="addLike"){
+        lList[e.detail.index].like+=1
+        lList[e.detail.index].amILike=true
+      }
+      this.setData({
+        leftList: lList
+      })
+    },
+    handleItemRightChange:function(e){
+      console.log(e.detail)
+      var rList = this.data.rightList
+      if(e.detail.type=="delLike"){
+        rList[e.detail.index].like-=1
+        rList[e.detail.index].amILike=false
+      }else if(e.detail.type="addLike"){
+        rList[e.detail.index].like+=1
+        rList[e.detail.index].amILike=true
+      }
+      this.setData({
+        rightList: rList
+      })
     },
     
     // TODO: 控制联合筛选条件

@@ -18,6 +18,7 @@ App({
       }
     })
     // 获取用户信息
+    var that = this
     wx.getSetting({
       success: res => {
         if (res.authSetting['scope.userInfo']) {
@@ -28,6 +29,24 @@ App({
 
               console.log("用户昵称:"+this.globalData.userInfo.nickName)
               console.log("用户头像地址:"+this.globalData.userInfo.avatarUrl)
+
+               // 开启攻略点赞监听
+              const db=wx.cloud.database()
+              const watcher_ = db.collection('message').where({
+                 target_nickname: this.globalData.userInfo.nickName,
+               }).watch({
+                 onChange: function(snapshot){
+                  console.log('changed events:',snapshot.docChanges)
+                  for(var i=0;i<snapshot.docChanges.length;i++){
+                    if(snapshot.docChanges[i].dataType=='add'){
+                      that.globalData._hasNewMessage = true  
+                    }
+                  }
+                 },
+                 onError:function(err){
+                  console.error('watch closed because of error',err)
+                }
+               })
 
               // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
               // 所以此处加入 callback 以防止这种情况
@@ -46,6 +65,22 @@ App({
   globalData: {
     // 全局信息： userInfo(用户信息)
     userInfo: null,
+    _hasNewMessage: false
+  },
+
+  // 监控hasNewMessage
+  watch: function(method){
+    var obj = this.globalData
+    Object.defineProperty(obj, "_hasNewMessage",{
+      configurable: true,
+      enumerable: true,
+      set: function(value){
+        method(value)
+      },
+      get:function(){
+        return this._hasNewMessage
+      }
+    })
   },
 
   /* 

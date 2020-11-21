@@ -23,15 +23,16 @@ Component({
         "guide_id": this.data.dataset[e.target.id]._id,
         "guide_title": this.data.dataset[e.target.id].title,
         "read": false,
+        "target_nickname": this.data.dataset[e.target.id].nickname, 
+        "target_avatar": this.data.dataset[e.target.id].user_avatar
       }
       this.callCloudFunc(likeContent,this.data.dataset[e.target.id].amILike)
-
+      
+      // 子组件向父组件触发函数itemChange
       if(this.data.dataset[e.target.id].amILike==true){
-        this.data.dataset[e.target.id].amILike=false;
-        this.data.dataset[e.target.id].like-=1;
+        this.triggerEvent('itemChange', {'index':e.target.id, 'type':'delLike'})
       }else{
-        this.data.dataset[e.target.id].amILike=true;
-        this.data.dataset[e.target.id].like+=1;
+        this.triggerEvent('itemChange', {'index':e.target.id, 'type':'addLike'})
       }
       this.setData({
         dataset: this.data.dataset

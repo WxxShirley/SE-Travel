@@ -34,7 +34,7 @@
    <view wx:if="{{active==1}}" class="content">
      <!--驴友贴内容-->
      <view>
-      <friendPost profile_url="{{item.profile_url}}" nickname="{{item.nickname}}" content="{{item.content}}" gender="{{item.demands.gender}}" valid_time="{{item.demands.valid_time}}" bindAttraction="{{item.demands.bindAttraction}}" timestamp="{{item.timestamp}}"  wx:for="{{searchFriendPostsShow}}" wx:key="index" id="child"/>
+      <friendPost  postObj="{{item}}"  wx:for="{{searchFriendPostsShow}}" wx:key="index" id="child"/>
      </view>
     </view>
 

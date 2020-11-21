@@ -2,6 +2,9 @@
 const utils = require("../../utils/util")
 const app=getApp(); //写在文件顶部
 
+const genders = ["male","female","random"]
+const formatGenders = ["小哥哥","小姐姐","都可"]
+
 Page({
 
   /**
@@ -86,6 +89,9 @@ Page({
 
 
     // 提交
+    wx.showLoading({
+      title: '正在提交',
+    })
     var obj = {
       "nickname": app.globalData.userInfo.nickName,
       "profile_url": app.globalData.userInfo.avatarUrl,
@@ -95,6 +101,8 @@ Page({
         "gender": this.data.radio,
         "valid_time":[this.data.startDate, this.data.endDate],
         "bindAttraction": this.data.attraction,
+        "formatGender": formatGenders[genders.indexOf(this.data.radio)],
+        "formatTime": utils.formatTime(this.data.startDate).substr(0,10)+"至"+utils.formatTime(this.data.endDate).toString().substr(0,10)
       },
       "expired":false
     }
@@ -108,6 +116,7 @@ Page({
       }
     }).then(res=>{
       console.log(res.errMsg)
+      wx.hideLoading({})
       if(res.errMsg=="cloud.callFunction:ok"){
         this.setData({save:true})
       }else{

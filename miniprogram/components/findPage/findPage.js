@@ -36,7 +36,9 @@ Component({
       {text:'欢乐谷', value:'欢乐谷'},
     ],
     value1:'random',
-    value2: '景区不限'
+    value2: '景区不限',
+    gender_choice:'random',
+    attraction_choice:'景区不限',
   },
 
   /**
@@ -108,12 +110,30 @@ Component({
 
     // 用户点击性别筛选时触发
     onGenderChange: function(e){
-      console.log(e.detail)
+      this.data.gender_choice=e.detail
+      console.log(this.data.gender_choice)
       if(e.detail=="random"){
-        this.setData({searchFriendPostsShow:this.data.searchFriendPosts})
+        if(this.data.attraction_choice=='景区不限'){
+          this.setData({
+            searchFriendPostsShow: this.data.searchFriendPosts
+          })
+        }else{
+          var that = this
+          var showList = this.data.searchFriendPosts.filter(function(obj){
+              return  obj.demands.bindAttraction==that.data.attraction_choice
+        })
+          this.setData({
+            searchFriendPostsShow: showList
+          })
+        }
+       // this.setData({searchFriendPostsShow:this.data.searchFriendPosts})
       }else{
+        var that = this
         var showList = this.data.searchFriendPosts.filter(function(obj){
-          return obj.demands.gender==e.detail
+          if(that.data.attraction_choice=='景区不限')
+            return obj.demands.gender==e.detail
+          else
+            return obj.demands.gender==e.detail && obj.demands.bindAttraction==that.data.attraction_choice
         })
         console.log(showList)
         this.setData({
@@ -122,15 +142,32 @@ Component({
       }
     },
 
+
     // 用户点击景点筛选后触发
     onAttractionChange: function(e){
+      this.data.attraction_choice=e.detail
+      console.log(this.data.attraction_choice)
       if(e.detail=="景区不限"){
-        this.setData({
-          searchFriendPostsShow: this.data.searchFriendPosts
-        })
+          if(this.data.gender_choice=='random'){
+            this.setData({
+              searchFriendPostsShow: this.data.searchFriendPosts
+            })
+          }else{
+            var that = this
+            var showList = this.data.searchFriendPosts.filter(function(obj){
+                return  obj.demands.gender==that.data.gender_choice
+          })
+            this.setData({
+              searchFriendPostsShow: showList
+            })
+          }
       }else{
+        var that = this
         var showList = this.data.searchFriendPosts.filter(function(obj){
-          return obj.demands.bindAttraction==e.detail
+            if(that.data.gender_choice=='random')
+              return  obj.demands.bindAttraction==e.detail
+            else
+              return obj.demands.bindAttraction==e.detail && obj.demands.gender==that.data.gender_choice
         })
         this.setData({searchFriendPostsShow:showList})
       }

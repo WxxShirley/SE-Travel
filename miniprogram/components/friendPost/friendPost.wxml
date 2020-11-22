@@ -19,7 +19,7 @@
       <!--占位符-->
       <van-col span="3"></van-col>
       <!--正式内容-->
-      <van-col span="21" offset="3">
+      <van-col span="18" offset="3">
         <text>{{postObj.content}} </text>
       </van-col>
     </van-row>

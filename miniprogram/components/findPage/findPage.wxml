@@ -23,7 +23,7 @@
 
 
 <!--显示寻找驴友-->
-<view wx:if="{{active==1}}" style="margin-left:10px;margin-right:10px">
+<view wx:if="{{active==1}}" style="margin-left:10px;margin-right:10px; width:100%">
    <!--筛选-->
     <van-dropdown-menu>
      <van-dropdown-item value="{{ value1 }}" options="{{ option1 }}" bind:change="onGenderChange"/>
@@ -33,7 +33,7 @@
 
    <view wx:if="{{active==1}}" class="content">
      <!--驴友贴内容-->
-     <view>
+     <view style="width:100%">
       <friendPost  postObj="{{item}}"  wx:for="{{searchFriendPostsShow}}" wx:key="index" id="child"/>
      </view>
     </view>

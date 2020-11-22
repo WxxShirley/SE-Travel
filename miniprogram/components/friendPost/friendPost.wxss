@@ -5,6 +5,7 @@
   background-color: white;
   text-align: center;
   text-overflow: ellipsis;
+  width: 100%;
 }
 
 
@@ -27,7 +28,6 @@
 
 .post-content{
   text-align: start;
-
 }
 
 .tags{

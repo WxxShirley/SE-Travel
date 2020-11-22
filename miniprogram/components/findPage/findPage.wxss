@@ -10,6 +10,7 @@
   flex-direction: row;
   margin: 5rpx;
   overflow: hidden;
+  width: 100%;
 }
 
 .left{

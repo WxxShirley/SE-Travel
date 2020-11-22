@@ -1,0 +1,43 @@
+<!---->
+
+<!--攻略图片的轮播图-->
+<view class="hmly-swiper-container">
+  <swiper class="hmly-swiper" autoplay="true" circular="true"
+    interval="3000" easing-function="easeOutCubic" current="{{swiperCurren}}" bindchange="swiperChange">
+    <swiper-item class="hmly-swiper-item" wx:for="{{guideObj.imgList}}" wx:key="index">
+      <image src="{{item}}" mode="widthFix"></image>
+    </swiper-item>
+  </swiper>
+  <view class="hmly-dots">
+    <block wx:for="{{guideObj.imgList}}" wx:key="index">
+      <view class="hmly-dots-item{{index==swiperCurren?'hmly-dot-active':''}}"></view>
+    </block>
+  </view>
+</view>
+
+<!--攻略内容-->
+<view class="page__hd">
+  <view class="page__title">{{guideObj.title}}</view>
+  <view class="user-info">
+    <image round class="avatar" src="{{guideObj.user_avatar}}" />
+    <view>{{guideObj.nickname?guideObj.nickname: "用户233"}}</view>
+    <view>{{guideObj.timestamp}}</view>
+  </view>
+</view>
+
+  
+<view class="page__bd">
+  <view>{{guideObj.txt_content}}</view>
+</view>
+
+<view class="tags">
+  <block wx:for="{{guideObj.tags}}" wx:key="index">
+    <view class="tag">{{item}}</view>
+  </block>
+</view>
+
+<view class="tail-text">
+    <van-icon size="25" name="like" wx:if="{{guideObj.amILike==true}}" color="#1989fe"  bindtap="onBindtap"/>
+    <van-icon size="25" wx:else name="like-o" color="gray"  bindtap="onBindtap"/>
+    <text class="like-num">{{guideObj.like}}</text>
+</view>

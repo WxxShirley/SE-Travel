@@ -53,6 +53,13 @@ Component({
         }
       })
     },
+
+    gotoDetail: function(e){
+      var guideObj=JSON.stringify(this.data.dataset[e.target.id])
+      wx.navigateTo({
+        url: '../guideDetail/guideDetail?guide='+guideObj,
+      })
+    }
    
 
   }

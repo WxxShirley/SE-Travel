@@ -1,0 +1,92 @@
+.hmly-swiper-container{
+  width: 100%;
+  height: 400rpx;
+  margin: 0rpx auto;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0rpx;
+}
+
+.hmly-swiper-item{
+  width: 100%;
+  height: 100%;
+  border-radius: 0rpx;
+}
+
+.hmly-swiper-item>image{
+  width: 100%;
+  overflow: hidden;
+  border-radius: 0rpx;
+}
+
+.page__hd{
+  margin-bottom: 30px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 20px;
+}
+
+.page__title{
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.avatar{
+  width: 30px;
+  height: 30px;
+  border-radius: 30px;
+  float: left;
+  margin-right: 10px;
+}
+
+.user-info>view{
+  font-size: 12px;
+}
+
+.page__bd{
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 90px;
+}
+
+.tags{
+  overflow: hidden;
+  width: 90%;
+  padding-left: 10px;
+  margin-bottom: 90px;
+}
+
+.tag{
+  float: left;
+  font-size: 12px;
+  color: rgb(161, 160, 160);
+  border: 1pt solid rgb(161, 160, 160);
+  border-radius: 16px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  margin-left: 3px;
+  margin-bottom: 5px;
+}
+
+.tail-text{
+  width: 100%;
+  height: max-content;
+  display: flex;
+  border-top: 1pt solid gainsboro;
+  padding-left: 10px;
+  padding-bottom: 7px;
+  padding-top: 7px;
+  position: fixed;
+  bottom: 0px;
+  font-size: 20px;
+  color: #1989fe;
+  background-color: white;
+}
+
+.like-num{
+  margin-left: 2px;
+  font-weight: bold;
+}

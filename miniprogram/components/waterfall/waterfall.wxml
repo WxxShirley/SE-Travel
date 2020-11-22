@@ -2,8 +2,8 @@
 <view>
   <block wx:for="{{dataset}}" wx:key="index">
       <view class="like-img">
-        <image class="pic " src="{{item.imgSrc}}" mode="widthFix"/>
-          <text class="detail-content" color="#C0C0C0">
+        <image id="{{index}}" class="pic " src="{{item.imgSrc}}" mode="widthFix" bindtap="gotoDetail"/>
+          <text id="{{index}}" class="detail-content" color="#C0C0C0" bindtap="gotoDetail">
             {{item.title?item.title : item.shortDescrip}}
           </text> 
           <view class="user-info">

@@ -119,9 +119,6 @@ Component({
         this.setData({
           searchFriendPostsShow: showList
         })
-        if(showList.length){
-          this.selectComponent("#child").update()
-        }
       }
     },
 
@@ -136,9 +133,6 @@ Component({
           return obj.demands.bindAttraction==e.detail
         })
         this.setData({searchFriendPostsShow:showList})
-        if(showList.length){
-          this.selectComponent("#child").update()
-        }
       }
     },
 

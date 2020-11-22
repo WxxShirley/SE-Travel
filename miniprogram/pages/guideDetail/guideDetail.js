@@ -10,7 +10,6 @@ Page({
     // 解析界面参数中传递的景点对象
     var obj = JSON.parse(options.guide)
     obj.timestamp = obj.timestamp.substring(0, 11)
-    obj.txt_content = obj.txt_content + obj.txt_content + obj.txt_content + obj.txt_content + obj.txt_content
     this.setData({
       guideObj: obj
     })
@@ -47,6 +46,48 @@ Page({
     this.setData({
       guideObj: gObj
     })
+    
+    // 需要同时在上一界面[findPage]更新点赞情况
+    let pages = getCurrentPages()
+    let currPage = null, prevPage = null
+    if(pages.length>=2){
+      currPage = pages[pages.length-1] // 当前界面
+      prevPage = pages[pages.length-2] // 上一界面
+    }
+    if(prevPage){
+      var list = prevPage.selectComponent("#findPage").data.guideData
+      for(var i=0;i<list.length;i++){
+        if(list[i]._id == this.data.guideObj._id){
+          var corrList = prevPage.selectComponent("#findPage").data.rightList
+           if(i%2==0){
+             //在leftList中
+             corrList = prevPage.selectComponent("#findPage").data.leftList
+           }
+           var index = parseInt(i/2) // 对应的在leftList/rightList中下标
+           // 进行findPage界面中 对应的攻略的 amILike 和 like 的更新
+           if(this.data.guideObj.amILike==true){
+             corrList[index].amILike=true
+             corrList[index].like+=1
+           }else{
+             corrList[index].amILike=false
+             corrList[index].like-=1
+           }
+           
+           // setData触发界面更新
+           if(i%2){
+            prevPage.selectComponent("#findPage").setData({
+              rightList: corrList
+            })
+           }else{
+             prevPage.selectComponent("#findPage").setData({
+               leftList: corrList
+             })
+           }
+
+        }
+      }
+    }
+
   },
 
   //  将本次修改事件传入后台

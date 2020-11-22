@@ -1,0 +1,17 @@
+<view class='flex-container' wx:if='{{ friendPost.length > 0 }}'>
+  <!--
+  <friendPost  postObj="{{item}}"  wx:for="{{friendPost}}" wx:key="index" id="child"/>
+  -->
+  <view wx:for="{{friendPost}}" wx:key="index">
+    <van-swipe-cell right-width="{{ 65 }}" async-close bind:close="deletePost" id="{{item._id}}">
+      <friendPost  postObj="{{item}}" />
+      <view slot="right" >
+          删除
+      </view>
+    </van-swipe-cell>
+  </view> 
+</view>
+<view class='empty' wx:if='{{ friendPost.length === 0 }}'>
+  <image class='empty-icon' src='/images/assets/empty.png' />
+  <text class='empty-text'>还没有找过驴友哟</text>
+</view>

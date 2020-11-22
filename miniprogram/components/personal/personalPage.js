@@ -24,6 +24,12 @@ Component({
       wx.navigateTo({
         url: '../../pages/diary/diaryList/diaryList',
       })
+    },
+    goPost: function(e){
+      console.log(e)
+      wx.navigateTo({
+        url: '../../pages/post/post',
+      })
     }
   }
 })

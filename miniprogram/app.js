@@ -51,7 +51,7 @@ App({
                       }
                     })
                   }
-                  else
+                  else if(snapshot.docChanges[snapshot.docChanges.length - 1].dataType == 'add')
                     that.globalData._hasNewMessage = true
                   wx.cloud.callFunction({
                     name: 'cf2'

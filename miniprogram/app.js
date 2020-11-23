@@ -37,11 +37,25 @@ App({
                }).watch({
                  onChange: function(snapshot){
                   console.log('changed events:',snapshot.docChanges)
-                  for(var i=0;i<snapshot.docChanges.length;i++){
-                    if(snapshot.docChanges[i].dataType=='add'){
-                      that.globalData._hasNewMessage = true  
-                    }
+                  if(snapshot.type == 'init') {
+                    wx.cloud.callFunction({
+                      name: 'cf',
+                      success: function(res) {
+                        wx.cloud.callFunction({
+                          name: 'cf3',
+                          success: function(res2) {
+                            if(res.result.message_count < res2.result.message_count)
+                              that.globalData._hasNewMessage = true
+                          }
+                        })
+                      }
+                    })
                   }
+                  else
+                    that.globalData._hasNewMessage = true
+                  wx.cloud.callFunction({
+                    name: 'cf2'
+                  })
                  },
                  onError:function(err){
                   console.error('watch closed because of error',err)

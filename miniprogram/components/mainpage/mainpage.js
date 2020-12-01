@@ -26,7 +26,7 @@ Component({
       {name: '景点攻略',  icon: 'fire', pageUrl: '../touristAttraction/touristAttraction'},
       {name: '发布攻略', icon: 'photo',pageUrl:'../publish/publish'},
       {name: '寻找驴友',  icon: 'friends',pageUrl:'../friend/friend'},
-      {name: '解锁成就', icon: 'award',pageUrl:null},
+      {name: '解锁成就', icon: 'award',pageUrl: '../achievements/achievements'},
     ],
     leftList: [],
     rightList: [],

@@ -13,7 +13,8 @@
     "pages/diary/saveDiary/saveDiary",
     "pages/friend/friend",
     "pages/guideDetail/guideDetail",
-    "pages/post/post"
+    "pages/post/post",
+    "pages/achievements/achievements"
   ],
   "cloud": true,
   "permission": {
@@ -60,7 +61,6 @@
     "van-dropdown-item": "plugins/vantComponents/dist/dropdown-item/index",
     "van-empty": "plugins/vantComponents/dist/empty/index",
     "van-swipe-cell": "plugins/vantComponents/dist/swipe-cell/index",
-
     "main": "components/mainpage/mainpage",
     "waterfall": "components/waterfall/waterfall",
     "messagePage": "components/messagePage/messagePage",

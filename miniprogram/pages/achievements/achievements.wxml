@@ -1,0 +1,17 @@
+<!--miniprogram/pages/achievements/achievements.wxml-->
+<view class='main'>
+  <image class="avatar" src="{{avatar}}" />
+
+  <view class="badge-wrap">
+    <block wx:for="{{number}}" wx:key="index">
+      <view class="badge {{className[index]}}" style="color: {{fontColor[index]}}">        
+        <image class="badge-image" src="{{imgSrc[index]}}" />
+        <view class="badge-name">{{badgeName[index]}}</view>
+        <image class="level-image" src="{{levelSrc[level[index]-1]}}" />
+        <view class="note">已发布{{content[index]}}{{number[index]}}篇</view>
+        <view class="note" wx:if="{{gap[index]!=null}}">升级还需{{gap[index]}}篇</view>
+        <view class="note" wx:if="{{gap[index]==null}}">满级</view>
+      </view>
+    </block>
+  </view>
+</view>

@@ -1,0 +1,102 @@
+/* miniprogram/pages/achievements/achievements.wxss */
+page{
+  height: 100%;
+}
+
+.main{
+  background-color: #1989FA;
+  width: 100%;
+  min-height: 100%;
+  text-align: center;
+  position: relative;
+  padding-bottom: 10%;
+}
+
+.avatar{
+  width: 70px;
+  height: 70px;
+  border-radius: 70px;
+  border: 5px solid white;
+  margin-bottom: 10%;
+  margin-top: 15%;
+}
+
+.badge-wrap{
+  background-color: white;
+  width: 90%;
+  margin-left: 5%;
+  border-radius: 20px;
+  padding-top: 1%;
+  padding-bottom: 5%;  
+}
+
+.badge{
+  display: block;
+  margin-left: 3%;
+  margin-right: 3%;
+  margin-top: 5%;
+  height: 120px;
+  border-radius: 20px;
+  overflow: hidden;
+  background-color: #F2F2F2;
+  position: relative;
+}
+
+.badge-left{
+  text-align: left;
+}
+
+.badge-right{
+  text-align: right;
+}
+
+.badge-left>view{
+  position: relative;
+  left: 15px;
+}
+
+.badge-right>view{
+  position: relative;
+  right: 15px;
+}
+
+.badge-left .level-image{
+  position: relative;
+  left: 15px;
+}
+
+.badge-right .level-image{
+  position: relative;
+  right: 15px;
+}
+
+.badge-right .badge-image{
+  left: 0px;
+}
+
+.badge-left .badge-image{
+  right: 0px;
+}
+
+.badge-image{
+  position: absolute;
+  height: 120px;
+  width: 240px;
+}
+
+.badge-name{
+  margin-top: 10px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.level-image{
+  width:40px;
+  height: 19px;
+  margin-top: 3px;
+}
+
+.note{
+  margin-top: 3px;
+  font-size: 10px;
+}

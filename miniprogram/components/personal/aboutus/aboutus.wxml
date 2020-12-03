@@ -1,0 +1,31 @@
+<!--miniprogram/components/personal/aboutus/aboutus.wxml-->
+<view class="main">
+  <image class="avatar" src="../../../images/logo.jpg" />
+  <view class="wrap">
+    <view class="text-content">
+      <text>
+        沪驴是一款提供您在上海市出行旅游的小程序。我们的服务包括景区介绍、手帐编写、分享攻略、寻找旅游、个性化记录这五大分区。
+      </text>
+      <text>
+        我们承诺:
+        1.沪驴不会保存您的任何隐私数据，也不会分享或使用您的隐私数据.
+        2.您在使用本小程序发布的数据，都将在腾讯云端安全、可靠、持久存储。沪驴小程序不会在其他任何平台公开或分享您的这些数据.
+      </text>
+      <text>
+      </text>
+    </view>
+    <view class="developer">
+      <view class="user-avatars">
+        <block wx:for="{{developer_avatars}}" wx:key="index">
+          <image src="{{developer_avatars[index]}}" class="developer-avatars" />
+        </block>
+      </view>
+      <view class="developer-info">
+        <text>复旦大学沪驴工作室</text>
+      </view>
+      <view class="developer-info">
+        <text>Copyright@Hulv Studio</text>
+      </view>
+    </view>
+  </view>
+</view>

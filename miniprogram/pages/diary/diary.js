@@ -473,7 +473,7 @@ Page({
         backgroundId: this.data.backgroundId,
         assemblies: new_assemblies,
         title: title,
-        timestap: util.formatTime(new Date()),
+        timestamp: util.formatTime(new Date()),
         backgroundUrl: this.data.backgroundUrl,
         backgroundPath: this.data.backgroundPath,
       }

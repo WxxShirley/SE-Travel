@@ -13,3 +13,7 @@
 <van-cell title="我的帖子" icon="friends-o" is-link bindtap="goPost"/>
 <van-cell title="我的攻略" icon="photo-o" is-link bindtap=""/>
 <van-cell title="我的足迹" icon='location-o' is-link bindtap=""/>
+
+<view class="white-space" style="height:50px"/>
+<van-cell title="关于沪驴" icon="setting-o" is-link bindtap="goAboutus"/>
+<van-cell title="使用反馈" icon="records" is-link bindtap="goFeedback"/>

@@ -30,6 +30,18 @@ Component({
       wx.navigateTo({
         url: '../../pages/post/post',
       })
+    },
+
+    goAboutus: function(e){
+      wx.navigateTo({
+        url: '../../components/personal/aboutus/aboutus',
+      })
+    },
+
+    goFeedback: function(e){
+      wx.navigateTo({
+        url: '../../components/personal/userFeedback/userFeedback',
+      })
     }
   }
 })

@@ -11,9 +11,15 @@ exports.main = async (event, context) => {
   let openid = cloud.getWXContext().OPENID
 
   try{
+    if(event.collection=="userFeedback"){
+      /* 用户反馈表按时间正序，5条 */
+      return await db.collection(event.collection).where({
+        openid: openid
+      }).get()
+    }
     return await db.collection(event.collection).where({
       openid: openid
-    }).get()
+    }).orderBy('timestamp','desc').get()
   }catch(e){
     console.log(e)
     return e

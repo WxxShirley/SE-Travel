@@ -1,0 +1,54 @@
+/* miniprogram/components/personal/aboutus/aboutus.wxss */
+
+page{
+  height: 100%;
+}
+
+.main{
+  background-color: #1989FA;
+  width: 100%;
+  min-height: 100%;
+  text-align: center;
+  position: relative;
+  padding-bottom: 10%;
+}
+
+.avatar{
+  width: 70px;
+  height: 70px;
+  border-radius: 70px;
+  border: 5px solid white;
+  margin-bottom: 10%;
+  margin-top: 10%;
+}
+
+.wrap{
+  background-color: white;
+  width: 90%;
+  margin-left: 5%;
+  border-radius: 20px;
+  padding-top: 1%;
+  padding-bottom: 5%;  
+}
+
+.text-content{
+  text-align: start;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 4%;
+  padding-bottom: 4%;
+}
+
+
+.developer-avatars{
+  width: 25px;
+  height: 25px;
+  border-radius: 25px;
+  margin-top: 10%;
+}
+
+.developer-info{
+  text-align: center;
+  font-weight: 300;
+  font-size: 12px;
+}

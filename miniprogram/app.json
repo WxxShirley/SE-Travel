@@ -14,7 +14,9 @@
     "pages/friend/friend",
     "pages/guideDetail/guideDetail",
     "pages/post/post",
-    "pages/achievements/achievements"
+    "pages/achievements/achievements",
+    "components/personal/aboutus/aboutus",
+    "components/personal/userFeedback/userFeedback"
   ],
   "cloud": true,
   "permission": {

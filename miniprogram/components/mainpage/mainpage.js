@@ -10,13 +10,21 @@ Component({
    * 组件的初始数据
    */
   data: {
-    imgList: [ 
+    /*imgList: [ 
       {id: 1,imgSrc: '/images/places/外滩.jpeg'},
       {id: 8,imgSrc: '/images/places/欢乐谷.jpeg'},
       {id: 3,imgSrc: '/images/places/迪士尼.jpeg'},
       {id: 7,imgSrc: '/images/places/科技馆.jpeg'},
       {id: 21,imgSrc: '/images/places/朱家角.jpeg'},
       {id: 11,imgSrc: '/images/places/城隍庙.jpeg'}
+    ],*/
+    imgList: [
+      {id: 1,imgSrc: 'cloud://env-dev-6gb5dffd859b69ee.656e-env-dev-6gb5dffd859b69ee-1303853824/mainPageAttraction/外滩.jpeg'},
+      {id: 8,imgSrc: 'cloud://env-dev-6gb5dffd859b69ee.656e-env-dev-6gb5dffd859b69ee-1303853824/mainPageAttraction/欢乐谷.jpeg'},
+      {id: 3,imgSrc: 'cloud://env-dev-6gb5dffd859b69ee.656e-env-dev-6gb5dffd859b69ee-1303853824/mainPageAttraction/迪士尼.jpeg'},
+      {id: 7,imgSrc: 'cloud://env-dev-6gb5dffd859b69ee.656e-env-dev-6gb5dffd859b69ee-1303853824/mainPageAttraction/科技馆.jpeg'},
+      {id: 21,imgSrc: 'cloud://env-dev-6gb5dffd859b69ee.656e-env-dev-6gb5dffd859b69ee-1303853824/mainPageAttraction/朱家角.jpeg'},
+      {id: 11,imgSrc: 'cloud://env-dev-6gb5dffd859b69ee.656e-env-dev-6gb5dffd859b69ee-1303853824/mainPageAttraction/城隍庙.jpeg'}
     ],
     swiperCurrent: 0,
     showAuthButton: false,

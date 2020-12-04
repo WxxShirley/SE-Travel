@@ -37,7 +37,7 @@ is-link
 <van-cell-group class="jingdian">
   <van-field
     value="{{ attraction }}" clearable label="景点名"
-    placeholder="输入想和驴友一起去的地方吧.." icon="location-o"
+    placeholder="输入和驴友一起去的地方吧" icon="location-o"
     border="{{ false }}"
     bind:change="onChange2"
   />

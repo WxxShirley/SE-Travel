@@ -32,7 +32,9 @@
 .detail-content{
   color: #C0C0C0;
   text-align: start;
-  justify-content: start;
+  padding-top:0px;
+  padding-left:5px;
+  margin-top: 0px;
 }
 
 .avatar{
@@ -43,4 +45,9 @@
 
 .tail-text{
   text-align: end;
+}
+
+.user-info{
+  text-align: start;
+  padding-left:5px;
 }

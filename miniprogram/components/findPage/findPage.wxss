@@ -8,7 +8,7 @@
 .content{
   display: flex;
   flex-direction: row;
-  margin: 5rpx;
+  
   overflow: hidden;
   width: 100%;
 }
@@ -16,12 +16,14 @@
 .left{
   width: 345rpx;
   padding-left: 5px;
+  margin-left:5px;
 }
 
 .right{
   width: 345rpx;
   margin-left: 20rpx;
   padding-right: 5px;
+  margin-right:5px;
 }
 
 .center-text{

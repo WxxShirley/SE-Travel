@@ -7,12 +7,15 @@
     <view class="name float">
        <open-data type="userNickName"></open-data>
     </view>
+    <view class="footprint ">
+      <text class="iconfont icon-footprint"/>
+    </view>
 </view>
+
 
 <van-cell title="我的手帐" icon="notes-o" is-link bindtap="goDiary"/>
 <van-cell title="我的帖子" icon="friends-o" is-link bindtap="goPost"/>
 <van-cell title="我的攻略" icon="photo-o" is-link bindtap=""/>
-<van-cell title="我的足迹" icon='location-o' is-link bindtap=""/>
 
 <view class="white-space" style="height:50px"/>
 <van-cell title="关于沪驴" icon="setting-o" is-link bindtap="goAboutus"/>

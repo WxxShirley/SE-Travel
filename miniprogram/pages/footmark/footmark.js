@@ -1,9 +1,9 @@
 // miniprogram/pages/footmark/footmark.js
 Page({
   data: {
-    latitude:28.304380682962783,
-    longitude:104.94140625,
-    scale: 3,
+    latitude:31.243452887043176,
+    longitude:121.49720404433653,
+    scale: 9,
     iconList: [
       'blue', 'cherry', 'deepblue', 'green', 'purple', 'red', 'yellow'
     ],

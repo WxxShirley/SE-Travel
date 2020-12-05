@@ -129,6 +129,8 @@ Page({
     }
     guide.imgList = []
     var tmpCounter = 0 , imgNum = imgList.length
+
+    var that = this;
     imgList.map((item,index)=>{
       wx.cloud.uploadFile({
         cloudPath: 'guide_image/'+new Date().getTime() + item.match(/\.[^.]+?$/)[0],
@@ -155,7 +157,7 @@ Page({
                   console.log(res.errMsg)
                   wx.hideLoading() 
                   if(res.errMsg=="cloud.callFunction:ok"){
-                    this.setData({save:true})
+                    that.setData({save:true})
                   }else{
                     wx.showToast({
                       title: '出错了..',

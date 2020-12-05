@@ -19,6 +19,12 @@ Component({
    */
   methods: {
     // 进入到手帐界面
+    goFootmark: function(e) {
+      wx.navigateTo({
+        url: '../../pages/footmark/footmark',
+      })
+    },
+
     goDiary: function(e){
       console.log(e)
       wx.navigateTo({

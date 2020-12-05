@@ -1,0 +1,3 @@
+<!--miniprogram/pages/footmark/footmark.wxml-->
+<map markers="{{markers}}" longitude="{{longitude}}" latitude="{{latitude}}" scale="{{scale}}" style="width:100%;height:700px" bindmarkertap="markertap" bindcallouttap="markertap" >
+</map>

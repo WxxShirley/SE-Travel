@@ -7,7 +7,7 @@
     <view class="name float">
        <open-data type="userNickName"></open-data>
     </view>
-    <view class="footprint ">
+    <view class="footprint " bindtap="goFootmark">
       <text class="iconfont icon-footprint"/>
     </view>
 </view>

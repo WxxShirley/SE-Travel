@@ -137,31 +137,37 @@ Page({
           console.log(res.fileID)
           guide.imgList.push(res.fileID)
           tmpCounter++ 
-           //  STEP2 所有图片上传完毕, 调用云函数，执行更新diary数据库操作
-           console.log("current imgCounter",tmpCounter)
-           if(tmpCounter==imgNum){
-             guide.imgSrc = guide.imgList[0]
-             this.callCloudFunc(guide)
-           }
-         })
+          //  STEP2 所有图片上传完毕, 调用云函数，执行更新diary数据库操作
+          console.log("current imgCounter",tmpCounter)
+          if(tmpCounter==imgNum){
+            guide.imgSrc = guide.imgList[0]
+            wx.getLocation({
+              type: 'gcj02',
+              success (res) {
+                console.log(res)
+                guide['longitude'] = res.longitude
+                guide['latitude'] = res.latitude
+                console.log(guide)
+                wx.cloud.callFunction({
+                  name: 'addEntry',
+                  data: {item: guide, collection: 'guide'},
+                  }).then(res=>{
+                  console.log(res.errMsg)
+                  wx.hideLoading() 
+                  if(res.errMsg=="cloud.callFunction:ok"){
+                    this.setData({save:true})
+                  }else{
+                    wx.showToast({
+                      title: '出错了..',
+                    })
+                  }
+                })
+              }
+            })
+          }
+        })
     })
   },
-  callCloudFunc: function(guide){  
-    wx.cloud.callFunction({
-      name: 'addEntry',
-      data: {item: guide, collection: 'guide'},
-     }).then(res=>{
-      console.log(res.errMsg)
-      wx.hideLoading() 
-      if(res.errMsg=="cloud.callFunction:ok"){
-        this.setData({save:true})
-      }else{
-        wx.showToast({
-          title: '出错了..',
-        })
-      }
-    })
- },
  // 关闭 RichTabBar
  onRefreshView: function(callback) {
   var that = this

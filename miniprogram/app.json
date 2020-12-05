@@ -16,7 +16,8 @@
     "pages/post/post",
     "pages/achievements/achievements",
     "components/personal/aboutus/aboutus",
-    "components/personal/userFeedback/userFeedback"
+    "components/personal/userFeedback/userFeedback",
+    "pages/footmark/footmark"
   ],
   "cloud": true,
   "permission": {

@@ -38,6 +38,13 @@ Component({
       })
     },
 
+    goGuide: function(e){
+      console.log(e)
+      wx.navigateTo({
+        url: '../../pages/showMyGuide/showMyGuide',
+      })
+    },
+
     goAboutus: function(e){
       wx.navigateTo({
         url: '../../components/personal/aboutus/aboutus',

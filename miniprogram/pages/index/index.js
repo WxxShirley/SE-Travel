@@ -99,5 +99,9 @@ Page({
   scrollToLower: function(e){
     console.log(e)
     this.selectComponent("#findPage").getGuideData()
+  },
+  scrollToLowermain: function(e){
+    console.log(e)
+    this.selectComponent("#mainpage").getGuideData()
   }
 })

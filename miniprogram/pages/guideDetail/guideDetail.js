@@ -89,6 +89,40 @@ Page({
           }
         }
       }
+      else if(prevPage.selectComponent("#mainpage")&&prevPage.selectComponent("#mainpage").data.guideData){
+        // 从瀑布流入口进入
+        var list = prevPage.selectComponent("#mainpage").data.guideData
+        for(var i=0;i<list.length;i++){
+          if(list[i]._id == this.data.guideObj._id){
+            var corrList = prevPage.selectComponent("#mainpage").data.rightList
+             if(i%2==0){
+               //在leftList中
+               corrList = prevPage.selectComponent("#mainpage").data.leftList
+             }
+             var index = parseInt(i/2) // 对应的在leftList/rightList中下标
+             // 进行findPage界面中 对应的攻略的 amILike 和 like 的更新
+             if(this.data.guideObj.amILike==true){
+               corrList[index].amILike=true
+               corrList[index].like+=1
+             }else{
+               corrList[index].amILike=false
+               corrList[index].like-=1
+             }
+             
+             // setData触发界面更新
+             if(i%2){
+              prevPage.selectComponent("#mainpage").setData({
+                rightList: corrList
+              })
+             }else{
+               prevPage.selectComponent("#mainpage").setData({
+                 leftList: corrList
+               })
+             }
+  
+          }
+        }
+      }
       
     }
 

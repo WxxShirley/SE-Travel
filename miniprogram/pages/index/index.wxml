@@ -2,7 +2,11 @@
 <view class="container">
   <view class="userinfo">
     <!--主页-->
-    <view wx:if="{{active==0}}"><main /></view>
+    <view wx:if="{{active==0}}">
+      <scroll-view scroll-y bindscrolltolower="scrollToLowermain" style="height:600px">
+        <main id="mainpage" />
+      </scroll-view>
+    </view>
     <!--发现页-->
     <view wx:elif="{{active==1}}">
       <scroll-view scroll-y bindscrolltolower="scrollToLower" style="height:600px">

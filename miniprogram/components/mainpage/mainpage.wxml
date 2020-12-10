@@ -44,11 +44,14 @@
 
 <view class="content">
   <view class="left">
-    <waterfall dataset="{{leftList}}" />
+    <waterfall dataset="{{leftList}}" binditemChange="handleItemLeftChange" />
   </view>
 
   <view class="right">
-    <waterfall dataset="{{rightList}}" />
+    <waterfall dataset="{{rightList}}" binditemChange="handleItemRightChange"/>
+  </view>
+  <view class="center-text" wx:if="{{noMore}}">
+    <text>没有更多数据了...</text>
   </view>
 </view>
 

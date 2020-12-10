@@ -36,8 +36,12 @@ Component({
       {name: '寻找驴友',  icon: 'friends',pageUrl:'../friend/friend'},
       {name: '解锁成就', icon: 'award',pageUrl: '../achievements/achievements'},
     ],
+    skip: Math.ceil(Math.random()*10),
+    num: 10,
     leftList: [],
     rightList: [],
+    guideData: [],
+    noMore: false,
     backTopValue: false, // “返回顶部”
 
   },
@@ -56,6 +60,8 @@ Component({
     },
 
     attached: function(){
+      this.getGuideData(this.data.skip, this.data.num)
+      /*
       var leftData = [];
       var rightData = [];
       // TODO: 加载所有热门攻略
@@ -74,6 +80,7 @@ Component({
         leftList: leftData,
         rightList: rightData,
       })
+      */
     }
   },
   methods: {
@@ -122,7 +129,65 @@ Component({
     },
     onClose: function(e){
       this.setData({showAuthButton:false})
-    }
+    },
+    getGuideData: function(){
+      var that = this
+       wx.cloud.callFunction({
+         name: 'getEntry',
+         data: {collection: 'guide', skip: that.data.skip,num: that.data.num, main:true},
+        }).then(res=>{
+         console.log(res)
+         
+         var left = that.data.leftList, right = that.data.rightList;
+         if(res.result.data.length==0){
+          that.setData({
+            noMore: true
+          })
+        }  
+         for(var i=0;i<res.result.data.length;i++){
+           if(i%2)
+             right.push(res.result.data[i])
+           else 
+             left.push(res.result.data[i])
+           that.data.guideData.push(res.result.data[i])
+         }  
+         var newSkip = that.data.skip+that.data.num
+         that.setData({
+           guideData: that.data.guideData,
+           leftList: left,
+           rightList: right,
+           skip: newSkip
+         })
+       })
+    },
+    handleItemLeftChange:function(e){
+      console.log(e.detail)
+      var lList = this.data.leftList
+      if(e.detail.type=="delLike"){
+       lList[e.detail.index].like-=1
+        lList[e.detail.index].amILike=false
+      }else if(e.detail.type="addLike"){
+        lList[e.detail.index].like+=1
+        lList[e.detail.index].amILike=true
+      }
+      this.setData({
+        leftList: lList
+      })
+    },
+    handleItemRightChange:function(e){
+      console.log(e.detail)
+      var rList = this.data.rightList
+      if(e.detail.type=="delLike"){
+        rList[e.detail.index].like-=1
+        rList[e.detail.index].amILike=false
+      }else if(e.detail.type="addLike"){
+        rList[e.detail.index].like+=1
+        rList[e.detail.index].amILike=true
+      }
+      this.setData({
+        rightList: rList
+      })
+    },
 
   }
 })

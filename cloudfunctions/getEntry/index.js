@@ -14,7 +14,20 @@ exports.main = async (event, context) => {
   
   try{
     // 修改逻辑:查询message表来判断是否喜欢 (amILike)
-    let entrys = await db.collection(event.collection).orderBy('timestamp', 'desc').skip(event.skip).limit(event.num).get()
+    //随机读取数据
+    console.log(event.skip)
+    let entrys;
+    if(event.main == true){ 
+      console.log(event.skip)
+      /*entrys = await db.collection(event.collection).aggregate().sample({
+        size:15
+      }).sort({like:-1}).end()*/
+      entrys = await db.collection(event.collection).orderBy('like', 'desc').skip(event.skip).limit(event.num).get()
+    }
+    else{
+      entrys = await db.collection(event.collection).orderBy('timestamp', 'desc').skip(event.skip).limit(event.num).get()
+    }
+      
     for(let entry of entrys.data){
       let id = entry._id
       let queryRes = await db.collection('message').where({

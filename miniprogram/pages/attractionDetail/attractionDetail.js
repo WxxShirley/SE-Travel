@@ -40,6 +40,7 @@ Page({
         longitude: this.data.attractionObj.geoInfo.lng,
         loc: this.data.attractionObj.geoInfo.location,
         title: this.data.attractionObj.title,
+        iconPath: '../../images/marker2.png',
       }
     )
     
@@ -71,6 +72,7 @@ Page({
               longitude: res.data[0].geoInfo.lng,
               loc: res.data[0].geoInfo.location,
               title: res.data[0].title,
+              iconPath: '../../images/marker.png',
             }
           )
           if(total_num <= cnt+2){

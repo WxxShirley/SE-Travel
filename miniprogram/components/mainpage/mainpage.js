@@ -40,14 +40,6 @@ Component({
    * 组件的方法列表
    */
   lifetimes:{
-    // 如果用户尚未登陆，请求授权登陆
-    created: function(){
-      if(wx.getStorageSync('isLogin')!="true"){
-        this.setData({
-          showAuthButton: true
-        })
-      }
-    },
 
     attached: function(){
       this.getGuideData(this.data.skip, this.data.num)
@@ -86,17 +78,7 @@ Component({
       utils.goattrDetail(id_)
     },
 
-    getUser: function(e){
-      wx.getUserInfo({
-       success:(res)=>{
-         this.setData({showAuthButton:false})
-         wx.setStorageSync('isLogin', "true")
-        
-         // 保存全局信息
-         getApp().globalData.userInfo = res.rawData
-       }
-      })
-    },
+   
     onClose: function(e){
       this.setData({showAuthButton:false})
     },

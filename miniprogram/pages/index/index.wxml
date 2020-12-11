@@ -1,7 +1,12 @@
 <!--index.wxml-->
 <view class="container">
   <view class="userinfo">
+   
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 授权使用 </button>
+
+
     <!--主页-->
+    <block wx:else>
     <view wx:if="{{active==0}}" id="main">
       <scroll-view scroll-y bindscrolltolower="scrollToLowermain" style="height:800px">
         <main id="mainpage" />
@@ -17,6 +22,8 @@
     <view wx:elif="{{active==2}}"><messagePage /></view>
    <!--个人中心-->
    <view wx:elif="{{active==3}}"><personal /></view>
+
+  </block>
   </view>
   
   <van-tabbar active="{{active}}" bind:change="onChange">
@@ -31,3 +38,4 @@
 <view wx:if="{{backTopValue}}" class="back-top" catchtap="backTop">
   <van-icon name="arrow-up" />
 </view>
+

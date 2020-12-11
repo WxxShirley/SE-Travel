@@ -9,7 +9,7 @@
     <val-col >
         <text class="user-nickname">{{postObj.nickname}}</text>
         <text class="hint" style="color:grey;font-weight:600"> 发布于 </text>
-        <text class="user-timestamp" style="font-style: italic;font-weight: 300;color: grey">{{postObj.timestamp+"      "}}</text>
+        <text class="user-timestamp" style="font-style: italic;font-weight: 300;color: grey">{{postObj.timestamp}}</text>
     </val-col>
   </van-row>
 

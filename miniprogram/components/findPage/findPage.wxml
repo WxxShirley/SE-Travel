@@ -23,20 +23,24 @@
 
 
 <!--显示寻找驴友-->
-<view wx:if="{{active==1}}" style="margin-left:10px;margin-right:10px; ">
+<view style="height:100%" wx:if="{{active==1}}">
+<view  >
    <!--筛选-->
     <van-dropdown-menu>
      <van-dropdown-item value="{{ value1 }}" options="{{ option1 }}" bind:change="onGenderChange"/>
      <van-dropdown-item value="{{ value2 }}" options="{{ option2 }}" bind:change="onAttractionChange"/>
     </van-dropdown-menu>
 </view>
-<van-divider wx:if="{{active==1}}" customStyle="margin-left:5%;width:90%;color: #1989fa; border-color: #1989fa;">
+<van-divider  customStyle="margin-left:5%;width:90%;color: #1989fa; border-color: #1989fa;">
   </van-divider>
-   <view wx:if="{{active==1}}" class="content">
+   <view  class="content2">
      <!--驴友贴内容-->
-     <view style="width:95%;margin-right:5px">
-      <friendPost  postObj="{{item}}"  wx:for="{{searchFriendPostsShow}}" wx:key="index" id="child"/>
+     <view style="width:95%;margin-right:5px;height:100%">
+       <block wx:for="{{searchFriendPostsShow}}" wx:key="index" >
+         <friendPost  postObj="{{item}}"  id="child"/>
+      </block>
      </view>
     </view>
 
 
+  </view>

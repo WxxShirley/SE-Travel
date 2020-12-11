@@ -78,7 +78,7 @@ Page({
   onPageScroll: function(e){
     let scrollTop = e.scrollTop
     //console.log(scrollTop)
-    let backTopValue = scrollTop>600?true:false;
+    let backTopValue = scrollTop>400?true:false;
     this.setData({backTopValue})
   },
 
@@ -97,8 +97,12 @@ Page({
   },
 
   scrollToLower: function(e){
-    console.log(e)
-    this.selectComponent("#findPage").getGuideData()
+    // console.log(e)
+    var comp = this.selectComponent('#findPage')
+    if(comp && comp.data.active==0){
+      console.log("查看攻略，继续下拉")
+      this.selectComponent("#findPage").getGuideData()
+    }
   },
   scrollToLowermain: function(e){
     console.log(e)

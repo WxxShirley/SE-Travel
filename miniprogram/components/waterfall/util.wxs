@@ -1,7 +1,7 @@
 
 var subStr = function(val){
-  if(val.length>10)
-    return val.substring(0,10)+".."
+  if(val.length>6)
+    return val.substring(0,6)+".."
   return val
 }
 

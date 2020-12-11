@@ -36,7 +36,7 @@
 
 > 这一阶段完善攻略服务(攻略点赞、详情界面)，以及个性化服务(管理驴友帖、手帐、攻略，生成个性化足迹、首页推荐、成就达成). 补充服务：隐私条款+联系我们
 
-[开发文档](https://github.com/WxxShirley/SE-Travel/blob/master/docs/Sprint3%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3)
+[开发文档](https://github.com/WxxShirley/SE-Travel/blob/master/docs/Sprint3%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3.md)
 
 
 ## 帮助文档

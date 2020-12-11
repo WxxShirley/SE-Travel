@@ -6,7 +6,7 @@
 <!--攻略获赞-->
 <view  class="likes-content">
   <block wx:for="{{likeNotice}}" wx:key="index">
-    <van-cell  value="{{tools.subStr(item.timestamp,11)}}">
+    <van-cell  value="{{tools.subStr(item.timestamp,16)}}">
        <view slot="title">
          <van-col span="4">
            <image class="avatar" src="{{item.source_avatar}}"/>

@@ -1,9 +1,9 @@
 var subStr = function(val,len){
-  if(len==11)
-     return val.substring(0,11)
-
+  if(len==16)
+     return val.substring(0,16)
+  
   if(val.length>len)
-    return val.substring(0,len)+"..."
+     return val.substring(0,len)+"..."
   return val
 }
 

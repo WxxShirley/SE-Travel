@@ -15,6 +15,7 @@
 下载代码，下载[微信小程序](https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html)，打开软件包。
 
 小程序ID：`wx871696d2ebd36b09`
+我是黄子菁
 
 
 

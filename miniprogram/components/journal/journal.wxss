@@ -44,7 +44,7 @@
 
 .settings-container {
   position: relative;
-  top: -48rpx;
+  top: -28rpx;
   right: -265rpx;
   height: 50rpx;
   width: 50rpx;

@@ -21,7 +21,7 @@ Component({
     showAuthButton: false,
     navList: [ // 宫格导航
       {name: '旅行手帐',  icon: 'edit', pageUrl: '../diary/diary'},
-      {name: '景点攻略',  icon: 'fire', pageUrl: '../touristAttraction/touristAttraction'},
+      {name: '景点介绍',  icon: 'fire', pageUrl: '../touristAttraction/touristAttraction'},
       {name: '发布攻略', icon: 'photo',pageUrl:'../publish/publish'},
       {name: '寻找驴友',  icon: 'friends',pageUrl:'../friend/friend'},
       {name: '解锁成就', icon: 'award',pageUrl: '../achievements/achievements'},

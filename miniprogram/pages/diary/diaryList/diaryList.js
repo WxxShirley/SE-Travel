@@ -13,7 +13,7 @@ Page({
 
   loadDiary: function(){
     // 加载手帐
-    wx.showLoading({ title: '正在加载',})
+    wx.showLoading({ title: '',})
     wx.cloud.callFunction({
       name: 'loadUserAll',
       data: {collection: 'diary'},

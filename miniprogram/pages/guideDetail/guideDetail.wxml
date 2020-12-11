@@ -5,7 +5,7 @@
   <swiper class="hmly-swiper" autoplay="true" circular="true"
     interval="3000" easing-function="easeOutCubic" current="{{swiperCurren}}" bindchange="swiperChange">
     <swiper-item class="hmly-swiper-item" wx:for="{{guideObj.imgList}}" wx:key="index">
-      <image src="{{item}}" mode="widthFix"></image>
+      <image src="{{item}}" mode="aspectFit"></image>
     </swiper-item>
   </swiper>
   <view class="hmly-dots">

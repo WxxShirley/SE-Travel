@@ -49,7 +49,7 @@ page{
   line-height: 60rpx;
   width: 200rpx;
   height: 240rpx;
-  margin: 100rpx 50rpx;
+  margin-top: 50px;
   font-size: 40rpx;
   color: #ffffff;
 }

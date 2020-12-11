@@ -2,7 +2,7 @@
   <!--
   <guidelist  postObj="{{item}}"  wx:for="{{guidelist}}" wx:key="index" id="child"/>
   -->
-  <view wx:for="{{guidelist}}" wx:key="index">
+  <view id="showMyGuide" wx:for="{{guidelist}}" wx:key="index">
     <van-swipe-cell right-width="{{ 65 }}" async-close bind:close="deleteGuide" id="{{item._id}}">
       <van-card desc="{{item.shortDescrip}}" title="{{item.title}}" id="{{index}}" thumb="{{item.imgSrc}}" bindtap="gotoDetail"/>
         <view slot="right" >

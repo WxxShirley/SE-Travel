@@ -1,6 +1,5 @@
 // pages/components/mainpage/mainpage.js
 var utils = require("../../utils/util.js")
-var mockData = require("../../models/mockData")
 
 Component({
   properties: {
@@ -10,14 +9,6 @@ Component({
    * 组件的初始数据
    */
   data: {
-    /*imgList: [ 
-      {id: 1,imgSrc: '/images/places/外滩.jpeg'},
-      {id: 8,imgSrc: '/images/places/欢乐谷.jpeg'},
-      {id: 3,imgSrc: '/images/places/迪士尼.jpeg'},
-      {id: 7,imgSrc: '/images/places/科技馆.jpeg'},
-      {id: 21,imgSrc: '/images/places/朱家角.jpeg'},
-      {id: 11,imgSrc: '/images/places/城隍庙.jpeg'}
-    ],*/
     imgList: [
       {id: 1,imgSrc: 'cloud://env-dev-6gb5dffd859b69ee.656e-env-dev-6gb5dffd859b69ee-1303853824/mainPageAttraction/外滩.jpeg'},
       {id: 8,imgSrc: 'cloud://env-dev-6gb5dffd859b69ee.656e-env-dev-6gb5dffd859b69ee-1303853824/mainPageAttraction/欢乐谷.jpeg'},
@@ -30,7 +21,6 @@ Component({
     showAuthButton: false,
     navList: [ // 宫格导航
       {name: '旅行手帐',  icon: 'edit', pageUrl: '../diary/diary'},
-      //{name: '路径规划', icon: 'location', pageUrl:null },
       {name: '景点攻略',  icon: 'fire', pageUrl: '../touristAttraction/touristAttraction'},
       {name: '发布攻略', icon: 'photo',pageUrl:'../publish/publish'},
       {name: '寻找驴友',  icon: 'friends',pageUrl:'../friend/friend'},
@@ -61,26 +51,6 @@ Component({
 
     attached: function(){
       this.getGuideData(this.data.skip, this.data.num)
-      /*
-      var leftData = [];
-      var rightData = [];
-      // TODO: 加载所有热门攻略
-      for(let i=0;i<mockData.shares.length;i++){
-        var shortDescrip = mockData.shares[i].content.substring(0,20);
-
-        mockData.shares[i].shortDescrip = shortDescrip+"....";
-        if(i%2==0){
-          leftData.push(mockData.shares[i]);
-        }else{
-          rightData.push(mockData.shares[i]);
-        }
-      }
-     
-      this.setData({
-        leftList: leftData,
-        rightList: rightData,
-      })
-      */
     }
   },
   methods: {

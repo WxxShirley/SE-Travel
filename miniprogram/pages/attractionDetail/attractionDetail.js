@@ -44,6 +44,15 @@ Page({
     )
     
     let cnt=1, total_num = Math.min(this.data.attractionObj.nearBy.length,10);
+    if(total_num==0){
+      // 直接进入景区详情界面，无需查询
+      mapObj['markers'] = markers
+      mapObj['id'] = this.data.attractionObj.id
+      mapObj = JSON.stringify(mapObj)
+      wx.navigateTo({
+        url: '../../pages/attractionDetail/mapView?mapObj=' + mapObj,
+       })
+    }
 
     for(var i = 0; i < total_num; i ++)
     {
@@ -64,7 +73,7 @@ Page({
               title: res.data[0].title,
             }
           )
-          if(total_num <= cnt){
+          if(total_num <= cnt+2){
             mapObj['markers'] = markers
             mapObj['id'] = this.data.attractionObj.id
             mapObj = JSON.stringify(mapObj)

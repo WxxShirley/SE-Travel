@@ -13,6 +13,32 @@ Page({
     this.setData({
       guideObj: obj
     })
+
+    //再次检查用户是否已经给攻略点过赞
+    var that = this;
+    if(that.data.guideObj.amILike==null){
+      wx.showLoading({
+        title: '加载中..',
+      })
+      wx.cloud.callFunction({
+        name: 'checkLike',
+        data:{
+          target_id: that.data.guideObj.target_id,
+          _id: that.data.guideObj._id
+        }
+      }).then(res=>{
+        var obj = that.data.guideObj
+        if(res.result.data.length>0){
+          obj.amILike = true 
+        }else{
+          obj.amILike = false 
+        }
+        that.setData({
+          guideObj: obj 
+        })
+        wx.hideLoading()
+      })
+    }
   },
 
   // 轮播图事件改变
@@ -21,6 +47,13 @@ Page({
   },
 
   onBindtap: function(e){
+    if(this.data.guideObj.amILike==null){
+      wx.showModal({
+        title:'正在加载,请勿点赞',
+        icon:"none"
+      })
+      return 
+    }
     // 修改前端界面展示值的变化
     var likeContent = {
       "source_avatar": app.globalData.userInfo.avatarUrl,
@@ -90,7 +123,7 @@ Page({
         }
       }
       else if(prevPage.selectComponent("#mainpage")&&prevPage.selectComponent("#mainpage").data.guideData){
-        // 从瀑布流入口进入
+        // 从主页瀑布流入口进入
         var list = prevPage.selectComponent("#mainpage").data.guideData
         for(var i=0;i<list.length;i++){
           if(list[i]._id == this.data.guideObj._id){
@@ -122,8 +155,30 @@ Page({
   
           }
         }
+      }else if(prevPage.data.guidelist&&prevPage.data.guidelist.length>0){
+        console.log("find show my guide!")
+        var lis = prevPage.data.guidelist 
+        
+        for(var i=0;i<lis.length;i++){
+          console.log(lis[i]._id, this.data.guideObj._id)
+          if(lis[i]._id==this.data.guideObj._id){
+            console.log("find")
+            console.log(lis[i])
+            if(this.data.guideObj.amILike==true){
+              lis[i].like+=1
+              console.log("add 1")
+            }else{
+              lis[i].like-=1
+              console.log("del 1")
+            }
+            break 
+          }
+          
+        }
+        prevPage.setData({
+          guidelist: lis
+        })
       }
-      
     }
 
   },
@@ -134,13 +189,7 @@ Page({
       name: 'onLike',
       data: {item: Content,like: amILike},
       }).then(res=>{
-      console.log(res.errMsg)
-      console.log(res.result)
-      if(res.errMsg!="cloud.callFunction:ok"){
-        wx.showToast({
-          title: '出错了..',
-        })
-      }
+      console.log(res)
     })
   },
 

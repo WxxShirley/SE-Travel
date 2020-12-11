@@ -14,16 +14,19 @@
   </van-row>
 
   <!--驴友贴内容-->
-  <view class="post-content">
-    <van-row>
+  
+    <van-row >
       <!--占位符-->
       <van-col span="3"></van-col>
       <!--正式内容-->
       <van-col span="18" offset="3">
-        <text>{{postObj.content}} </text>
+        <view style="text-align: start">
+          <text >{{postObj.content}} </text>
+        </view>
+        
       </van-col>
     </van-row>
-  </view>
+
 
    <!--tag显示时间、性别-->
    <view class="tags">

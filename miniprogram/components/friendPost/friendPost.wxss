@@ -12,6 +12,7 @@
 .user-info{
   padding-top: 10px;
   padding-left: 15px;
+  padding-bottom: 0;
   vertical-align: center;
   text-align: start;
 }

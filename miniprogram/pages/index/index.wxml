@@ -2,14 +2,14 @@
 <view class="container">
   <view class="userinfo">
     <!--主页-->
-    <view wx:if="{{active==0}}">
-      <scroll-view scroll-y bindscrolltolower="scrollToLowermain" style="height:600px">
+    <view wx:if="{{active==0}}" id="main">
+      <scroll-view scroll-y bindscrolltolower="scrollToLowermain" style="height:800px">
         <main id="mainpage" />
       </scroll-view>
     </view>
     <!--发现页-->
-    <view wx:elif="{{active==1}}">
-      <scroll-view scroll-y bindscrolltolower="scrollToLower" style="height:600px">
+    <view wx:elif="{{active==1}}" id="find">
+      <scroll-view scroll-y bindscrolltolower="scrollToLower" style="height:800px">
         <findPage id="findPage" />
       </scroll-view>
     </view>

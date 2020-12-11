@@ -10,9 +10,16 @@
 
 
 .user-info{
-  padding-top: 10px;
+  padding-top: 0px;
   padding-left: 15px;
-  padding-bottom: 0;
+  padding-bottom: 0px;
+  vertical-align: center;
+  text-align: start;
+}
+.post-info{
+  padding-top: 0px;
+  padding-left: 15px;
+  padding-bottom: 0px;
   vertical-align: center;
   text-align: start;
 }
@@ -21,10 +28,12 @@
   width: 30px;
   height: 30px;
   padding-left: 10px;
+  padding-bottom: 0px;
 }
 
 .user-nickname{
   vertical-align: center;
+  padding-bottom: 0px;
 }
 
 .post-content{

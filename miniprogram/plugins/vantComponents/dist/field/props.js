@@ -14,7 +14,7 @@ export const commonProps = {
   disabled: Boolean,
   maxlength: {
     type: Number,
-    value: -1,
+    value: 100,
   },
   cursorSpacing: {
     type: Number,

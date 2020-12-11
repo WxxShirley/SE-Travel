@@ -3,7 +3,7 @@
 
   <!--界面元素: 用户头像与昵称-->
   <van-row class="user-info" >
-    <van-col span="3" >
+    <van-col span="4" >
       <image class="user-avatar" src="{{postObj.profile_url}}" />
     </van-col>
     <val-col >
@@ -14,16 +14,14 @@
   </van-row>
 
   <!--驴友贴内容-->
-  
-    <van-row >
-      <!--占位符-->
+    <van-row class="post-info">
+      <!-- 占位符 -->
       <van-col span="3"></van-col>
       <!--正式内容-->
-      <van-col span="18" offset="3">
+      <van-col span="18" offset="4">
         <view style="text-align: start">
           <text >{{postObj.content}} </text>
         </view>
-        
       </van-col>
     </van-row>
 
@@ -31,8 +29,8 @@
    <!--tag显示时间、性别-->
    <view class="tags">
      <van-row>
-      <van-col span="3"></van-col>
-      <van-col span="21" offset="3">
+      <van-col span="4"></van-col>
+      <van-col span="21" offset="4">
         <van-tag plain type="primary">{{postObj.demands.formatGender}}</van-tag>
        <text>{{whitespace}}</text>
       <van-tag plain type="primary">{{postObj.demands.formatTime}}</van-tag>
@@ -44,7 +42,7 @@
    <view class="post-location">
      <van-row>
       <van-col span="3"></van-col>
-      <van-col offset="3">
+      <van-col offset="4">
         <van-icon name="location-o" color="primary" style="padding-top:5px"/>
         <text style="color:grey; font-weight:400">{{postObj.demands.bindAttraction}}</text>
       </van-col>

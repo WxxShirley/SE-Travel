@@ -38,7 +38,12 @@ Page({
         data: {collection:'guide' ,_id:event.currentTarget.id}
       }).then(res=>{
         //console.log(e.detail)
-        this.loadGuide() // 重新加载
+        wx.cloud.callFunction({
+          name: 'deleteMessage',
+          data: {collection:'message',guide_id:event.currentTarget.id}
+        }).then(res=>
+          this.loadGuide() // 重新加载
+        )
       })
     },
 

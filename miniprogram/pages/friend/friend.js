@@ -99,11 +99,12 @@ Page({
       "content":this.data.txtContent,
       "demands":{
         "gender": this.data.radio,
-        "valid_time":[this.data.startDate, this.data.endDate],
+        "valid_time":[new Date(this.data.startDate), new Date(this.data.endDate)],
         "bindAttraction": this.data.attraction,
         "formatGender": formatGenders[genders.indexOf(this.data.radio)],
         "formatTime": utils.formatTime(this.data.startDate).substr(0,10)+"至"+utils.formatTime(this.data.endDate).toString().substr(0,10)
       },
+      "endTime": new Date(this.data.endDate),
       "expired":false
     }
     

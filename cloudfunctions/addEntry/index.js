@@ -14,6 +14,12 @@ exports.main = async (event, context) => {
   entry.openid = openid
   
   try{
+    if(event.collection=='searchFriend'){
+      entry.endTime = new Date(entry.endTime)
+      return await db.collection(event.collection).add({
+        data: entry,
+      })
+    }
     return await db.collection(event.collection).add({
       data: entry,
     })

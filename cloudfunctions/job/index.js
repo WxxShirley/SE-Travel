@@ -9,17 +9,28 @@ const _ = db.command
 // 云函数入口函数
 exports.main = async (event, context) => {
   const wxContext = cloud.getWXContext()
-  var date = new Date()
-  console.log(date)
+  var today = new Date()
+ 
   try{
-    /*return db.collection('searchFriend').where({
+    await db.collection('searchFriend').where({
+      'endTime': _.lte(today)
+    }).get().then(res=>{
+      console.log("find!!!")
+      //console.log(res)
+      if(res.data){
+        for(var i=0;i<res.data.length;i++){
+          console.log(res.data[i].content,res.data[i].endTime)
+        }
+      }
+    })
+    return db.collection('searchFriend').where({
       // 结束日期小于当前时间，设置为过期
-      'demands.valid_time.1':_.lt(date+1)
+      'endTime': _.lte(today)
     })
     .update(
       {data:{expired: true}}
-    )*/
-
+    )
+   
   }catch(e){
     console.log(e)
     return e

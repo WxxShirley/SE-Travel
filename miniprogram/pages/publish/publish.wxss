@@ -96,6 +96,7 @@
   display: inline-block;
   margin: 18rpx 42rpx 10rpx;
   font-size: 33rpx;
+  justify-content: center;
 }
 .tag-scroll-view {
   display: flex;
@@ -103,22 +104,32 @@
   white-space: nowrap;
   color: #727177;
 }
+
 .tag-rich-tab-bar {
   background-color: #f4f4f4;
   position: relative;
   bottom: 0;
-  width: 750rpx;
-  height: 310rpx;
+  justify-content: center; 
+  height: 410rpx;
   display: flex;
   flex-direction: column;
-  align-items: stretch;
+  align-items: center;
   z-index: 19980119;
 }
+
 .tag-type-scroll-view {
   display: flex;
   flex-direction: row;
   white-space: nowrap;
   color: #808085;
+  justify-content: center;
+  align-items: center;
+  width:300rpx;
+}
+.Tag{
+  display: flex;
+  justify-content: center;  /*水平*/
+  align-items: center; /*垂直*/
 }
 @keyframes rich-tab-bar-open {
   from {

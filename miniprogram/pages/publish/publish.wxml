@@ -36,6 +36,11 @@
 </view>
 <!--选择标签-->
 <view class='tag-rich-tab-bar' style='animation:{{ TagAnimation }} 0.3s;bottom:{{ TagBottom }};' wx:if='{{ TagRichTabBarDidOpen }}'>
+    <van-cell-group>
+    <van-field value="{{ addTag }}" center clearable label="自定义标签" placeholder="请输入标签" border="{{ false }}" bind:change="onChange" use-button-slot>
+    <van-button slot="button" size="small" type="primary" bindtap="onAdd">添加</van-button>
+    </van-field>
+    </van-cell-group>
     <scroll-view class='tag-type-scroll-view' scroll-x bindtap='onTagTypeTap'>
       <view class='tag-type' data-type='tourist_attraction' style='color:{{ TagTypes[0].color }}'>景点</view>
       <view class='tag-type' data-type='character' style='color:{{ TagTypes[1].color }}'>其他</view>

@@ -7,7 +7,15 @@ const cloud = require('wx-server-sdk')
 cloud.init({env: 'env-dev-6gb5dffd859b69ee'})
 const db = cloud.database()
 exports.main = async (event, context) => {
-  
+  if( event.isMessage!=null){
+    console.log("del message!")
+    return await db.collection('message').where({
+       guide_id: event.guide_id
+    }).remove().then(res=>{
+    console.log(res)
+  })
+    
+  }
   try{
     return await db.collection(event.collection).doc(event._id).remove().then(res=>{
       console.log(res)

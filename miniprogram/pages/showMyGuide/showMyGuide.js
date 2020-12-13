@@ -13,7 +13,7 @@ Page({
   loadGuide: function(){
     // 加载自己的攻略
     var that = this
-    wx.showLoading({ title: '正在加载',})
+    wx.showLoading({ title: '',})
     wx.cloud.callFunction({
       name: 'loadUserAll',
       data: {collection: 'guide'},
@@ -33,17 +33,20 @@ Page({
       const { position, instance } = event.detail;
       var that = this
       console.log(position,instance)
+      console.log(event.currentTarget.id);
       wx.cloud.callFunction({
-        name: 'deleteMessage',
-        data: {collection:'message' ,guide_id:event.currentTarget.id}
-      }).then(res=>{
+        name: 'deleteEntry',
+        data:{isMessage:true,guide_id:event.currentTarget.id}
+      }).then(res=>
+        {
         wx.cloud.callFunction({
           name: 'deleteEntry',
           data: {collection:'guide',_id:event.currentTarget.id}
-        }).then(res=>
+        }).then(result=>
           this.loadGuide() // 重新加载
         )
-      })
+      }
+      )
     },
 
     gotoDetail: function(e){

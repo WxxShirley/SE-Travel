@@ -34,13 +34,12 @@ Page({
       var that = this
       console.log(position,instance)
       wx.cloud.callFunction({
-        name: 'deleteEntry',
-        data: {collection:'guide' ,_id:event.currentTarget.id}
+        name: 'deleteMessage',
+        data: {collection:'message' ,guide_id:event.currentTarget.id}
       }).then(res=>{
-        //console.log(e.detail)
         wx.cloud.callFunction({
-          name: 'deleteMessage',
-          data: {collection:'message',guide_id:event.currentTarget.id}
+          name: 'deleteEntry',
+          data: {collection:'guide',_id:event.currentTarget.id}
         }).then(res=>
           this.loadGuide() // 重新加载
         )

@@ -39,6 +39,16 @@
 [开发文档](https://github.com/WxxShirley/SE-Travel/blob/master/docs/Sprint3%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3.md)
 
 
+**测试出现的问题**
+* UI：基本fix
+  - [x]部分text-overflow
+  - [x]消息页显示
+  - [x]地图视图区别景点和周围景点
+  - [ ]发布攻略tag显示
+  
+* 逻辑：
+  - [x]删除攻略时消息级联删除
+
 ## 帮助文档
 
 - 后端

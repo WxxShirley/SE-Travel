@@ -14,7 +14,7 @@
   </van-row>
 
   <!--驴友贴内容-->
-    <van-row class="post-info">
+    <van-row >
       <!-- 占位符 -->
       <van-col span="3"></van-col>
       <!--正式内容-->

@@ -19,7 +19,8 @@
     "components/personal/userFeedback/userFeedback",
     "pages/footmark/footmark",
     "pages/showMyGuide/showMyGuide",
-    "pages/publish/chooseTag"
+    "pages/publish/chooseTag",
+    "pages/diary/showOneDiary/showOneDiary"
   ],
   "cloud": true,
   "permission": {

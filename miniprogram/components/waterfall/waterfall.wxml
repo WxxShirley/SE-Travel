@@ -10,6 +10,11 @@
           
         </view>
           <view class="user-info">
+            <view class="tags">
+              <block wx:for="{{tools.subTags(item.tags)}}" wx:key="index">
+                <view class="tag">{{item}}</view>
+              </block>
+            </view>
             <image round class="avatar" src="{{item.user_avatar}}" />
             {{item.nickname?tools.subStr(item.nickname): "用户233"}} 
             <van-icon id="{{index}}"  name="like" wx:if="{{item.amILike==true}}" color="#1989fe" class="tail-text" bindtap="onBindtap"/>

@@ -5,6 +5,16 @@ var subStr = function(val){
   return val
 }
 
+var subTags = function(tagList){
+  var returnTags = []
+  var  len = Math.min(4,tagList.length)
+  for(var i=0;i<len;++i){
+    returnTags.push(tagList[i])
+  }
+  return returnTags 
+}
+
 module.exports = {
-  subStr: subStr
+  subStr: subStr,
+  subTags: subTags
 }

@@ -34,7 +34,7 @@ Component({
       {text:'外滩', value:'外滩'},
       {text:'迪士尼', value:'迪士尼'},
       {text:'欢乐谷', value:'欢乐谷'},
-      {text:'上海科技馆', value:'上海科技馆'},
+      {text:'科技馆', value:'科技馆'},
       {text:'朱家角', value:'朱家角'},
       {text:'豫园', value:'豫园'},
     ],
@@ -108,9 +108,7 @@ Component({
       })
     },
     
-    // TODO: 控制联合筛选条件
-    // TODO: 调整卡片同样宽度
-
+   
     // 用户点击性别筛选时触发
     onGenderChange: function(e){
       this.data.gender_choice=e.detail
@@ -129,7 +127,6 @@ Component({
             searchFriendPostsShow: showList
           })
         }
-       // this.setData({searchFriendPostsShow:this.data.searchFriendPosts})
       }else{
         var that = this
         var showList = this.data.searchFriendPosts.filter(function(obj){
@@ -168,9 +165,13 @@ Component({
         var that = this
         var showList = this.data.searchFriendPosts.filter(function(obj){
             if(that.data.gender_choice=='random')
-              return  obj.demands.bindAttraction==e.detail
+              //return  obj.demands.bindAttraction==e.detail
+              // 查找景区中包含了过滤条件的
+              // 比如过滤条件是“迪士尼”(e.detail)，能够匹配“上海迪士尼” “迪士尼乐园”
+              return obj.demands.bindAttraction.search(e.detail)!=-1
             else
-              return obj.demands.bindAttraction==e.detail && obj.demands.gender==that.data.gender_choice
+              //return obj.demands.bindAttraction==e.detail && obj.demands.gender==that.data.gender_choice
+              return obj.demands.bindAttraction.search(e.detail)!=-1 && obj.demands.gender==that.data.gender_choice
         })
         this.setData({searchFriendPostsShow:showList})
       }

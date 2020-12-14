@@ -88,11 +88,8 @@ Page({
   publish: function(e){
     let desc = this.data.desc; // 用户文本内容
     let imgList = this.data.imgList; // 上传图片集合
-    var tags = []
-    for(var x in this.data.tags)
-    {
-      tags.push(this.data.tags[x].tag)
-    }
+    var tags = this.data.tags
+   
     if(!desc || desc.length<5){
       wx.showToast({
         icon: "none", title:"内容长度需要大于5"

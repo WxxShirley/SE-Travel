@@ -1,0 +1,19 @@
+/* miniprogram/pages/diary/showOneDiary/showOneDiary.wxss */
+
+.diary-wrapper{
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top:60px;
+}
+
+.show-diary{
+
+    position: absolute;
+    top: 65rpx;
+    display: block;
+    width: 660rpx;
+    height:980rpx;
+    border-radius: 12rpx;
+    box-shadow: 2rpx 2rpx 18rpx #5b5a5b;
+   
+}

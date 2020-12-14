@@ -2,7 +2,7 @@
 
 .flex-container {
   padding: 30rpx;
-  background-color: #fff;
+  
   height: 100%;
   display: flex;
   flex-flow: row wrap;

@@ -31,6 +31,7 @@
   display: inline-block;
   width: 65px;
   height: 44px;
+  padding-top: 45px;
   font-size: 15px;
   line-height: 44px;
   color: #fff;

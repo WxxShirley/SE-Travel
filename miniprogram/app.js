@@ -36,7 +36,7 @@ App({
                  target_nickname: this.globalData.userInfo.nickName,
                }).watch({
                  onChange: function(snapshot){
-                  console.log('changed events:',snapshot.docChanges)
+                
                   if(snapshot.type == 'init') {
                     wx.cloud.callFunction({
                       name: 'cf',

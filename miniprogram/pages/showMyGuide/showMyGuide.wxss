@@ -29,11 +29,11 @@
 .van-swipe-cell__right {
   display: inline-block;
   width: 65px;
-  height: 44px;
+  
   font-size: 15px;
-  line-height: 44px;
+  padding-top: 35px;
   color: #fff;
   text-align: center;
   background-color: #f44;
-  vertical-align: center;
+  vertical-align: middle;
 }

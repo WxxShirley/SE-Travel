@@ -30,11 +30,12 @@
 }
 
 .detail-content{
-  color: #C0C0C0;
+  color: #C0C0CC;
   text-align: start;
   padding-top:0px;
   padding-left:5px;
   margin-top: 0px;
+  font-weight: 500;
 }
 
 .avatar{
@@ -50,4 +51,26 @@
 .user-info{
   text-align: start;
   padding-left:5px;
+}
+
+.tags{
+  overflow: hidden;
+  width: 90%;
+  background-color: white;
+  margin-bottom: 5px;
+}
+
+.tag{
+  float: left;
+  font-size: 12px;
+  color: rgb(161, 160, 160);
+  
+  border: 1pt solid #1989fa;
+  border-radius: 16px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  margin-left: 3px;
+  margin-bottom: 5px;
 }

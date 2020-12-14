@@ -1,0 +1,6 @@
+<!--miniprogram/pages/diary/showOneDiary/showOneDiary.wxml-->
+
+
+<view class="diary-wrapper">
+  <image  class="show-diary"  src="{{imgSrc}}" ></image>
+</view>

@@ -75,5 +75,11 @@ Component({
         }
       })
     },
+    onJournalTap: function(e){
+      console.log(this.data.previewImageUrl)
+      wx.navigateTo({
+        url: '../../diary/showOneDiary/showOneDiary?path='+this.data.previewImageUrl,
+      })
+    }
   }
 })

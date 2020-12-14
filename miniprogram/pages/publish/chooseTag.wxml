@@ -1,0 +1,47 @@
+<!--miniprogram/pages/publish/chooseTag.wxml-->
+
+<!--展示用户已经添加的的tags-->
+<view class="hmly-like">
+  <view class="hmly-bar-title">
+    <view class="hmly-title-left">已选标签</view>
+  </view>
+</view>
+<view class="tagRoot">
+  <block wx:for="{{tags}}" wx:key="id">
+    <view >
+      <van-tag  closeable round size="medium" type="primary" id="{{index}}" bind:close="onClosetag">{{item}}</van-tag>
+    </view>
+  </block>
+</view>
+
+<!--用户自定义标签-->
+<view class="hmly-like">
+  <view class="hmly-bar-title">
+    <view class="hmly-title-left">自定义标签</view>
+  </view>
+</view>
+<van-cell-group>
+  <van-field value="{{addTag}}" placeholder="自定义标签内容" border="{{false}}" bind:change="inputTag" use-button-slot>
+    <van-button slot="button" size="small" type="primary" color="#1989fa" center clearable bindtap="onAddTag">添加</van-button>
+  </van-field>
+</van-cell-group>
+
+<!--以分区模式选择景区标签-->
+<view class="hmly-like">
+  <view class="hmly-bar-title">
+    <view class="hmly-title-left">选择景区标签</view>
+  </view>
+</view>
+<view class="area-show">
+  <van-tree-select items="{{districts}}" height="80vw" main-active-index="{{mainActiveIndex}}" active-id="{{activeId}}" bind:click-nav="onClickNav" bind:click-item="onClickItem">
+       
+  </van-tree-select>
+</view>
+
+<!--确认-->
+<view class="submit">
+  <van-button icon="add" class="sub" type="info" bindtap="submitTags" block>确认</van-button>
+</view>
+
+
+

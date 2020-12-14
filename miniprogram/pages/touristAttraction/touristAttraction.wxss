@@ -1,6 +1,6 @@
 /* pages/touristAttraction/touristAttraction.wxss */
 .search-bar{
-  width: 90%;
+  width: 100%;
 }
 
 

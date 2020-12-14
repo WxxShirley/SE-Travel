@@ -1,0 +1,30 @@
+/* miniprogram/pages/publish/chooseTag.wxss */
+
+.hmly-title-left{
+  padding-left:15px;
+  float: left;
+  font-size: 37rpx;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: 800;
+  color: #1989fa;
+}
+
+.tagRoot {
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+  display: flex;
+  display: -webkit-flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+
+.submit{
+  margin-left: 15px;
+  margin-right:15px;
+  margin-top:30px;
+}

@@ -93,9 +93,9 @@ Page({
     {
       tags.push(this.data.tags[x].tag)
     }
-    if(!desc || desc.length<20){
+    if(!desc || desc.length<5){
       wx.showToast({
-        icon: "none", title:"内容长度需要大于20"
+        icon: "none", title:"内容长度需要大于5"
       })
       return 
     }
@@ -197,13 +197,16 @@ showTagRichTabBar: function() {
   })
 },
 onTagTabTap: function() {
-  var that = this,
+  /*var that = this,
     flag = this.data.TagRichTabBarDidOpen
 
   this.onRefreshView(function() {
     if (!flag) {
       that.showTagRichTabBar()
     }
+  })*/
+  wx.navigateTo({
+    url: '../publish/chooseTag',
   })
 },
 

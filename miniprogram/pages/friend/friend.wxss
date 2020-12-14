@@ -11,6 +11,7 @@
   border: solid 1px gainsboro;
   margin: 1%;
   height: 300rpx;
+  background-color: white;
 }
 .mf{
   

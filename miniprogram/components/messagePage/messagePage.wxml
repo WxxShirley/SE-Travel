@@ -4,7 +4,7 @@
 
 
 <!--攻略获赞-->
-<view  class="likes-content">
+<view  class="likes-content" style="margin-bottom:50px;">
   <block wx:for="{{likeNotice}}" wx:key="index">
     <van-cell  value="{{tools.subStr(item.timestamp,16)}}">
        <view slot="title">

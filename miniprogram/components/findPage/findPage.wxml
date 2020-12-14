@@ -6,7 +6,7 @@
 </van-tabs>
 
 <!--瀑布流显示 景点-攻略-->
-<view wx:if="{{active==0}}" class="content">
+<view wx:if="{{active==0}}" class="content" style="margin-bottom:50px;">
   <view class="left">
     <waterfall dataset="{{leftList}}" binditemChange="handleItemLeftChange" />
   </view>
@@ -23,7 +23,7 @@
 
 
 <!--显示寻找驴友-->
-<view style="height:100%" wx:if="{{active==1}}">
+<view style="height:100%;" wx:if="{{active==1}}">
 <view  >
    <!--筛选-->
     <van-dropdown-menu>

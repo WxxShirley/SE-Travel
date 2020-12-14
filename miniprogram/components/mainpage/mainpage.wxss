@@ -91,6 +91,7 @@
   flex-direction: row;
   margin: 20rpx;
   overflow: hidden;
+  margin-bottom: 50px;
 }
 
 .left{

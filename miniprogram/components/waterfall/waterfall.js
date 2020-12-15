@@ -45,15 +45,6 @@ Component({
         data: {item: Content,like: amILike},
        }).then(res=>{
          console.log(res)
-       /* console.log(res.errMsg)
-        console.log(res.result)
-
-        if(res.errMsg!="cloud.callFunction:ok"){
-          wx.showToast({
-            title: '出错了..',
-          })
-        }
-       */
 
       })
     },

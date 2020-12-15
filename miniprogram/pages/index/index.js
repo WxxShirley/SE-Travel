@@ -77,7 +77,6 @@ Page({
   // 监听滚动条坐标, 如果滚动超过600，则出现“返回顶部”的按钮
   onPageScroll: function(e){
     let scrollTop = e.scrollTop
-    //console.log(scrollTop)
     let backTopValue = scrollTop>400?true:false;
     this.setData({backTopValue})
   },

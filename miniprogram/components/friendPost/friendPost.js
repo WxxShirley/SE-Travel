@@ -14,6 +14,10 @@ Component({
         timestamp:""
       }
     },
+    showLine:{
+      type:Boolean,
+      value: true
+    }
   },
 
   /**
@@ -33,6 +37,8 @@ Component({
 
   lifetimes:{
     attached:function(){
+
+      console.log(this.data.showLine)
     }
   },
   methods:{

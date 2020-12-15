@@ -1,4 +1,5 @@
 <!--pages/touristAttraction/touristAttraction.wxml-->
+<view class="wrapper">
 <!--搜索框-->
 <view class="search-bar">
   <van-search  placeholder="请输入你想去的地方" show-action bindtap="onSearchTap"/>
@@ -17,4 +18,5 @@
   <van-tree-select items="{{districts}}" height="60vw" main-active-index="{{mainActiveIndex}}" active-id="{{activeId}}" bind:click-nav="onClickNav" bind:click-item="onClickItem">
        
   </van-tree-select>
+</view>
 </view>

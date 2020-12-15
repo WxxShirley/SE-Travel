@@ -1,6 +1,7 @@
 Page({
   data: {
     friendPost: [], //searchFriend
+    falseVar: false
   },
 
   /**
@@ -25,22 +26,25 @@ Page({
     })
   },
 
- 
+  // 删除驴友帖，先弹出选择确认框 防止用户误删  
     deletePost: function(event) {
-      console.log(event)
-      const { position, instance } = event.detail;
       var that = this
-      console.log(position,instance)
-      wx.cloud.callFunction({
-        name: 'deleteEntry',
-        data: {collection:'searchFriend' ,_id:event.currentTarget.id}
-      }).then(res=>{
-        //console.log(e.detail)
-        this.loadFriend() // 重新加载
+      
+      wx.showModal({
+        title: '提示',
+        content: '确定删除驴友帖吗？',
+        success: res => {
+          if (res.confirm) {
+            wx.cloud.callFunction({
+              name: 'deleteEntry',
+              data: {collection:'searchFriend' ,_id:event.currentTarget.id}
+            }).then(res=>{
+              //console.log(e.detail)
+              that.loadFriend() // 重新加载
+            })
+          }
+        }
       })
     },
-  
-
-
   
 })

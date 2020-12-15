@@ -4,11 +4,13 @@
   -->
   <view wx:for="{{friendPost}}" wx:key="index">
     <van-swipe-cell right-width="{{ 65 }}" async-close bind:close="deletePost" id="{{item._id}}">
-      <friendPost  postObj="{{item}}" />
-      <view slot="right" >
+      <friendPost  postObj="{{item}}"  showLine="{{falseVar}}" />
+      <view style="margin-bottom:10px" slot="right" >
           删除
       </view>
+    
     </van-swipe-cell>
+    <van-divider />
   </view> 
 </view>
 <view class='empty' wx:if='{{ friendPost.length === 0 }}'>

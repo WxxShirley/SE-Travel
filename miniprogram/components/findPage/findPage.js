@@ -121,7 +121,9 @@ Component({
         }else{
           var that = this
           var showList = this.data.searchFriendPosts.filter(function(obj){
-              return  obj.demands.bindAttraction==that.data.attraction_choice
+              return  obj.demands.bindAttraction.search(that.data.attraction_choice)!=-1
+              //obj.demands.bindAttraction==that.data.attraction_choice
+              
         })
           this.setData({
             searchFriendPostsShow: showList
@@ -133,7 +135,8 @@ Component({
           if(that.data.attraction_choice=='景区不限')
             return obj.demands.gender==e.detail
           else
-            return obj.demands.gender==e.detail && obj.demands.bindAttraction==that.data.attraction_choice
+            return obj.demands.gender==e.detail &&  obj.demands.bindAttraction.search(that.data.attraction_choice)!=-1
+            //obj.demands.bindAttraction==that.data.attraction_choice
         })
         console.log(showList)
         this.setData({
@@ -155,7 +158,7 @@ Component({
           }else{
             var that = this
             var showList = this.data.searchFriendPosts.filter(function(obj){
-                return  obj.demands.gender==that.data.gender_choice
+                return  obj.demands.gender==that.data.gender_choice 
           })
             this.setData({
               searchFriendPostsShow: showList

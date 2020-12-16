@@ -2,11 +2,24 @@
 <map markers="{{markers}}" longitude="{{longitude}}" latitude="{{latitude}}" scale="{{scale}}" style="width:100%;height:700px" bindmarkertap="markertap" bindcallouttap="markertap" >
 </map>
 
-<view class="mask" catchtouchmove="preventTouchMove" wx:if="{{showModal}}">
-</view>
-<view class="modalDlg" wx:if="{{showModal}}">
-   <image src="{{tappedGuide.imgSrc}}" >
-   </image>
-   <text>{{tappedGuide.shortDescrip}}</text>
-   <button bindtap="go">点击关闭</button>
+<view class="story-area {{ showModal ? 'show' : '' }}" catchtap="go">
+   <view class="main" catchtap="noGo">
+      <view class="box">
+         <view class="title-area">
+            <view class="title">{{ tappedGuide.title }}
+         </view>
+      </view>
+      <scroll-view scroll-x class="images-area">
+         <view class="images-scroll">
+            <block wx:for="{{ tappedGuide.imgList }}" wx:for-item="todo" wx:for-index="index" wx:key="index">
+              <image class="img-each" mode="aspectFill" src="{{ todo }}" catchtap="showAllScreen" data-url="{{ todo }}"></image>
+            </block>
+          </view>
+        </scroll-view>
+        <view class="content-area">
+          <view class="contnet">{{ tappedGuide.shortDescrip }}</view>
+          <view class="content-mask"></view>
+        </view>
+    </view>
+  </view>
 </view>

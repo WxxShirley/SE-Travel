@@ -11,7 +11,7 @@ Page({
     markers: [],
     // 被用户点击的攻略
     showModal: false,
-    tappedGuide: null 
+    tappedGuide: null,
   },
 
   onLoad() {
@@ -68,7 +68,7 @@ Page({
   markertap(e) {
     this.setData({
       tappedGuide: this.data.guides[Number(e.markerId)],
-      showModal: true
+      showModal: true,
     })
   },
 
@@ -76,5 +76,9 @@ Page({
     this.setData({
     showModal: false
     })
-}
+  },
+
+  noGo: function() { 
+    return;
+  },  
 })

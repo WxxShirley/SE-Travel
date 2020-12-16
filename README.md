@@ -21,26 +21,13 @@
 
 ## 开发
 
-**Sprint1**：
-> 这一阶段我们构建上海市景区数据集，提供景区搜索、展示详细信息、实时热门景区和景区评分的功能
+| 开发阶段 | 工作内容                                                     | 文档                                                         |
+| -------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| Sprint1  | 构建上海市景区数据集，提供景区搜索、展示详细信息、实时热门景区和景区评分的功能 | [文档](https://github.com/WxxShirley/SE-Travel/blob/master/docs/Sprint1%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3.md) |
+| Sprint2  | 地图服务， 我的手帐静态展示、保存图片和个人中心查看所有， 寻找驴友服务中发布驴友贴， 发布攻略服务中发布和**瀑布流**展示攻略 | [文档](https://github.com/WxxShirley/SE-Travel/blob/master/docs/Sprint2%E5%BC%80%E5%8F%91.md) |
+| Sprint3  | 完善攻略服务(攻略点赞、详情界面)，以及个性化服务(管理驴友帖、手帐、攻略，生成个性化足迹、首页推荐、成就达成). 补充服务：隐私条款+联系我们 | [文档](https://github.com/WxxShirley/SE-Travel/blob/master/docs/Sprint3%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3.md) |
+| 测试     | 对景区、手帐、攻略、驴友帖、个性化五大服务分别测试           | [记录](https://github.com/WxxShirley/SE-Travel/blob/master/docs/%E4%BF%AE%E5%A4%8D%E9%97%AE%E9%A2%98%E5%90%88%E9%9B%86.md) |
 
-[开发文档](https://github.com/WxxShirley/SE-Travel/blob/master/docs/Sprint1%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3.md)
-
-**Sprint2**:
-> 这一阶段 完成的功能包括：地图服务， 我的手帐静态展示、保存图片和个人中心查看所有， 寻找驴友服务中发布驴友贴， 发布攻略服务中发布和**瀑布流**展示攻略
-
-[开发文档](https://github.com/WxxShirley/SE-Travel/blob/master/docs/Sprint2%E5%BC%80%E5%8F%91.md)
-
-
-**Sprint3**
-
-> 这一阶段完善攻略服务(攻略点赞、详情界面)，以及个性化服务(管理驴友帖、手帐、攻略，生成个性化足迹、首页推荐、成就达成). 补充服务：隐私条款+联系我们
-
-[开发文档](https://github.com/WxxShirley/SE-Travel/blob/master/docs/Sprint3%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3.md)
-
-
-**测试出现的问题及解决**
-[文档记录](https://github.com/WxxShirley/SE-Travel/blob/master/docs/%E4%BF%AE%E5%A4%8D%E9%97%AE%E9%A2%98%E5%90%88%E9%9B%86.md)
 
 
 ## 帮助文档

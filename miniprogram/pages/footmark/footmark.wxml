@@ -17,7 +17,7 @@
           </view>
         </scroll-view>
         <view class="content-area">
-          <view class="contnet">{{ tappedGuide.shortDescrip }}</view>
+          <view class="contnet">{{ tappedGuide.txt_content }}</view>
           <view class="content-mask"></view>
         </view>
     </view>

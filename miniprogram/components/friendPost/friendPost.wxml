@@ -49,5 +49,5 @@
       
      </van-row>
    </view>
-   <van-divider />
+   <van-divider wx:if="{{showLine}}"/>
 </view>

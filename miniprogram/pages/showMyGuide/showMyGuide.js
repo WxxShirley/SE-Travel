@@ -32,21 +32,29 @@ Page({
       console.log(event)
       const { position, instance } = event.detail;
       var that = this
-      console.log(position,instance)
-      console.log(event.currentTarget.id);
-      wx.cloud.callFunction({
-        name: 'deleteEntry',
-        data:{isMessage:true,guide_id:event.currentTarget.id}
-      }).then(res=>
-        {
-        wx.cloud.callFunction({
-          name: 'deleteEntry',
-          data: {collection:'guide',_id:event.currentTarget.id}
-        }).then(result=>
-          this.loadGuide() // 重新加载
-        )
-      }
-      )
+      
+      // 加入提示逻辑 防止误删
+      wx.showModal({
+        title: '提示',
+        content: '确定删除攻略吗？',
+        success: res => {
+          if (res.confirm) {
+            wx.cloud.callFunction({
+              name: 'deleteEntry',
+              data:{isMessage:true,guide_id:event.currentTarget.id}
+            }).then(res=>
+              {
+              wx.cloud.callFunction({
+                name: 'deleteEntry',
+                data: {collection:'guide',_id:event.currentTarget.id}
+              }).then(result=>
+                that.loadGuide() // 重新加载
+              )
+            }
+            )
+          }
+        }
+      })
     },
 
     gotoDetail: function(e){

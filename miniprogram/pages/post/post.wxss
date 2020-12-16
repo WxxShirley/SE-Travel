@@ -1,11 +1,8 @@
 /* miniprogram/pages/post/post.wxss */
 
 .flex-container {
-  padding: 5rpx;
-  background-color: #fff;
   
- 
-  margin-left: 10px;
+  margin-left: 5px;
   margin-right: 10px;
 }
 
@@ -30,7 +27,7 @@
 .van-swipe-cell__right {
   display: inline-block;
   width: 65px;
-  height: 44px;
+  height: 34px;
   padding-top: 45px;
   font-size: 15px;
   line-height: 44px;
@@ -38,4 +35,5 @@
   text-align: center;
   background-color: #f44;
   vertical-align: center;
+  
 }

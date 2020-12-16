@@ -1,4 +1,8 @@
 /* pages/touristAttraction/touristAttraction.wxss */
+.wrapper{
+  background-color: white;
+}
+
 .search-bar{
   width: 100%;
 }

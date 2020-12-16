@@ -35,8 +35,8 @@ Page({
             longitude: res.result.data[i].longitude,
             latitude: res.result.data[i].latitude,
             iconPath: iconPath,
-            width: 20,
-            height: 20,
+            width: 30,
+            height: 30,
             anchor: {
               x: 0.5,
               y: 0.5

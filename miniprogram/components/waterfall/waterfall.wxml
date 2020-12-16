@@ -17,9 +17,13 @@
             </view>
             <image round class="avatar" src="{{item.user_avatar}}" />
             {{item.nickname?tools.subStr(item.nickname): "用户233"}} 
-            <van-icon id="{{index}}"  name="like" wx:if="{{item.amILike==true}}" color="#1989fe" class="tail-text" bindtap="onBindtap"/>
-            <van-icon id="{{index}}" wx:else name="like-o" color="gray" class="tail-text" bindtap="onBindtap"/>
-            <text class="tail-text">{{item.like}}</text>
+
+           
+               <van-icon id="{{index}}"  name="like" wx:if="{{item.amILike==true}}" color="#1989fe" class="tail-text" bindtap="onBindtap"/>
+               <van-icon id="{{index}}" wx:else name="like-o" color="gray" class="tail-text" bindtap="onBindtap"/>
+               <text class="tail-text">{{item.like+" "}}</text>
+            
+      
           </view>
         </view>
     </block>

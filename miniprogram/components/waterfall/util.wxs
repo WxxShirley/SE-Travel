@@ -1,5 +1,7 @@
 
 var subStr = function(val){
+  if(val[0]>='a'&&val[0]<='z' || val[0]>='A'&&val[0]<='Z')
+     return val.substring(0,12)+"..."
   if(val.length>6)
     return val.substring(0,6)+".."
   return val

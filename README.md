@@ -1,14 +1,22 @@
 # 沪驴
 👣 一款提供上海市旅行、交友、攻略手帐的微信小程序。复旦软件工程化开发小组项目。
 
+Copyright (c) 2020 by [Bingyu Tang](https://github.com/TangBingyu), [Ruiyang Zhang](https://github.com/Ruiyang-061X), [Yuzhen Zhang](https://github.com/zyzeat), [Kaiqi Zhou](https://github.com/kyraazhou), [Xinyi Zhou](https://github.com/veghen), [Zijing Huang](https://github.com/kawaiihzj123) and Xixi Wu @Fudan Univerisity
+
 
 ## 功能
-* 景区展示，包括**上海市所有景区**。提供完备的景区地图和景区介绍服务
-* 编写旅行手帐，提供丰富的贴纸组件可以自由移动，编写属于自己的**个性化**旅行手帐。可**保存到相册**
-* 发布和查看旅行攻略，瀑布流实现
-* 发布和查看招募驴友的帖子，提供筛选功能
-* 个性化服务，包括我的足迹、我的成就；个人的发帖、攻略管理
+* 景区展示，包括**上海市所有景区**,提供完备的景区地图和景区介绍服务。支持景区查询及分当季、热门、上海市各个区景点展示
+* 编写旅行手帐，提供丰富的贴纸组件可以自由移动，编写属于自己的**个性化**旅行手帐。可生成预览图，可**保存到相册**
+* 发布旅行攻略，支持多图、多标签，发现页瀑布流滑动展示，支持攻略点赞和消息实时提示
+   * 根据攻略生成个性化足迹，以上海市为中心的足迹地图，点击展示攻略卡片
+* 发布和查看招募驴友的帖子，提供**筛选功能**
+* 个性化服务，包括**我的足迹、我的成就、主页推荐、多项个人内容管理**
+* 补充服务:隐私条款说明,发送反馈和查看历史反馈
 
+扫码体验
+
+
+![QRcode](https://github.com/WxxShirley/SE-Travel/blob/master/QR.jpeg)
 
 ## 运行
 

@@ -13,10 +13,6 @@ Copyright (c) 2020 by [Bingyu Tang](https://github.com/TangBingyu), [Ruiyang Zha
 * 个性化服务，包括**我的足迹、我的成就、主页推荐、多项个人内容管理**
 * 补充服务:隐私条款说明,发送反馈和查看历史反馈
 
-扫码体验
-
-
-![QRcode](https://github.com/WxxShirley/SE-Travel/blob/master/QR.jpeg)
 
 ## 运行
 

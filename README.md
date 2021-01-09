@@ -3,6 +3,8 @@
 
 Copyright (c) 2020 by [Bingyu Tang](https://github.com/TangBingyu), [Ruiyang Zhang](https://github.com/Ruiyang-061X), [Yuzhen Zhang](https://github.com/zyzeat), [Kaiqi Zhou](https://github.com/kyraazhou), [Xinyi Zhou](https://github.com/veghen), [Zijing Huang](https://github.com/kawaiihzj123) and Xixi Wu @Fudan Univerisity
 
+## 扫码体验
+![QRcode](https://github.com/WxxShirley/SE-Travel/blob/master/QR.jpeg)
 
 ## 功能
 * 景区展示，包括**上海市所有景区**,提供完备的景区地图和景区介绍服务。支持景区查询及分当季、热门、上海市各个区景点展示

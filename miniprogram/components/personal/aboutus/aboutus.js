@@ -8,12 +8,7 @@ Page({
     developer_avatars:[
       "https://thirdwx.qlogo.cn/mmopen/vi_32/g4vibWFiazOIkPNbd7sbfB4icpUWlfRwUJgOF6NwleibStseSWicEZ6JEYa9DcWVg5xibVe5ichDMnPqov7GLq0lLibrCg/132",
       "https://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTK62gfVmfeQEdOKl1GDSHAqwoh2ntIXLT4BR0vI5icSxKJOQMuxuohBJJ40Vml0M1yF1xE4niaeLqKA/132",
-      "https://thirdwx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTIr5qh5IzgYO7MtvB7K7kG4hjnN7muQT4TAS5GsovDTxl01m4tAvsSWLTjMqOP4peJiaOSen586rmA/132",
-
-      "https://thirdwx.qlogo.cn/mmopen/vi_32/HfLUbVtSwDmNaBZ0eJtalK31bayVicRkbiasibCSG4KawnDlkRtF1QzS6FrPAibZmt5E8rGoB9cWUVSyDJFvhtRoiaQ/132",
-      "https://thirdwx.qlogo.cn/mmopen/vi_32/NGib8v9Lml2JgBibjLeHwea7fawVTnv8q7qlpIFTuE2BpmJAQic4E61KfaJqmomhicmP748AkufKreOjdDwov9ZHxw/132",
-      "https://thirdwx.qlogo.cn/mmopen/vi_32/yMOVAClJad9G4DPeibnOzIthqjiaQvWeClm3UV22Oric4ibsI0Bf3XRhEBfWWCelicCffskCTTXrcibTAibJbpQ8xoVNQ/132",
-      "https://thirdwx.qlogo.cn/mmopen/vi_32/ficTmdLUSNV3t9YCOmwuuzrBwLAHPTaWgLOcFYnxCibYRJMT2kBw17BiaLkYTHoRgsF2KGolIAPtgVaW7ZKFGa5Dw/132"
+      "cloud://env-dev-4g6anmt6c45832a8.656e-env-dev-4g6anmt6c45832a8-1303853824/WechatIMG1122.png"
     ]
   },
 

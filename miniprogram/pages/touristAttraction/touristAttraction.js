@@ -14,13 +14,14 @@ Page({
     wx.showLoading({
       title: '加载中...',
     })
-    wx.cloud.database().collection('touristAttraction').orderBy('hotDegree','desc')
-    .get()
+    wx.cloud.database().collection('touristAttraction').orderBy('hotDegree','desc').get()
     .then(res=>{
+       console.log(res.data)
         var hotList = res.data.slice(0,3)
         for(var i=0;i<3;i++){
           hotList[i].imgSrc = hotList[i].imgSrc[0]
         }
+        console.log(hotList)
         this.setData({hotPlace:hotList,})
         wx.hideLoading()
      })

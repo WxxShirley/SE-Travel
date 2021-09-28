@@ -5,6 +5,119 @@
 
 // districtMp: 上海市行政区到对应景点的映射
 var districtMp = [
+{
+  text:'姑苏区',
+  dot: false,
+  children: [
+    {text:'拙政园', id: 151},
+    {text:'虎丘山风景名胜区', id:153},
+    {text:'寒山寺', id:156},
+    {text:'狮子林', id:157},
+    {text:'留园', id:158},
+    {text:"山塘街", id:158},
+    {text:"网师园", id:165},
+    {text:"沧浪亭", id:168},
+    {text:"苏州古运河", id:171},
+    {text:"苏州博物馆", id:177},
+    {text:"耦园", id:178},
+    {text:"盘门", id:190},
+  ]
+},
+{
+  text:'高新区',
+  dot: false,
+  children: [
+    {text:'拙政园', id: 151},
+    {text:"苏州太湖国家湿地公园",id: 166},
+    {text: "苏州乐园森林水世界", id: 182},
+    {text:  "白马涧龙池景区", id: 193},
+  ]
+},
+{
+  text:"虎丘区",
+  dot:false,
+  children:[
+    {text:"上方山森林动物世界", id:160},
+    {text: "苏州上方山国家森林公园", id:181}
+  ]
+},
+
+{
+  text:'工业园区',
+  dot: false,
+  children: [
+    {text:'华谊兄弟电影乐园', id: 152},
+    {text: "苏州乐园森林世界",id: 159},
+    {text: "阳澄湖半岛旅游度假区",id: 173},
+  ]
+},
+{
+  text:'吴中区',
+  dot: false,
+  children: [
+    {text:'金鸡湖', id: 169},
+    {text:"穹窿山", id: 170},
+    {text: "甪直古镇", id:172},
+    {text: "西山",id:174},
+    {text:"天平山", id:175},
+    {text:"木渎古镇", id:179},
+    {text: "明月湾古村", id:186},
+    {text: "三山岛", id:187},
+    {text: "林屋洞", id:189},
+  ]
+},
+
+{
+  text:'吴江区',
+  dot: false,
+  children: [
+    {text:'同里古镇', id: 155},
+    {text:'同里国家湿地公园', id: 180},
+  ]
+},
+{
+  text:'昆山市',
+  dot: false,
+  children: [
+    {text:'周庄', id: 154},
+    {text:'千灯古镇', id: 183},
+    {text: "蒙特利亲子乐园", id: 164},
+    {text: "亭园林", id: 185},
+    {text: "小象动物奇幻世界", id: 192}
+  ]
+},
+{
+  text:'张家港市',
+  dot: false,
+  children: [
+    {text:'香山景区', id: 176},
+    {text:"张家港梦幻海洋王国",id: 191}
+  ]
+},
+{
+  text:'常熟市',
+  dot: false,
+  children: [
+
+    {text:'尚湖风景区', id: 162},
+    {text:'沙家浜风景区', id: 163},
+    {text:'虞山景区', id: 167},
+    {text:"红豆山庄", id: 188},
+  ]
+},
+{
+  text:'平江区',
+  dot: false,
+  children: [
+
+    {text: "平江路历史街区", id: 184},
+   
+  ]
+},
+
+
+
+
 {text: '黄浦区',
  dot: false,
  children: [{text: '外滩', id: 1},
@@ -320,7 +433,7 @@ var stickers = [
 
 // 景点图片主路径
 //  因为在导入数据库的时候直接用了"img/1.jpg"作为imgSrc，因此在加载的时候需要加上路径
-var path="cloud://env-dev-6gb5dffd859b69ee.656e-env-dev-6gb5dffd859b69ee-1303853824/"
+var path="cloud://env-dev-4g6anmt6c45832a8.656e-env-dev-4g6anmt6c45832a8-1303853824/"
 
 
 

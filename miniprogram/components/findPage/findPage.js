@@ -67,6 +67,7 @@ Component({
            data: {},
          }
        ).then((res)=>{
+         console.log(res);
          that.setData({
            searchFriendPosts: res.result.data,
            searchFriendPostsShow: res.result.data

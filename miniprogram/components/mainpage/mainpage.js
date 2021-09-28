@@ -10,12 +10,12 @@ Component({
    */
   data: {
     imgList: [
-      {id: 1,imgSrc: 'cloud://env-dev-6gb5dffd859b69ee.656e-env-dev-6gb5dffd859b69ee-1303853824/mainPageAttraction/外滩.jpeg'},
-      {id: 8,imgSrc: 'cloud://env-dev-6gb5dffd859b69ee.656e-env-dev-6gb5dffd859b69ee-1303853824/mainPageAttraction/欢乐谷.jpeg'},
-      {id: 3,imgSrc: 'cloud://env-dev-6gb5dffd859b69ee.656e-env-dev-6gb5dffd859b69ee-1303853824/mainPageAttraction/迪士尼.jpeg'},
-      {id: 7,imgSrc: 'cloud://env-dev-6gb5dffd859b69ee.656e-env-dev-6gb5dffd859b69ee-1303853824/mainPageAttraction/科技馆.jpeg'},
-      {id: 21,imgSrc: 'cloud://env-dev-6gb5dffd859b69ee.656e-env-dev-6gb5dffd859b69ee-1303853824/mainPageAttraction/朱家角.jpeg'},
-      {id: 11,imgSrc: 'cloud://env-dev-6gb5dffd859b69ee.656e-env-dev-6gb5dffd859b69ee-1303853824/mainPageAttraction/城隍庙.jpeg'}
+      {id: 1,imgSrc: 'cloud://env-dev-4g6anmt6c45832a8.656e-env-dev-4g6anmt6c45832a8-1303853824/attractions/周庄.jpeg'},
+      {id: 8,imgSrc: 'cloud://env-dev-4g6anmt6c45832a8.656e-env-dev-4g6anmt6c45832a8-1303853824/attractions/太湖.jpeg'},
+      {id: 3,imgSrc: 'cloud://env-dev-4g6anmt6c45832a8.656e-env-dev-4g6anmt6c45832a8-1303853824/attractions/拙政园.jpeg'},
+      {id: 7,imgSrc: 'cloud://env-dev-4g6anmt6c45832a8.656e-env-dev-4g6anmt6c45832a8-1303853824/attractions/留园.jpeg'},
+      {id: 21,imgSrc: 'cloud://env-dev-4g6anmt6c45832a8.656e-env-dev-4g6anmt6c45832a8-1303853824/attractions/金鸡湖.jpeg'},
+      {id: 11,imgSrc: 'cloud://env-dev-4g6anmt6c45832a8.656e-env-dev-4g6anmt6c45832a8-1303853824/attractions/朱家角.jpeg'}
     ],
     swiperCurrent: 0,
     showAuthButton: false,

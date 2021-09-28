@@ -1,6 +1,6 @@
 
 <view class='flex-container' wx:if='{{ journals.length > 0 }}'>
-  <journal journal_id='{{ item._id }}' title='{{ item.title }}' date='{{ item.timestap }}' previewImageUrl='{{item.reviewImageUrl}}' binditemChange="handleItemChange"
+  <journal journal_id='{{ item._id }}' title='{{ item.title }}' date='{{ item.timestap }}' previewImageUrl='{{item.previewImageUrl}}' binditemChange="handleItemChange"
    bindrefreshJournalList="onRefreshJournalList" wx:key='_id' wx:for='{{ journals }}' />
 </view>
 <view class='empty' wx:if='{{ journals.length === 0 }}'>

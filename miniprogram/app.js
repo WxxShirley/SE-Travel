@@ -6,7 +6,7 @@ App({
       console.error('请升级版本使用云开发功能')
     }else{
       wx.cloud.init({
-        env: 'env-dev-6gb5dffd859b69ee',
+        env: 'env-dev-4g6anmt6c45832a8',
       })
     }
 

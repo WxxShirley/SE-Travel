@@ -17,67 +17,54 @@ App({
         console.log("code",res.code)
       }
     })
-    // 获取用户信息
-    var that = this
-    wx.getSetting({
-      success: res => {
-       // if (res.authSetting['scope.userInfo']) {
-          // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
-          wx.getUserInfo({
-            success: res => {
-              this.globalData.userInfo = res.userInfo
 
-              console.log("用户昵称:"+this.globalData.userInfo.nickName)
-              console.log("用户头像地址:"+this.globalData.userInfo.avatarUrl)
+    // 从缓存中加载用户信息
+    var user = wx.getStorageSync('user')
+    if(user){
+      this.globalData.userInfo = user
+      
+      // 打印用户信息
+      console.log("用户昵称:"+this.globalData.userInfo.nickName)
+      console.log("用户头像地址:"+this.globalData.userInfo.avatarUrl)
 
-               // 开启攻略点赞监听
-              const db=wx.cloud.database()
-              const watcher_ = db.collection('message').where({
-                 target_nickname: this.globalData.userInfo.nickName,
-               }).watch({
-                 onChange: function(snapshot){
-                
-                  if(snapshot.type == 'init') {
-                    wx.cloud.callFunction({
-                      name: 'cf',
-                      success: function(res) {
-                        wx.cloud.callFunction({
-                          name: 'cf3',
-                          success: function(res2) {
-                            if(res.result.message_count < res2.result.message_count)
-                              that.globalData._hasNewMessage = true
-                          }
-                        })
-                      }
-                    })
-                  }
-                  else if(snapshot.docChanges[snapshot.docChanges.length - 1].dataType == 'add')
-                    that.globalData._hasNewMessage = true
-                  wx.cloud.callFunction({
-                    name: 'cf2'
-                  })
-                 },
-                 onError:function(err){
-                  console.error('watch closed because of error',err)
-                }
+
+      // 开启攻略点赞监听
+     const db=wx.cloud.database()
+     const watcher_ = db.collection('message').where({
+        target_nickname: this.globalData.userInfo.nickName,
+      }).watch({
+        onChange: function(snapshot){
+       
+         if(snapshot.type == 'init') {
+           wx.cloud.callFunction({
+             name: 'cf',
+             success: function(res) {
+               wx.cloud.callFunction({
+                 name: 'cf3',
+                 success: function(res2) {
+                   if(res.result.message_count < res2.result.message_count)
+                     that.globalData._hasNewMessage = true
+                 }
                })
+             }
+           })
+         }
+         else if(snapshot.docChanges[snapshot.docChanges.length - 1].dataType == 'add')
+           that.globalData._hasNewMessage = true
+         wx.cloud.callFunction({
+           name: 'cf2'
+         })
+        },
+        onError:function(err){
+         console.error('watch closed because of error',err)
+       }
+      })
+    }
 
-              // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-              // 所以此处加入 callback 以防止这种情况
-              if (this.userInfoReadyCallback) {
-                this.userInfoReadyCallback(res)
-              }
-            }
-          })
-        /*}else{
-          // 用户没有授权，有消息提示框
-          console.log("你还未授权")
-        }*/
-      }
-    })
+  
   },
   globalData: {
-    // 全局信息： userInfo(用户信息)
+    // 全局信息： userInfo(用户信息), _hasNewMessage(是否有新的点赞消息)
     userInfo: null,
     _hasNewMessage: false
   },

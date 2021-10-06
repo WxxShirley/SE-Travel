@@ -39,7 +39,7 @@
   },
   "appid": "wx871696d2ebd36b09",
   "projectname": "hulv_beta",
-  "libVersion": "2.8.1",
+  "libVersion": "2.15.0",
   "simulatorType": "wechat",
   "simulatorPluginLibVersion": {},
   "cloudfunctionTemplateRoot": "cloudfunctionTemplate",

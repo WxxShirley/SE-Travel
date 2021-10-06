@@ -2,8 +2,7 @@
 <view class="container">
   <view class="userinfo">
    
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 授权使用 </button>
-
+    <button wx:if="{{!hasUserInfo }}" bindtap="getUserProfile"> 授权使用 </button>
 
     <!--主页-->
     <block wx:else>

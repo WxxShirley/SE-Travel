@@ -14,7 +14,7 @@ function initData(that) {
   msgList = [{
       speaker: 'server',
       contentType: 'text',
-      content: '您在使用本小程序过程中，有任何bug或意见反馈都可以在这里提交~'
+      content: '您在使用本小程序过程中，有任何bug或意见反馈输入后点击回车都可以在这里提交~'
     },
     /*{
       speaker: 'customer',
@@ -129,6 +129,7 @@ Page({
    * 发送点击监听
    */
   sendClick: function(e) {
+    console.log(e)
     if(e==null || e.detail==null || e.detail.value==null|| e.detail.value.length==0){
       wx.showToast({
         icon: "none",

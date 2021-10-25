@@ -1,7 +1,7 @@
 <!--miniprogram/pages/diary/diary.wxml-->
 
 <!--正在编辑界面-->
-<view class='editor-container' wx:if="{{isEdit}}">
+<view class='editor-container' wx:if="{{isEdit}}" enable-flex="true">
   <!--输入文字框
        * 绑定了处理“确定-onInputConfirm”和“取消-OnInputCancel”的函数
        * 变量addingText决定它是否会显示
@@ -14,7 +14,7 @@
   <view class='journal-container' style='height:{{ containerHeight }}rpx;' bindtap='onRefreshView'>
     <view class='journal' style='Bottom:-{{ windowBottom }}rpx;'>
       <!--背景图-->
-      <image class='background' src='{{ backgroundUrl }}' mode=""/>
+      <image  class='background' src='{{ backgroundUrl }}' mode="scaleToFill"/>
       
       <!--所有的贴纸-->
       <sticker id='{{ item.id }}' component_type='{{ item.component_type }}' selected='{{ selected }}' hidden='{{ hidden }}' border='{{ border }}' image_url='{{ item.image_url }}' text='{{ item.text }}' stickerCenterX='{{ item.stickerCenterX }}' stickerCenterY='{{ item.stickerCenterY }}'

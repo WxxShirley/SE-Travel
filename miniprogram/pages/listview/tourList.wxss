@@ -44,7 +44,7 @@
 }
 
 .hmly-content-title{
-  font-size: 35rpx;
+  font-size: 30rpx;
   height: 40rpx;
   color: #000;
   display: -webkit-box;
@@ -61,14 +61,14 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
-  font-size: 27rpx;
+  font-size: 25rpx;
   text-align: left;
   color: #ccc;
   margin-top: 15rpx;
 }
 
 .hmly-count{
-  font-size: 27rpx;
+  font-size: 25rpx;
   color: #ccc;
   display: flex;
   justify-content: start;
@@ -76,7 +76,7 @@
 }
 
 .hmly-like-text{
-  font-size: 28rpx;
+  font-size: 25rpx;
   color: gray;
   margin-top: 10rpx;
   display: -webkit-box;

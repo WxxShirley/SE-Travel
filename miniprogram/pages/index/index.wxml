@@ -3,6 +3,7 @@
   <view class="userinfo">
    
     <button wx:if="{{!hasUserInfo }}" bindtap="getUserProfile"> 授权使用 </button>
+    <text wx:if="{{!hasUserInfo }}" style="padding: 5%;">本项目是提供上海市苏州市旅游出行功能的小程序，由复旦大学学生开发、目前仅在一定范围内使用。因此需要您授权登陆来享有全部的功能体验。</text>
 
     <!--主页-->
     <block wx:else>

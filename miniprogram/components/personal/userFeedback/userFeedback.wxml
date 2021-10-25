@@ -42,8 +42,8 @@
 </scroll-view>
 
 <view class='inputRoom' style='bottom: {{inputBottom}}'>
-  <input bindconfirm='sendClick' adjust-position='{{false}}' value='{{inputVal}}' confirm-type='send' bindfocus='focus' bindblur='blur'></input>
-  <van-icon size="30px" color="#1989fa" name="upgrade"  />
+  <input bindconfirm='sendClick' adjust-position='{{false}}' value='{{inputVal}}' confirm-type='send' bindfocus='focus' bindblur='blur' style="width: 90%;"></input>
+  <!--<van-icon size="30px" color="#1989fa" name="upgrade"  bindtap="sendClick"/>-->
 </view>
 </view>
 

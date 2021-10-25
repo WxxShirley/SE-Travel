@@ -19,7 +19,7 @@ Page({
 
     // 图片素材信息
     allBackground: new Array(9),
-    backgroundUrl: "cloud://env-dev-6gb5dffd859b69ee.656e-env-dev-6gb5dffd859b69ee-1303853824/diary_bg/bg1.jpg",
+    backgroundUrl: "cloud://env-dev-4g6anmt6c45832a8.656e-env-dev-4g6anmt6c45832a8-1303853824/bg/1.jpeg",
     backgroundId: '1',
     backgroundPath: '',
     stickerUrl: '', // 请求后台的贴纸图
@@ -82,18 +82,22 @@ Page({
   // 下载背景图
   downloadBackgroundImage: function(backgroundId) {
     // TODO: 正确修改背景图
+    console.log("修改背景图")
     var that = this
     for(var i=0;i<this.data.allBackground.length;++i){
       if(this.data.allBackground[i].id==backgroundId){
         var path = this.data.allBackground[i].path
+
         wx.cloud.downloadFile({
           fileID: this.data.allBackground[i].path,
           success: res=>{
+            console.log(res)
             that.setData({
               backgroundId:backgroundId,
               backgroundUrl: path,
               backgroundPath: res.tempFilePath
             })
+            console.log(that.data.backgroundUrl)
           }
         })
       }
